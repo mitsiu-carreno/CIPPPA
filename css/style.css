@@ -1,0 +1,7 @@
+@font-face{
+    font-family: Rosario;
+    src: url('../fonts/rosario/Rosario-Regular.ttf'),
+        url('../fonts/rosario/Rosario-Regular.ttf');
+}
+
+* { font-family: Rosario !important; font-size: 15px;}   //aplica la fuenta a todos los elementos
