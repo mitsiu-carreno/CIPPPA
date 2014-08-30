@@ -4,4 +4,16 @@
         url('../fonts/rosario/Rosario-Regular.ttf');
 }
 
+@font-face{
+    font-family: Margot;
+    src: url('../fonts/margot/Margot-Regular.ttf'),
+        url('../fonts/margot/Margot-Regular.ttf');
+}
+
+@font-face{
+    font-family: Homizio;
+    src: url('../fonts/homizio/regular.ttf'),
+        url('../fonts/homizio/regular.ttf');
+}
+
 * { font-family: Rosario !important; font-size: 15px;}   //aplica la fuenta a todos los elementos

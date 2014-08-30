@@ -10,8 +10,8 @@
         <script src="<?php echo base_url() ?>js/jquery-1.11.1.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url() ?>js/bootstrap.js" type="text/javascript"></script>
         <script src="<?php echo base_url() ?>js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var global_baseurl = "<?php echo base_url(); ?>"
+        </script> 
     </head>
-    <body>
-        <?php echo base_url()?>
-    </body>
-       
+    <body>   
