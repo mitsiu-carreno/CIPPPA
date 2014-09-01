@@ -1,14 +1,23 @@
 <style>
     .form-horizontal{
         margin: 0 auto;
-        background-color: blue;
-        width: 900px;
+        //background-color: #275420;
+        background: linear-gradient(#459e00, #275420); 
+        width: 500px;
+        border: 2px solid;
+        border-radius: 25px;
+        opacity: 0.9;
     }
     #error{
-    display: none;
+        display: none;
     }
     #new{
         display: none;
+    }
+    body{
+        background-image: url('<?php echo base_url();?>img/login-background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>
 <script>
@@ -39,18 +48,21 @@
 </script>
 
 <form class="form-horizontal" id="signin"  method="post" action="<?php echo site_url(array("login","in")) ?>" role="form">
+    <br>
+    <h1 class="text-center"><b>BIENVENIDO</b></h1>
+    <br>
   <div class="form-group">
-    <label for="inputEmail3" class="col-md-4 control-label">Email</label>
-    <div class="col-md-4">
+    <label for="inputEmail3" class="col-md-3 control-label">Email</label>
+    <div class="col-md-7">
         <div class="input-group">
-          <input class="form-control" type="email" placeholder="Enter email">
+          <input class="form-control" type="text" placeholder="Enter email">
             <div class="input-group-addon">@upa.edu.mx</div>
         </div>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputPassword3" class="col-md-4 control-label">Password</label>
-    <div class="col-md-4">
+    <label for="inputPassword3" class="col-md-3 control-label">Password</label>
+    <div class="col-md-7">
       <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
     </div>
   </div>
@@ -68,7 +80,10 @@
       <button type="submit" class="btn btn-default">Ingresar</button>
     </div>
   </div>
+  <br>
+  <a href="#" class="pull-right" ><b>Registrarse</b></a>
 </form>
+
 
 
 <!--Formulario de Registro-->
@@ -90,5 +105,3 @@
 </div>
 
 <div id="error" class="alert alert-danger">Usuario o contraseña invalidos</div>
-
-ÁÉÍÓÚ aáéíóú

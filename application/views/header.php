@@ -15,3 +15,6 @@
         </script> 
     </head>
     <body>   
+        <header>
+            <center><img src="<?php echo base_url()?>img/upa_header.png"></center>
+        </header>
