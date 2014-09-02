@@ -41,12 +41,13 @@
         
         $('#registro').click(function(e){
             e.preventDefault();
-            $(".container").hide('fade');
+            $("#signin").hide('fade');
             $("#new").show('fade');
         });
     });
 </script>
-
+<br>
+<br>
 <form class="form-horizontal" id="signin"  method="post" action="<?php echo site_url(array("login","in")) ?>" role="form">
     <br>
     <h1 class="text-center"><b>BIENVENIDO</b></h1>
@@ -81,7 +82,7 @@
     </div>
   </div>
   <br>
-  <a href="#" class="pull-right" ><b>Registrarse</b></a>
+  <button type="button" class="pull-right btn btn-info" style="margin-right: 5%" id="registro"><b>Registrarse</b></button>
 </form>
 
 

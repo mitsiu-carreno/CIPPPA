@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>CIPPPA</title>
+        <link rel="icon" type="image/x-icon" href="<?php echo base_url()?>img/upa.ico">
         <link href="<?php echo base_url() ?>css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url() ?>css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url() ?>css/datepicker.css" rel="stylesheet" type="text/css"/>
@@ -16,5 +17,12 @@
     </head>
     <body>   
         <header>
-            <center><img src="<?php echo base_url()?>img/upa_header.png"></center>
+            <!--Responsive!-->
+            <a href="http://www.upa.edu.mx"><img class="container-fluid" src="<?php echo base_url()?>img/upa_logo.png" style="margin-left:12%; width: 22%"></a>
+            <img class="container-fluid" src="<?php echo base_url()?>img/bic_logo.png" style="float:right; margin-right: 10%; width: 12%">
+            <a href="http://www.ses.sep.gob.mx/instituciones-educacion-superior/universidades-politecnicas"><img class="container-fluid" src="<?php echo base_url()?>img/up_logo.png" style="float:right; width: 16%"></a>
+            <a href="http://http://www.aguascalientes.gob.mx/"><img class="container-fluid" src="<?php echo base_url()?>img/Prog_logo.png" style="float:right; width: 17%"></a>
+            
+            <!--<center><img src="<?php echo base_url()?>img/upa_header.png" style="width: 80%"></center>  -->
+            
         </header>
