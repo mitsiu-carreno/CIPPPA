@@ -9,8 +9,9 @@ class Login extends CI_Controller {
         if($this->session->userdata("userid")>0){
             $id=$this->session->userdata("userid");
             $this->load->model("user_model");
-            
+            $data["tipo"]= $this->user_model->get_type_by_iduser($id);
         }
+        echo "test_sublime_text_yahoo";
         //TEST
         //$this->load->model("abc_model");
         //$this->abc_model->insert_foreign_key();
@@ -47,11 +48,7 @@ class Login extends CI_Controller {
     public function registro(){
         $this->load->model("log_model");
         $this->load->model("abc_model");
-        //var_dump($this->input->post());
         $data["registro"]=$this->input->post();
-        $bean = "usertest";
-        //$id= $this->log_model->insert($data["registro"], $bean);
-        //TEST
         $this->abc_model->insert_under_foreign_key();
         //FIN-TEST
 
