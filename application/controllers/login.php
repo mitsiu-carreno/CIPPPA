@@ -11,7 +11,7 @@ class Login extends CI_Controller {
             $this->load->model("user_model");
             $data["tipo"]= $this->user_model->get_type_by_iduser($id);
         }
-        echo "test_sublime_text_yahoo";
+        echo "test_sublime_text_ssh";
         //TEST
         //$this->load->model("abc_model");
         //$this->abc_model->insert_foreign_key();
