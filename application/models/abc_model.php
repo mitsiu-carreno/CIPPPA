@@ -12,29 +12,35 @@ class Abc_model extends CI_Model{
         $id=R::store($bean);
         return $id;
     }
+
     
-//    function insert_foreign_key(){
-//        $shop = R::dispense('shop');
-//        $shop->name = 'Antiques';
-//        
-//        $vase = R::dispense('product');
-//        $vase->price = 25;
-//        $shop->ownProductList[] = $vase;
-//        R::store($shop);
-//    } 
-    //$table, $table2, $data, $id
-    function insert_under_foreign_key($table, $table2, $data, $id){
+    function initial_tables(){
+        $bean = R::dispense('tipouser');
+        $bean->tipo_usuario = 'usuario';
+        R::store($bean);
+        $bean = R::dispense('tipouser');
+        $bean->tipo_usuario = 'evaluador';
+        R::store($bean);
+        $bean = R::dispense('tipouser');
+        $bean->tipo_usuario = 'administrador';
+        R::store($bean);
+    } 
+    //$table=tabla llave padre, $table2= tabla llave foranea, $data=datos del tabla hijo, $id = llave padre a la que se liga
+    function insert_with_foreign_key($table, $table2, $data, $id){
         $bean = R::load($table, $id);
         $bean2 = R::dispense($table2);
         $bean2->import($data);
         $bean->ownBeanList[] = $bean2;
         $id = R::store($bean);
+        $new_id = $bean2->id;
+        return $new_id;
     }
     
     function get_bean($table, $field, $id){
      $bean = R::load($table, $id);
      if($bean){
-         return $bean;
+        $value = $bean->$field;
+         return $value;
      }
     }
 }

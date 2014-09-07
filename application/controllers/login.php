@@ -12,7 +12,6 @@ class Login extends CI_Controller {
             $data["tipo"]= $this->user_model->get_type_by_iduser($id);
             echo $data;
         }
-        var_dump("test_9");
         $this->load->view("header");
         $this->load->view("login/login");
         
@@ -21,7 +20,7 @@ class Login extends CI_Controller {
     //Crea una sesión y accesa al sistema
     public function in(){
         $this->load->model("user_model");
-        $user = $this->log_model->in($this->input->post("nombre"),$this->input->post("password"));
+        $user = $this->user_model->in($this->input->post("nombre"),$this->input->post("password"));
         if(!is_null($user)){
             $this->session->set_userdata("userid", $user->id);
             echo $user->id;
@@ -42,12 +41,17 @@ class Login extends CI_Controller {
     
     //Crea un nuevo registro
     public function registro(){
-        $this->load->model("log_model");
+        //$this->load->model("log_model");
         $this->load->model("abc_model");
         $data["registro"]=$this->input->post();
-        $this->abc_model->insert_under_foreign_key();
-        //FIN-TEST
-
+        $data["registro"]["password"] = md5($data["registro"]["password"]);
+        $data["registro"]["fecha_registro"] = date("Y/m/d G:i:s");
+        $data["registro"]["fecha_actualizacion"] = date("Y/m/d G:i:s");
+        unset($data["registro"]["password2"]);
+        $id = $this->abc_model->insert_with_foreign_key("tipouser","user", $data["registro"],1);
+        var_dump($id);
+        
+        
 
         //$id = $this->log_model->insert($this->input->post("nombre"), $this->input->post("password"));
         //$this->session->set_userdata("userid", $id);

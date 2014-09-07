@@ -61,7 +61,7 @@
                 return false;
             }
             $.post(this.action,$(this).serialize(), function(data){
-                console.log(data)
+                console.log(data);
                 if(data > 0)
                     window.location = "<?php echo site_url(array("main")) ?>";
                 else{
@@ -86,7 +86,7 @@
         <label for="inputEmail3" class="col-md-3 control-label">Email</label>
         <div class="col-md-7">
             <div class="input-group">
-                <input class="form-control" type="text" name="correo_usuario" placeholder="Enter email" autofocus>
+                <input class="form-control" type="text" name="correo_institucion" placeholder="Enter email" autofocus>
                 <div class="input-group-addon">@upa.edu.mx</div>
             </div>
         </div>
@@ -148,7 +148,7 @@
                     <label for="inputEmail3" class="col-md-3 control-label">Correo Institucional</label>
                     <div class="col-md-7">
                         <div class="input-group">
-                            <input class="form-control" type="text" name="correo_usuario" id="registro_email_inst" placeholder="Correo Institucional">
+                            <input class="form-control" type="text" name="correo_institucion" id="registro_email_inst" placeholder="Correo Institucional">
                             <div class="input-group-addon">@upa.edu.mx</div>
                         </div>
                         <p>En caso que aún no cuente con un correo institucional deje este espacio en blanco</p>
