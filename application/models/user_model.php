@@ -9,7 +9,6 @@ class User_model extends CI_Model{
         $user = R::load('user', $iduser);
         $tipo = $user ->id;
         return $tipo;
-        //test
     }
 }
 
