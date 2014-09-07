@@ -12,7 +12,7 @@ class Login extends CI_Controller {
             $data["tipo"]= $this->user_model->get_type_by_iduser($id);
             echo $data;
         }
-        //echo "test_sublime_text_ssh_finally_2";
+        echo "test_sublime_text_ssh_finally_2";
         //TEST
         //$this->load->model("abc_model");
         //$this->abc_model->insert_foreign_key();
