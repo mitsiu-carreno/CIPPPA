@@ -7,7 +7,7 @@ class User_model extends CI_Model{
     
     function get_type_by_iduser($iduser){
         $user = R::load('user', $iduser);
-        $tipo = $user ->id;
+        $tipo = $user ->tipouser_id;
         return $tipo;
     }
 }

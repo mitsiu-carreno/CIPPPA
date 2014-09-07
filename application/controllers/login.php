@@ -8,9 +8,14 @@ class Login extends CI_Controller {
     public function index(){
         if($this->session->userdata("userid")>0){
             $id=$this->session->userdata("userid");
-            $this->load->model("user_model");
-            $data["tipo"]= $this->user_model->get_type_by_iduser($id);
-            echo $data;
+            //TAMBIEN SIRVE <----
+            //$this->load->model("user_model");
+            //$data["tipo"]= $this->user_model->get_type_by_iduser($id);
+            //var_dump($data);
+
+            $this->load->model("abc_model");
+            $data["tipo"] = $this->abc_model->get_field_from_bean("user", "tipouser_id", $id);
+            var_dump($data["tipo"]);
         }
         $this->load->view("header");
         $this->load->view("login/login");
@@ -19,25 +24,17 @@ class Login extends CI_Controller {
     
     //Crea una sesión y accesa al sistema
     public function in(){
-        $this->load->model("user_model");
-        $user = $this->user_model->in($this->input->post("nombre"),$this->input->post("password"));
+        //$this->load->model("user_model");
+        //$user = $this->user_model->in($this->input->post("nombre"),$this->input->post("password"));
+
+        $this->load->model("abc_model");
+        $user= $this->abc_model->get_bean("user", "correo_institucion", "mitsiu.carreno");
         if(!is_null($user)){
             $this->session->set_userdata("userid", $user->id);
             echo $user->id;
         } else
             echo "null";    
     }
-//    public function test_RB(){
-//        var_dump("test_4");
-//        $this->load->model("log_model");
-//        $this->log_model->insert('mitsiu', 'contrasena');
-//        
-//        $this->load->view("welcome_message");
-//        
-////        $this->load->view("header");
-////        $this->load->view("login");
-////        $this->load->view("footer");
-//    }
     
     //Crea un nuevo registro
     public function registro(){
@@ -49,8 +46,8 @@ class Login extends CI_Controller {
         $data["registro"]["fecha_actualizacion"] = date("Y/m/d G:i:s");
         unset($data["registro"]["password2"]);
         $id = $this->abc_model->insert_with_foreign_key("tipouser","user", $data["registro"],1);
-        var_dump($id);
-        
+        $this->session->set_userdata("userid", $id);
+        echo $id;
         
 
         //$id = $this->log_model->insert($this->input->post("nombre"), $this->input->post("password"));

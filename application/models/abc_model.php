@@ -36,11 +36,28 @@ class Abc_model extends CI_Model{
         return $new_id;
     }
     
-    function get_bean($table, $field, $id){
-     $bean = R::load($table, $id);
-     if($bean){
-        $value = $bean->$field;
-         return $value;
-     }
+    function get_bean($table, $id){
+        $bean = R::load($table, $id);
+        if($bean){
+            return $bean;
+        }
     }
+
+    function get_field_from_bean($table, $field, $id){
+        $bean = R::load($table, $id);
+        if($bean){
+            $value = $bean->$field;
+            return $value;
+        }
+    }
+    /*
+    function get_bean($table, $field, $value){
+        $bean = R::findOne($table, $field'='$value);
+        echo "model";
+        echo $bean;
+        if($bean){
+            return $bean;
+        }
+    }
+    */
 }
