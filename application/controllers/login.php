@@ -12,11 +12,6 @@ class Login extends CI_Controller {
             $data["tipo"]= $this->user_model->get_type_by_iduser($id);
             echo $data;
         }
-<<<<<<< HEAD
-        echo "test2";
-=======
-        echo "test";
->>>>>>> f2e7eb8aba8eda12453410f314d68e19cddd336e
         $this->load->view("header");
         $this->load->view("login/login");
         
