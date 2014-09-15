@@ -16,6 +16,7 @@ class Login extends CI_Controller {
             $this->load->model("abc_model");
             $data["tipo"] = $this->abc_model->get_field_from_bean("user", "tipouser_id", $id);
             var_dump($data["tipo"]);
+            redirect("main");
         }
         $this->load->view("header");
         $this->load->view("login/login");

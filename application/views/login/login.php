@@ -19,6 +19,8 @@
         $("#error").hide();
         $("#new").hide();
         $("#error_registro").hide();
+
+        //ENVIAR FORMULARIO SIGN IN
         $('#signin').submit(function (e){
             e.preventDefault();
             $.post(this.action,$(this).serialize(), function(data){
@@ -46,13 +48,19 @@
             $("#signin").show("fade");
         });
         
-        $("#registro_pass").focus(function(e){
+        //Valida que se llene al menos un correo
+        $("#form_reg_listo").click(function(){
             if($("#registro_email_inst").val()==false){
+                $("#registro_email_inst").attr("required", false);
                 $("#registro_email_pers").attr("required", true);
             }
+            else{
+                $("#registro_email_pers").attr("required", false);
+            }
         });
-        //CAMBIAR-CHECAR
-        $("#register-form").submit(function(){
+
+        $("#register-form").submit(function(e){
+            //Validación que contraseñas coincidan
             if($("#registro_pass").val()!=$("#registro_pass2").val()){
                 $("#error_registro").show("fade");
                         setTimeout(function(){
@@ -60,7 +68,8 @@
                         }, 3000);
                 return false;
             }
-            $.post(this.action,$(this).serialize(), function(data){
+            e.preventDefault();
+            $.post(this.action, $(this).serialize(), function(data){
                 console.log(data);
                 if(data > 0)
                     window.location = "<?php echo site_url(array("main","info_personal")) ?>";
@@ -129,26 +138,26 @@
                 <div class="form-group">
                     <label for="inputPassword3" class="col-md-3 control-label">Nombre(s)</label>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required>
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-md-3 control-label">Apellido Paterno</label>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" name="apellido_paterno" placeholder="Apellido Paterno" required>
+                        <input type="text" class="form-control" name="apellido_paterno" placeholder="Apellido Paterno" required value="Carreño">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-md-3 control-label">Apellido Materno</label>
                     <div class="col-md-7">
-                        <input type="text" class="form-control" name="apellido_materno" placeholder="Apellido Materno" required>
+                        <input type="text" class="form-control" name="apellido_materno" placeholder="Apellido Materno" required value="Sarabia">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-md-3 control-label">Correo Institucional</label>
                     <div class="col-md-7">
                         <div class="input-group">
-                            <input class="form-control" type="text" name="correo_institucion" id="registro_email_inst" placeholder="Correo Institucional">
+                            <input class="form-control" type="text" name="correo_institucion" id="registro_email_inst" placeholder="Correo Institucional" required value="mitsiu.carreno">
                             <div class="input-group-addon">@upa.edu.mx</div>
                         </div>
                         <p>En caso que aún no cuente con un correo institucional deje este espacio en blanco</p>
@@ -157,25 +166,25 @@
                 <div class="form-group">
                     <label for="inputPassword3" class="col-md-3 control-label">Correo Personal</label>
                     <div class="col-md-7">
-                        <input type="email" class="form-control" name="correo_personal" id="registro_email_pers" placeholder="Correo Personal">
+                        <input type="email" class="form-control" name="correo_personal" id="registro_email_pers" placeholder="Correo Personal" required value="mitsiu.carreno@gmail.com">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-md-3 control-label">Contraseña</label>
                     <div class="col-md-7">
-                        <input type="password" class="form-control" name="password" id="registro_pass" placeholder="Contraseña" required>
+                        <input type="password" class="form-control" name="password" id="registro_pass" placeholder="Contraseña" required value="1234">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-md-3 control-label">Repetir Contraseña</label>
                     <div class="col-md-7">
-                        <input type="password" class="form-control" name="password2" id="registro_pass2" placeholder="Repetir contraseña" required>
+                        <input type="password" class="form-control" name="password2" id="registro_pass2" placeholder="Repetir contraseña" required value="1234">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <div class="col-md-offset-3 col-md-10">
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                        <button id="form_reg_listo" type="submit" class="btn btn-primary">Registrarse</button>
                     </div>
                 </div>
             </form>
