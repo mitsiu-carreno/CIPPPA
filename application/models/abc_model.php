@@ -36,11 +36,16 @@ class Abc_model extends CI_Model{
         return $new_id;
     }
     
-    function get_bean($table, $id){
+    function get_bean($table, $field, $value){
+        /*
         $bean = R::load($table, $id);
         if($bean){
             return $bean;
         }
+        */
+        $bean = R::findOne('user', 'nombre like Mitsiu Alejandro';
+        //$user = R::findOne('user', 'nombre like ? AND password = MD5(?)',  array($nombre, $pass));
+        return $bean;
     }
 
     function get_field_from_bean($table, $field, $id){

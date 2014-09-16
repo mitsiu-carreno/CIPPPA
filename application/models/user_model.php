@@ -5,10 +5,9 @@ class User_model extends CI_Model{
         $this->load->library("rb");
     }
     
-    function get_type_by_iduser($iduser){
-        $user = R::load('user', $iduser);
-        $tipo = $user ->tipouser_id;
-        return $tipo;
+    function login ($nombre, $password){
+        $user = R::findOne('user', 'nombre like ? AND password = MD5(?)',  array($nombre, $pass));
+        return $user;
     }
 }
 

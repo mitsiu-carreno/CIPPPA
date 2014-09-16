@@ -3,6 +3,9 @@
 class Main extends CI_Controller {
     function __construct() {
         parent::__construct();
+        if(!$this->session->userdata("userid")){
+            redirect("login");
+        }
     }
 
     function index(){
@@ -15,6 +18,7 @@ class Main extends CI_Controller {
     	$sessioninf = $this->session->userdata("userid");
         var_dump($sessioninf);
         $this->load->view("header");
+        //$this->load->view("usuario/info_personal")
     }
 
 }

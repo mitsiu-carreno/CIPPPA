@@ -8,14 +8,9 @@ class Login extends CI_Controller {
     public function index(){
         if($this->session->userdata("userid")>0){
             $id=$this->session->userdata("userid");
-            //TAMBIEN SIRVE <----
-            //$this->load->model("user_model");
-            //$data["tipo"]= $this->user_model->get_type_by_iduser($id);
-            //var_dump($data);
-
             $this->load->model("abc_model");
             $data["tipo"] = $this->abc_model->get_field_from_bean("user", "tipouser_id", $id);
-            var_dump($data["tipo"]);
+            //var_dump($data["tipo"]);
             redirect("main");
         }
         $this->load->view("header");
@@ -25,16 +20,22 @@ class Login extends CI_Controller {
     
     //Crea una sesión y accesa al sistema
     public function in(){
-        //$this->load->model("user_model");
-        //$user = $this->user_model->in($this->input->post("nombre"),$this->input->post("password"));
+        
+        $this->load->model("user_model");
+        $user = $this->user_model->login($this->input->post("correo_institucion"),$this->input->post("password"));
+        console.log($user);
 
-        $this->load->model("abc_model");
-        $user= $this->abc_model->get_bean("user", "correo_institucion", "mitsiu.carreno");
+        //Testing
+        //$data = $this->input->post();   
+        
+        //echo $data;
+        /*
         if(!is_null($user)){
             $this->session->set_userdata("userid", $user->id);
             echo $user->id;
         } else
             echo "null";    
+            */
     }
     
     //Crea un nuevo registro
@@ -49,13 +50,6 @@ class Login extends CI_Controller {
         $id = $this->abc_model->insert_with_foreign_key("tipouser","user", $data["registro"],1);
         $this->session->set_userdata("userid", $id);
         echo $id;
-        
-
-        //$id = $this->log_model->insert($this->input->post("nombre"), $this->input->post("password"));
-        //$this->session->set_userdata("userid", $id);
-        //$sessioninf = $this->session->userdata("userid");
-        //var_dump($sessioninf);
-        //redirect("main");
     }
     
     //Destruye session y regresa a inicio
