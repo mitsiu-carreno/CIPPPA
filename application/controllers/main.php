@@ -9,19 +9,22 @@ class Main extends CI_Controller {
     }
 
     function index(){
-    	$sessioninf = $this->session->userdata("userid");
-        var_dump($sessioninf);
+    	$sessioninf["userid"] = $this->session->userdata("userid");
+        //var_dump($sessioninf);
         $this->load->view("header");
-         $this->session->sess_destroy();
-        redirect("login");
+        $this->load->view("usuario/info_personal", $sessioninf);
+        // $this->session->sess_destroy();
+        //redirect("login");
     }
 
     function info_personal(){
     	$sessioninf = $this->session->userdata("userid");
         var_dump($sessioninf);
         $this->load->view("header");
-         $this->session->sess_destroy();
-        redirect("login");
+         //$this->session->sess_destroy();
+        //redirect("login");
+
+
         //$this->load->view("usuario/info_personal")
     }
 

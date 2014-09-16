@@ -11,9 +11,14 @@ class Login extends CI_Controller {
             $this->load->model("abc_model");
             $data["tipo"] = $this->abc_model->get_field_from_bean("user", "tipouser_id", $id);
             //var_dump($data["tipo"]);
-            redirect("main");
+            if($data["tipo"]==1){
+                redirect("main");
+            }
+            else{
+                //FALTA COMPLETAR!!!
+            }
         }
-        $this->load->view("header");
+        $this->load->view("header"); 
         $this->load->view("login/login");
         
     }
@@ -69,5 +74,10 @@ class Login extends CI_Controller {
     public function out(){
         $this->session->sess_destroy();
         redirect("login");
+    }
+
+    public function testing(){
+        $this->load->model("abc_model");
+        $this->abc_model->test();
     }
 }
