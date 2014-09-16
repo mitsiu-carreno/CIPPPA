@@ -23,7 +23,7 @@ class Login extends CI_Controller {
         
         $this->load->model("user_model");
         $user = $this->user_model->login($this->input->post("correo_institucion"),$this->input->post("password"));
-        console.log($user);
+        var_dump($user);
 
         //Testing
         //$data = $this->input->post();   
@@ -43,6 +43,11 @@ class Login extends CI_Controller {
         //$this->load->model("log_model");
         $this->load->model("abc_model");
         $data["registro"]=$this->input->post();
+        if($data["registro"]["correo_institucion"]== null){
+            
+            $correo = $data["registro"]["nombre"] + $data["registro"]["apellido_paterno"];
+            $data["registro"]["correo_institucion"]=$correo;
+        }
         $data["registro"]["password"] = md5($data["registro"]["password"]);
         $data["registro"]["fecha_registro"] = date("Y/m/d G:i:s");
         $data["registro"]["fecha_actualizacion"] = date("Y/m/d G:i:s");

@@ -43,9 +43,9 @@ class Abc_model extends CI_Model{
             return $bean;
         }
         */
-        $bean = R::findOne('user', 'nombre like Mitsiu Alejandro';
+        //$bean = R::findOne('user', 'nombre like Mitsiu Alejandro';
         //$user = R::findOne('user', 'nombre like ? AND password = MD5(?)',  array($nombre, $pass));
-        return $bean;
+        //return $bean;
     }
 
     function get_field_from_bean($table, $field, $id){
