@@ -73,7 +73,7 @@
             $.post(this.action, $(this).serialize(), function(data){
                 console.log(data);
                 if(data > 0)
-                    window.location = "<?php echo site_url(array("main","info_personal")) ?>";
+                    window.location = "<?php echo site_url(array("login","out")) ?>";
                 else{
                     $("#error").show("fade");
                         setTimeout(function(){

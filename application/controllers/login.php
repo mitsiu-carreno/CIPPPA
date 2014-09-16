@@ -40,13 +40,21 @@ class Login extends CI_Controller {
     
     //Crea un nuevo registro
     public function registro(){
-        //$this->load->model("log_model");
         $this->load->model("abc_model");
         $data["registro"]=$this->input->post();
+        //en caso que no tenga un correo institucional se le crea uno
         if($data["registro"]["correo_institucion"]== null){
-            
-            $correo = $data["registro"]["nombre"] + $data["registro"]["apellido_paterno"];
+            //convierte los nombres y apellido en minusculas
+            $data["registro"]["nombre"] = strtolower($data["registro"]["nombre"]);
+            $data["registro"]["apellido_paterno"] = strtolower($data["registro"]["apellido_paterno"]);
+            //Se separa los nombres en cada espacio (nombres compuestos)
+            $first_name = explode(' ',trim($data["registro"]["nombre"]));
+            $correo =$first_name[0] . "." . $data["registro"]["apellido_paterno"];
             $data["registro"]["correo_institucion"]=$correo;
+        }
+        else{   //verificar que no haya repetido "@upa.edu.mx" <--some times users are kind of stupid!!
+            $data["registro"]["correo_institucion"] = explode('@', trim($data["registro"]["correo_institucion"]));
+            $data["registro"]["correo_institucion"]=$data["registro"]["correo_institucion"][0];
         }
         $data["registro"]["password"] = md5($data["registro"]["password"]);
         $data["registro"]["fecha_registro"] = date("Y/m/d G:i:s");
@@ -60,6 +68,6 @@ class Login extends CI_Controller {
     //Destruye session y regresa a inicio
     public function out(){
         $this->session->sess_destroy();
-        redirect("login/login");
+        redirect("login");
     }
 }
