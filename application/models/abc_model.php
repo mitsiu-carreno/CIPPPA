@@ -61,12 +61,13 @@ class Abc_model extends CI_Model{
         $table = "user";
         $field = "apellido_paterno";
         $value = "carreño";
-        $bean = R::findOne($table, "apellido_paterno like ?", array($value));  //<--AVANCE
+        $bean = R:: findOne($table, "apellido_paterno like ?", array($value));
+        //$bean = R::findOne($table, "apellido_paterno like ?", array($value));  //<--AVANCE
         //$bean = R::findOne("user", "apellido_paterno like 'carreño'");
         
-        
+    
         var_dump($bean);
-        
+        //return $bean->export();
     }
     
     
