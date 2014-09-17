@@ -56,15 +56,18 @@ class Abc_model extends CI_Model{
         }
     }
     
-    /*
+    
     function test(){
+        $table = "user";
+        $field = "apellido_paterno";
+        $value = "carreño";
+        $bean = R::findOne($table, "apellido_paterno like ?", array($value));  //<--AVANCE
+        //$bean = R::findOne("user", "apellido_paterno like 'carreño'");
         
-        //$bean = R::findOne("user", "correo_institucion like hola");
-        $bean = R::findOne('user', 'nombre like Mitsiu Alejandro';
         
         var_dump($bean);
         
     }
-    */
+    
     
 }
