@@ -5,9 +5,12 @@ class User_model extends CI_Model{
         $this->load->library("rb");
     }
     
-    function login ($nombre, $password){
-        $user = R::findOne('user', 'nombre like ? AND password = MD5(?)',  array($nombre, $pass));
-        return $user;
+    function login ($correo, $pass){
+        $user = R::findOne('user', 'correo_institucion like ? AND password = MD5(?)',  array($correo, $pass));
+       	if($user){
+            $id = $user->id;
+            return $id;
+        }
     }
 }
 

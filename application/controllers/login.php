@@ -25,22 +25,15 @@ class Login extends CI_Controller {
     
     //Crea una sesión y accesa al sistema
     public function in(){
-        
         $this->load->model("user_model");
-        $user = $this->user_model->login($this->input->post("correo_institucion"),$this->input->post("password"));
-        var_dump($user);
-
-        //Testing
-        //$data = $this->input->post();   
-        
-        //echo $data;
-        /*
-        if(!is_null($user)){
-            $this->session->set_userdata("userid", $user->id);
-            echo $user->id;
-        } else
-            echo "null";    
-            */
+        $id = $this->user_model->login($this->input->post("correo_institucion"),$this->input->post("password"));
+        if($id){
+            $this->session->set_userdata("userid", $id);
+            echo $id;
+        }
+        else{
+            echo "null";
+        }
     }
     
     //Crea un nuevo registro

@@ -25,7 +25,6 @@
             e.preventDefault();
             $.post(this.action,$(this).serialize(), function(data){
                 console.log(data);
-                /*
                 if(data > 0)
                     window.location = "<?php echo site_url(array("main")) ?>";
                 else{
@@ -34,7 +33,7 @@
                             $("#error").hide("fade");
                         }, 3000);
                 }
-                */    
+                  
             });
         });
         
@@ -73,7 +72,7 @@
             $.post(this.action, $(this).serialize(), function(data){
                 console.log(data);
                 if(data > 0)
-                    window.location = "<?php echo site_url(array("main")) ?>";
+                    window.location = "<?php echo site_url(array("main", "info_personal")) ?>";
                 else{
                     $("#error").show("fade");
                         setTimeout(function(){
