@@ -39,8 +39,7 @@ class Main extends CI_Controller {
         $id=$this->id;
         $this->load->model("abc_model");
         $data["user_info"]=$this->abc_model->get_bean("user", $id);
-        var_dump($data["user_info"]);
-        $this->load->view("header");
+        $this->load->view("header", $data);
         $this->load->view("usuario/info_personal", $data);
          //$this->session->sess_destroy();
         //redirect("login");

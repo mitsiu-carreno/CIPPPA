@@ -23,6 +23,14 @@
             <a href="http://www.ses.sep.gob.mx/instituciones-educacion-superior/universidades-politecnicas"><img class="container-fluid" src="<?php echo base_url()?>img/up_logo.png" style="float:right; width: 16%"></a>
             <a href="http://http://www.aguascalientes.gob.mx/"><img class="container-fluid" src="<?php echo base_url()?>img/Prog_logo.png" style="float:right; width: 17%"></a>
             
+            
+            <?php if(isset($user_info["nombre"])):?>
+                <div id="bienvenido_message">
+                    <br>
+                    <div class="text-center">Bienvenido <?php echo $user_info["nombre"] ." ". $user_info["apellido_paterno"]?></div>
+                    <br>
+                </div>
+            <?php endif;?>
             <!--<center><img src="<?php echo base_url()?>img/upa_header.png" style="width: 80%"></center>  -->
             
         </header>

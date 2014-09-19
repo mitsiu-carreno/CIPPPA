@@ -1,13 +1,4 @@
 <style>
-    .form-horizontal{
-        margin: 0 auto;
-        //background-color: #275420;
-        background: linear-gradient(#459e00, #275420); 
-        width: 500px;
-        border: 2px solid;
-        border-radius: 25px;
-        opacity: 0.9;
-    }
     body{
         background-image: url('<?php echo base_url();?>img/login-background.jpg');
         background-repeat: no-repeat;

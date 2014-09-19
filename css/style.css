@@ -16,4 +16,21 @@
         url('../fonts/homizio/regular.ttf');
 }
 
-* { font-family: Rosario !important;  color: white;}   //aplica la fuenta a todos los elementos
+* { font-family: Rosario !important;  color: white;}
+
+#bienvenido_message{
+	background-color: green;
+	width: 90%;
+	margin: 0 auto;
+	border-radius: 25px;
+	color:white;
+}
+
+.form-horizontal{
+        margin: 0 auto;
+        background: linear-gradient(#459e00, #275420); 
+        width: 500px;
+        border: 2px solid;
+        border-radius: 25px;
+        opacity: 0.9;
+    }
