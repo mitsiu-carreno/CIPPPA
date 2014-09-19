@@ -39,7 +39,7 @@ class Abc_model extends CI_Model{
     function get_bean($table, $id){
         $bean = R::load($table, $id);
         if($bean){
-            return $bean;
+            return $bean->export();
         }
         
     }
