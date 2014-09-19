@@ -1,9 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Main extends CI_Controller {
+    /*+++++++++++++++++++++++++++++
+    NOTA para variables globales
+    1.-Definir var $var_glob;
+    2.-En constructor:
+        $this->var_glob = "asignar valor";
+    3.-Llamar la variable en función X
+        $var_glob = $this->id;
+    +++++++++++++++++++++++++++++*/
     //variable global que tiene el id del usuario
     var $id;
-    
+
     function __construct() {
         parent::__construct();
         if($this->session->userdata("userid")){
