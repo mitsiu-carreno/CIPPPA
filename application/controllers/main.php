@@ -11,11 +11,14 @@ class Main extends CI_Controller {
     +++++++++++++++++++++++++++++*/
     //variable global que tiene el id del usuario
     var $id;
+    var $data;
 
     function __construct() {
         parent::__construct();
         if($this->session->userdata("userid")){
             $this->id= $this->session->userdata("userid");
+            $this->load->model("abc_model");
+            $this->data["user_info"] = $this->abc_model->get_bean("user", $this->id);
         }
         else{
             redirect("login");
@@ -24,28 +27,22 @@ class Main extends CI_Controller {
     
 
     function index(){
-    	$sessioninf["userid"] = $this->session->userdata("userid");
-        //var_dump($sessioninf);
+    	
         $this->load->view("header");
-        $this->load->view("usuario/info_personal", $sessioninf);
+        $this->load->view("usuario/info_personal");
         $this->load->view("welcome_message");
-        // $this->session->sess_destroy();
-        //redirect("login");
+        
     }
 
     function info_personal(){
-    	//$sessioninf = $this->session->userdata("userid");
-        //var_dump($sessioninf);
-        $id=$this->id;
-        $this->load->model("abc_model");
-        $data["user_info"]=$this->abc_model->get_bean("user", $id);
+    	$data= $this->data;
+        var_dump($data);
+        //$id=$this->id;
+        //$this->load->model("abc_model");
+        //$data["user_info"]=$this->abc_model->get_bean("user", $id);
         $this->load->view("header", $data);
         $this->load->view("usuario/info_personal", $data);
-         //$this->session->sess_destroy();
-        //redirect("login");
-
-
-        //$this->load->view("usuario/info_personal")
+        
     }
 
 }
