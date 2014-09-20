@@ -187,6 +187,7 @@
 <br>
 
 <div id="ajax-loader">
-    <span>ESPERE</span><br />
+    <span>ESPERE</span>
+    <br>
     <img src="<?php echo base_url();?>img/load.gif" style="width: 80px; height: 80px"/>
 </div>
