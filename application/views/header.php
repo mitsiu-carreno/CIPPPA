@@ -18,11 +18,30 @@
     <body>   
         <header>
             <!--Responsive!-->
-            <a href="http://www.upa.edu.mx"><img class="container-fluid" src="<?php echo base_url()?>img/upa_logo.png" style="margin-left:12%; width: 22%"></a>
-            <img class="container-fluid" src="<?php echo base_url()?>img/bic_logo.png" style="float:right; margin-right: 10%; width: 12%">
-            <a href="http://www.ses.sep.gob.mx/instituciones-educacion-superior/universidades-politecnicas"><img class="container-fluid" src="<?php echo base_url()?>img/up_logo.png" style="float:right; width: 16%"></a>
-            <a href="http://http://www.aguascalientes.gob.mx/"><img class="container-fluid" src="<?php echo base_url()?>img/Prog_logo.png" style="float:right; width: 17%"></a>
+            <a href="http://www.upa.edu.mx">
+                <img class="container-fluid responsive" src="<?php echo base_url()?>img/upa_logo.png" style="margin-left:12%;">
+            </a>
+            <img class="container-fluid responsive" src="<?php echo base_url()?>img/bic_logo.png" style="float:right; margin-right: 10%;">
+            <a href="http://www.ses.sep.gob.mx/instituciones-educacion-superior/universidades-politecnicas">
+                <img class="container-fluid responsive" src="<?php echo base_url()?>img/up_logo.png" style="float:right;">
+            </a>
+            <a href="http://http://www.aguascalientes.gob.mx/">
+                <img class="container-fluid responsive" src="<?php echo base_url()?>img/Prog_logo.png" style="float:right;">
+            </a>
             
+
+            <!--ORIGINAL
+             <a href="http://www.upa.edu.mx">
+                <img class="container-fluid responsive" src="<?php echo base_url()?>img/upa_logo.png" style="margin-left:12%; width: 22%">
+            </a>
+            <img class="container-fluid responsive" src="<?php echo base_url()?>img/bic_logo.png" style="float:right; margin-right: 10%; width: 12%">
+            <a href="http://www.ses.sep.gob.mx/instituciones-educacion-superior/universidades-politecnicas">
+                <img class="container-fluid responsive" src="<?php echo base_url()?>img/up_logo.png" style="float:right; width: 16%">
+            </a>
+            <a href="http://http://www.aguascalientes.gob.mx/">
+                <img class="container-fluid responsive" src="<?php echo base_url()?>img/Prog_logo.png" style="float:right; width: 17%">
+            </a>
+            -->
             
             <?php if(isset($user_info["nombre"])):?>
                 <div id="bienvenido_message">

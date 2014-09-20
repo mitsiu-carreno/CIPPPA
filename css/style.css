@@ -50,3 +50,52 @@
     padding-top: 100px;
     z-index: 2;
 }
+
+
+@media screen and (max-width: 1250px) {
+    .responsive{
+        width: 180px;
+        background-color: black;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .responsive{
+        width: 160px;
+        background-color: blue;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .responsive{
+        width: 130px;
+        background-color: green;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .responsive{
+        width: 110px;
+        background-color: yellow;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .responsive{
+        width: 95px;
+        background-color: green;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .responsive{
+        width: 80px;
+        background-color: black;
+    }
+}
+@media screen and (max-width: 430px) {
+    .responsive{
+        width: 72px;
+        background-color: red;
+    }
+}
