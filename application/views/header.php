@@ -17,7 +17,11 @@
     </head>
     <body>   
         <header>
-            <!--Responsive!-->
+            <div style="width:100%; text-align:center">
+                <img class="responsive_2" src="<?php echo base_url()?>img/upa_header.png" >
+            </div>
+            <br>
+            <!--Responsive!
             <a href="http://www.upa.edu.mx">
                 <img class="container-fluid responsive" src="<?php echo base_url()?>img/upa_logo.png" style="margin-left:12%;">
             </a>
@@ -28,7 +32,7 @@
             <a href="http://http://www.aguascalientes.gob.mx/">
                 <img class="container-fluid responsive" src="<?php echo base_url()?>img/Prog_logo.png" style="float:right;">
             </a>
-            
+            End-Responsive-->
 
             <!--ORIGINAL
              <a href="http://www.upa.edu.mx">
@@ -41,7 +45,7 @@
             <a href="http://http://www.aguascalientes.gob.mx/">
                 <img class="container-fluid responsive" src="<?php echo base_url()?>img/Prog_logo.png" style="float:right; width: 17%">
             </a>
-            -->
+            End-Original-->
             
             <?php if(isset($user_info["nombre"])):?>
                 <div id="bienvenido_message">

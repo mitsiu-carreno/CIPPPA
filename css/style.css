@@ -51,7 +51,7 @@
     z-index: 2;
 }
 
-
+/*
 @media screen and (max-width: 1250px) {
     .responsive{
         width: 180px;
@@ -97,5 +97,16 @@
     .responsive{
         width: 72px;
         background-color: red;
+    }
+}
+*/
+@media screen and (max-width: 1000px){
+    .responsive_2{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 540px){
+    .responsive_2{
+        width: 480px;
     }
 }
