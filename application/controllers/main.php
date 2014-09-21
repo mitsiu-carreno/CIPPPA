@@ -36,7 +36,7 @@ class Main extends CI_Controller {
 
     function info_personal(){
     	$data= $this->data;
-        var_dump($data);
+        //var_dump($data);
         //$id=$this->id;
         //$this->load->model("abc_model");
         //$data["user_info"]=$this->abc_model->get_bean("user", $id);
