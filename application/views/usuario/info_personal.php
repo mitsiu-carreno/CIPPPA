@@ -40,7 +40,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="input" class="form-control" name="" placeholder="" required value="<?php if($apellido_materno) {echo $apellido_materno;} else {null;}?>">
+    <input type="input" class="form-control" name="" placeholder="" required value="<?php if(isset($user_info["apellido_materno"])){echo 'test';} else{echo '';}?>">
   </div>
   <div class="visible-md-block"></div>
 
