@@ -1,9 +1,27 @@
 @font-face{
-    font-family: Rosario;
+    font-family: Rosario-regular;
     src: url('../fonts/rosario/Rosario-Regular.ttf'),
         url('../fonts/rosario/Rosario-Regular.ttf');
 }
 
+@font-face{
+    font-family: Rosario-bold;
+    src: url('../fonts/rosario/Rosario-Bold.ttf'),
+    url('../fonts/rosario/Rosario-Bold.ttf');
+}
+@font-face{
+    font-family: Rosario-italic;
+    src: url('../fonts/rosario/Rosario-Italic.ttf'),
+    url('../fonts/rosario/Rosario-Italic.ttf');
+}
+
+@font-face{
+    font-family: Rosario-bold-italic;
+    src: url('../fonts/rosario/Rosario-BoldItalic.ttf'),
+    url('../fonts/rosario/Rosario-BoldItalic.ttf');
+}
+
+/* Otras opciones
 @font-face{
     font-family: Margot;
     src: url('../fonts/margot/Margot-Regular.ttf'),
@@ -16,14 +34,25 @@
         url('../fonts/homizio/regular.ttf');
 }
 
-* { font-family: Rosario !important;  color: white;}
+@font-face{
+    font-family: Smidswater;
+    src: url('../fonts/smidswater/Smidswater Regular/SmidsReg.ttf'),
+    url('../fonts/smidswater/Smidswater Regular/SmidsReg.ttf');
+}
+*/
 
-#bienvenido_message{
+* { font-family: Rosario-regular;  color: white;}
+
+#bienvenido_message_wrap{
 	background-color: green;
 	width: 90%;
 	margin: 0 auto;
 	border-radius: 25px;
-	color:white;
+}
+
+#bienvenido_message{
+    color:white;
+    font-family: Rosario-Bold-italic;
 }
 
 .form-horizontal{

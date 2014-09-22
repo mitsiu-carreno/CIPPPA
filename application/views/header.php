@@ -48,9 +48,9 @@
             End-Original-->
             
             <?php if(isset($user_info["nombre"])):?>
-                <div id="bienvenido_message">
+                <div id="bienvenido_message_wrap">
                     <br>
-                    <div class="text-center">Bienvenido <?php echo $user_info["nombre"] ." ". $user_info["apellido_paterno"]?></div>
+                    <div  id="bienvenido_message" class="text-center">Bienvenido <?php echo $user_info["nombre"] ." ". $user_info["apellido_paterno"]?></div>
                     <br>
                 </div>
             <?php endif;?>
