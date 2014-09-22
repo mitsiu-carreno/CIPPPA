@@ -21,7 +21,7 @@
   </div>
   <div class="visible-md-block"></div>
 
-  <label class="col-md-2 col-sm-2 lay">Apellido Paterno</label>     
+  <label class="col-md-2 col-sm-2 lay">Apellido Pat.</label>     
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
@@ -29,7 +29,7 @@
   </div>
   <div class="visible-md-block"></div>
 
-  <label class="col-md-2 col-sm-2 lay">Apellido Materno</label>     
+  <label class="col-md-2 col-sm-2 lay">Apellido Mat.</label>     
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
@@ -165,7 +165,23 @@
   </div>
   <div class="visible-md-block"></div>
 
-  <label class="col-md-2 col-sm-2 lay">Número Profesor</label>     
+  <label class="col-md-2 col-sm-2 lay">Núm. Profesor</label>     
+  <div class="visible-md-block"></div>
+  
+  <div class="col-md-2 col-sm-4">
+    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+  </div>
+  <div class="visible-md-block"></div>
+
+  <label class="col-md-2 col-sm-2 lay">Municipio</label>     
+  <div class="visible-md-block"></div>
+  
+  <div class="col-md-2 col-sm-4">
+    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+  </div>
+  <div class="visible-md-block"></div>
+
+  <label class="col-md-2 col-sm-2 lay">Puesto Solicitado</label>     
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
