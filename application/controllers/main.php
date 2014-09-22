@@ -27,21 +27,25 @@ class Main extends CI_Controller {
     
 
     function index(){
-    	
-        $this->load->view("header");
-        $this->load->view("usuario/info_personal");
-        $this->load->view("welcome_message");
+    	$data = $this->data;
+        if($data["user_info"]["fecha_registro"]==$data["user_info"]["fecha_actualizacion"]){
+            $data["user_info"]["new"]="true";
+            $this->info_personal($data);
+        }
+        //var_dump($data["user_info"]);
+        //$this->load->view("header");
+        //$this->load->view("usuario/info_personal_new");
+        //$this->load->view("welcome_message");
         
     }
 
-    function info_personal(){
-    	$data= $this->data;
-        //var_dump($data);
+    function info_personal($data){	
+        var_dump($data);
         //$id=$this->id;
         //$this->load->model("abc_model");
         //$data["user_info"]=$this->abc_model->get_bean("user", $id);
         $this->load->view("header", $data);
-        $this->load->view("usuario/info_personal", $data);
+        $this->load->view("usuario/info_personal", $data["user_info"]);
         
     }
 

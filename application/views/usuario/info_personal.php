@@ -9,7 +9,6 @@
     background-color: green;
   }
 </style>
-
 <br>
 <br>
  <div class="row">        
@@ -17,7 +16,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php echo $nombre?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -25,7 +24,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo $apellido_paterno?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -33,7 +32,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo $apellido_materno?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -41,7 +40,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="input" class="form-control" name="" placeholder="" required value="<?php if($apellido_materno) {echo $apellido_materno;} else {null;}?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -49,7 +48,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -57,7 +56,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -65,7 +64,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -73,7 +72,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -81,7 +80,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -89,7 +88,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -97,7 +96,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -105,7 +104,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -113,7 +112,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -121,7 +120,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>   
 
@@ -129,7 +128,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -137,7 +136,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -145,7 +144,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -153,7 +152,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -161,7 +160,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -169,7 +168,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -177,7 +176,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
@@ -185,7 +184,7 @@
   <div class="visible-md-block"></div>
   
   <div class="col-md-2 col-sm-4">
-    <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="Mitsiu Alejandro">
+    <input type="text" class="form-control" name="" placeholder="" required value="<?php echo '' ?>">
   </div>
   <div class="visible-md-block"></div>
 
