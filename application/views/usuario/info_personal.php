@@ -12,8 +12,11 @@
 
 <script type="text/javascript">
   $(function(){
-    //console.log($data);
-    $('#myModal').modal('show');
+    //Función para mostrar modal si el profesor es nuevo
+    var show_modal = <?php echo $user_info["new"];?>;
+    if (show_modal){
+      //$('#myModal').modal('show');
+    }
   });
 </script>
 <!--Modal oculto, mostrar en caso que sea un usuario nuevo y no tenga correo institucional previo-->
@@ -29,10 +32,10 @@
         Académico (CIPPPA). 
         <br>
         <br>
-        Este es el primer paso para completar su registro en el sistema donde se le solicitará llene la información siguiente.
+        Este es el primer paso para completar su registro en el sistema a continuación se le solicitará llene la información siguiente.
         <br>
         <br>
-        Se le ha creado un correo, debe recordarlo para acceder a este sistema: <h1><center><?php echo $user_info["correo_institucion"]?>@upa.edu.mx</center></h1>
+        El siguiente correo es el que debe usar para acceder a este sistema: <h1><center><?php echo $user_info["correo_institucion"]?>@upa.edu.mx</center></h1>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
@@ -43,8 +46,32 @@
 <!--Fin del modal-->
 <br>
 <br>
+<div class="row">
+  <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
+  <div class="visible-md-block"></div>
+  <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
+  <div class="visible-md-block"></div>
+  <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
+    <div class="visible-md-block"></div>
+    <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
+    <div class="visible-md-block"></div>
+    <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
+    <div class="visible-md-block"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-2 col-sm-4">
+    <label>Nombre</label>
+  </div>
+  <div class="visible-md-block"></div>
+  <div class="col-md-2 col-sm-4">
+      <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
+  </div>
+  <div class="visible-md-block"></div>
+</div>
+<!--
 <form id="info_personal" method="post" action="" role="form">
-  <div class="row">        
+  <div class="row"> 
     <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
     <div class="visible-md-block"></div>
     
@@ -226,6 +253,6 @@
 
   </div>
 </form>
-
+-->
 <a href="<?php echo site_url("login/out")?>"><button type="button">Salir</button></a>
 

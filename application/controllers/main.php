@@ -29,7 +29,11 @@ class Main extends CI_Controller {
     function index(){
     	$data = $this->data;
         if($data["user_info"]["fecha_registro"]==$data["user_info"]["fecha_actualizacion"]){
-            $data["user_info"]["new"]="true";
+            $data["user_info"]["new"]=true;
+            $this->info_personal($data);
+        }
+        else{
+            $data["user_info"]["new"]=false;
             $this->info_personal($data);
         }
         //var_dump($data["user_info"]);
