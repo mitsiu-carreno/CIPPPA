@@ -57,3 +57,4 @@
             <!--<center><img src="<?php echo base_url()?>img/upa_header.png" style="width: 80%"></center>  -->
             
         </header>
+    <div id="main_wrapper">

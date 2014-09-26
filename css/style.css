@@ -140,3 +140,9 @@
         width: 480px;
     }
 }
+
+#main_wrapper{ 
+    width: 90%;
+    //background-color: black;
+    margin: 0 auto;
+}

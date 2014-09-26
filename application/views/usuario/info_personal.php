@@ -3,7 +3,7 @@
 		color:black;
 	}
   .lay{
-    background-color: red;
+    
   }
   #in{
     background-color: green;
@@ -46,29 +46,52 @@
 <!--Fin del modal-->
 <br>
 <br>
-<div class="row">
-  <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
+
+<div class="row"> <!--Crea un renglon con tres columnas-->
+  <div class="col-md-4 col-sm-5 lay"> <!--Esta es la primer columna-->
+    <div class="row"> <!--Se anida otro renglon para separar el layer del input-->
+      <div class="col-sm-offset-1">
+        <label>Nombre</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
+      </div>
+    </div>
+  </div>
   <div class="visible-md-block"></div>
-  <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
+
+    <div class="col-md-4 col-sm-5 lay">
+    <div class="row">
+      <div class="col-sm-offset-1">
+        <label>Nombre</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
+      </div>
+    </div>
+  </div>
   <div class="visible-md-block"></div>
-  <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
-    <div class="visible-md-block"></div>
-    <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
-    <div class="visible-md-block"></div>
-    <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
-    <div class="visible-md-block"></div>
+  
+    <div class="col-md-4 col-sm-5 lay">
+    <div class="row">
+      <div class="col-sm-offset-1">
+        <label>Nombre</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  
 </div>
 
-<div class="row">
-  <div class="col-md-2 col-sm-4">
-    <label>Nombre</label>
-  </div>
-  <div class="visible-md-block"></div>
-  <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
-  </div>
-  <div class="visible-md-block"></div>
-</div>
 <!--
 <form id="info_personal" method="post" action="" role="form">
   <div class="row"> 
