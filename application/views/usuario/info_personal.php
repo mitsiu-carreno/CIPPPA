@@ -1,15 +1,3 @@
-<style type="text/css">
-	*{
-		color:black;
-	}
-  .lay{
-    
-  }
-  #in{
-    background-color: green;
-  }
-</style>
-
 <script type="text/javascript">
   $(function(){
     //Función para mostrar modal si el profesor es nuevo
@@ -46,45 +34,213 @@
 <!--Fin del modal-->
 <br>
 <br>
-
+<h1 class="text-center">Información Personal</h1>
 <div class="row"> <!--Crea un renglon con tres columnas-->
-  <div class="col-md-4 col-sm-5 lay"> <!--Esta es la primer columna-->
-    <div class="row"> <!--Se anida otro renglon para separar el layer del input-->
+  <div class="col-md-4 col-sm-5"> <!--Esta es la primer columna-->
+    <div class="row lay"> <!--Se anida otro renglon para separar el layer del input-->
       <div class="col-sm-offset-1">
         <label>Nombre</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" required value="<?php echo $user_info["nombre"]?>">
       </div>
     </div>
   </div>
   <div class="visible-md-block"></div>
   <!---->
-  <div class="col-md-4 col-sm-5 lay">
-    <div class="row">
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
       <div class="col-sm-offset-1">
-        <label>Nombre</label>
+        <label>Apellido Paterno</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
+        <input type="text" class="form-control" name="apellido_paterno" placeholder="Apellido Paterno" required value="<?php echo $user_info["apellido_paterno"]?>">
       </div>
     </div>
   </div>
   <div class="visible-md-block"></div>
   <!---->
-  <div class="col-md-4 col-sm-5 lay">
-    <div class="row">
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
       <div class="col-sm-offset-1">
-        <label>Nombre</label>
+        <label>Apellido Materno</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
+        <input type="text" class="form-control" name="apellido_materno" placeholder="Apellido Materno" required value="<?php echo $user_info["apellido_materno"]?>">
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label>Fecha de Nacimiento</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
       </div>
     </div>
   </div>
@@ -99,7 +255,7 @@
     <div class="visible-md-block"></div>
     
     <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" autofocus required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
+      <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
     </div>
     <div class="visible-md-block"></div>
 
@@ -206,7 +362,7 @@
     <div class="visible-md-block"></div>
     
     <div class="col-md-2 col-sm-4">
-      <input type="number" class="form-control" name="num_domicilio_exterior" placeholder="Numero Domic" required value="<?php if(isset($user_info["num_domicilio"])){echo $user_info["num_domicilio"];} else{echo '';}?>">
+      <input type="number" class="form-control" name="num_exterior_domicilio" placeholder="Numero Domic" required value="<?php if(isset($user_info["num_domicilio"])){echo $user_info["num_domicilio"];} else{echo '';}?>">
     </div>
     <div class="visible-md-block"></div>   
 
@@ -214,7 +370,7 @@
     <div class="visible-md-block"></div>
     
     <div class="col-md-2 col-sm-4">
-      <input type="number" class="form-control" name="num_domicilio_interior" placeholder="Número Interior" value="<?php if(isset($user_info["num_interior"])){echo $user_info["num_interior"];} else{echo '';}?>">
+      <input type="number" class="form-control" name="num_interior_domicilio" placeholder="Número Interior" value="<?php if(isset($user_info["num_interior"])){echo $user_info["num_interior"];} else{echo '';}?>">
     </div>
     <div class="visible-md-block"></div>
 

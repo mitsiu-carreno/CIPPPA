@@ -13,8 +13,43 @@ class Abc_model extends CI_Model{
         return $id;
     }
 
-    
+    //Crea tablas iniciales para que funcione el sistema :) 
     function initial_tables(){
+        //Destruye toda la basde de datos 
+        R::nuke(); //HANDLE WITH CARE!!!! <-FOR TESTING POURPUSES ONLY
+
+        //Tabla user
+        $bean = R ::dispense('user');
+        $bean->nombre=null;
+        $bean->apellido_paterno=null;
+        $bean->apellido_materno=null;
+        $bean->correo_institucion=null;
+        $bean->correo_personal=null;
+        $bean->password=null;
+        $bean->fecha_registro=null;
+        $bean->fecha_actualizacion=null;
+        $bean->tipouser_id=null;
+        $bean->fecha_nacimiento=null;
+        $bean->edo_civil=null;
+        $bean->tel=null;
+        $bean->tel_oficina=null;
+        $bean->celular=null;
+        $bean->cod_postal=null;
+        $bean->fracc=null;
+        $bean->calle=null;
+        $bean->num_exterior_domicilio=null;
+        $bean->num_interior_domicilio=null;
+        $bean->curp=null;
+        $bean->rfc=null;
+        $bean->nacionalidad=null;
+        $bean->imss=null;
+        $bean->profesor_id=null;
+        $bean->municipio=null;
+        $bean->puesto_solicitado=null;
+        R::store($bean);
+        R::wipe('user');
+
+        //Tabla tipouser
         $bean = R::dispense('tipouser');
         $bean->tipo_usuario = 'usuario';
         R::store($bean);

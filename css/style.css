@@ -41,7 +41,7 @@
 }
 */
 
-* { font-family: Rosario-regular;  color: white;}
+* { font-family: Rosario-regular;}
 
 #bienvenido_message_wrap{
 	background-color: green;
@@ -64,6 +64,7 @@
     border: 2px solid;
     border-radius: 25px;
     opacity: 0.9;
+    color:white;
 }
 
 #cargando {
@@ -101,4 +102,8 @@
     width: 90%;
     //background-color: black;
     margin: 0 auto;
+}
+
+.lay{
+    //background-color: red;
 }

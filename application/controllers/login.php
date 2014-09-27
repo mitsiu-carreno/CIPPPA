@@ -73,6 +73,6 @@ class Login extends CI_Controller {
 
     public function testing(){
         $this->load->model("abc_model");
-        $this->abc_model->test();
+        $this->abc_model->initial_tables();
     }
 }

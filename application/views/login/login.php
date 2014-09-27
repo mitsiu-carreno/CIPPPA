@@ -36,7 +36,7 @@
         $("#back_login").click(function(e){
             e.preventDefault();
             $("#register_form").hide('fade');
-            $("#signin").show("fade");
+            $("#signin_form").show("fade");
         });
         
         //Valida que se llene al menos un correo
@@ -243,7 +243,10 @@
     </form>
     <button type="button" class="pull-right btn btn-info" style="margin-right: 5%" id="back_login"><b>Ya estoy registrado</b></button>
 </div>
-
+<br>
+<br>
+<br>
+<br>
 <!-- //USAR EN CASO QUE SE PONGA LENTO
 <div id="cargando">
     <span>ESPERE</span>
