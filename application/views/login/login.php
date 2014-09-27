@@ -78,7 +78,47 @@
 <br>
 <div id="error" class="alert alert-danger">Usuario o contraseña invalidos</div>
 <div id="error_registro" class="alert alert-danger">Las contraseñas no coinciden</div>
-<form class="form-horizontal" id="signin"  method="post" action="<?php echo site_url(array("login","in")) ?>" role="form">
+<div class="login_wrapper">
+    <form id="signin" method="post" acction="<?php echo site_url(array("login", "in"))?>" role="form">
+        <h1 class="text-center"><b>BIENVENIDO</b></h1>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-md-2">
+                <label>Correo</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-md-9">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="correo_institucion" placeholder="Enter email" autofocus>
+                    <div class="input-group-addon">@upa.edu.mx</div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-md-2">
+                <label>Contraseña</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-md-9">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+        </div>
+        <br>    
+        <br>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <br>
+        <br>
+    </form>    
+    <button type="button" class="pull-right btn btn-info" style="margin-right: 5%" id="registro"><b>Registrarse</b></button>
+</div>
+<!--
+<form class="login_wrapper" id="signin"  method="post" action="<?php echo site_url(array("login","in")) ?>" role="form">
     <br>
     <h1 class="text-center"><b>BIENVENIDO</b></h1>
     <br>
@@ -105,7 +145,7 @@
                 </label>
             </div>
         </div>
-    </div>-->
+    </div>
     
     <div class="form-group">
         <div class="col-md-offset-3 col-md-10">
@@ -115,13 +155,13 @@
     
     <button type="button" class="pull-right btn btn-info" style="margin-right: 5%" id="registro"><b>Registrarse</b></button>
 </form>
-
+-->
 
 
 <!--Formulario de Registro-->
 <div id="new">
     <div class="row">
-        <div class="form-horizontal">
+        <div class="login_wrapper">
             <form class="form-signin" id="register-form"  method="post" action="<?php echo site_url(array("login","registro")) ?>" role="form">
                 <br>
                 <h1 class="text-center"><b>REGISTRESE</b></h1>

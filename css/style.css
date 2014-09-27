@@ -56,10 +56,10 @@
     font-size: 23px;
 }
 
-.form-horizontal{
+.login_wrapper{
     margin: 0 auto;
     background: linear-gradient(#459e00, #275420); 
-    width: 500px;
+    width: 45%;
     border: 2px solid;
     border-radius: 25px;
     opacity: 0.9;
