@@ -61,8 +61,8 @@
     </div>
   </div>
   <div class="visible-md-block"></div>
-
-    <div class="col-md-4 col-sm-5 lay">
+  <!---->
+  <div class="col-md-4 col-sm-5 lay">
     <div class="row">
       <div class="col-sm-offset-1">
         <label>Nombre</label>
@@ -75,8 +75,8 @@
     </div>
   </div>
   <div class="visible-md-block"></div>
-  
-    <div class="col-md-4 col-sm-5 lay">
+  <!---->
+  <div class="col-md-4 col-sm-5 lay">
     <div class="row">
       <div class="col-sm-offset-1">
         <label>Nombre</label>
@@ -89,7 +89,7 @@
     </div>
   </div>
   <div class="visible-md-block"></div>
-  
+  <!---->
 </div>
 
 <!--
