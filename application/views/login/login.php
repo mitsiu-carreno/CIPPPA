@@ -11,6 +11,11 @@
         $("#register_form").hide();
         $("#error_registro").hide();
 
+        $("#signin_btn").click(function(e){
+            var btn = $(this);
+            btn.button('loading');
+        });
+
         //ENVIAR FORMULARIO SIGN IN
         $('#signin').submit(function (e){
             e.preventDefault();
@@ -19,6 +24,8 @@
                 if(data > 0)
                     window.location = "<?php echo site_url(array("main")) ?>";
                 else{
+                    var btn = $("#signin_btn");
+                    btn.button('reset');
                     $("#error").show("fade");
                         setTimeout(function(){
                             $("#error").hide("fade");
@@ -41,6 +48,8 @@
         
         //Valida que se llene al menos un correo
         $("#form_reg_listo").click(function(){
+            var btn = $(this);
+            btn.button('loading');
             if($("#registro_email_inst").val()==false){
                 $("#registro_email_inst").attr("required", false);
                 $("#registro_email_pers").attr("required", true);
@@ -65,6 +74,8 @@
                 if(data > 0)
                     window.location = "<?php echo site_url(array("main")) ?>";
                 else{
+                    var btn = $("#form_reg_listo");
+                    btn.button('reset');
                     $("#error").show("fade");
                         setTimeout(function(){
                             $("#error").hide("fade");
@@ -116,7 +127,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-md-2">
-                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <button id="signin_btn" type="submit" data-loading-text="Espere..." class="btn btn-primary">Ingresar</button>
             </div>
         </div>
         
@@ -235,7 +246,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-md-2">
-                <button id="form_reg_listo" type="submit" class="btn btn-primary">Registrarse</button>
+                <button id="form_reg_listo" type="submit" data-loading-text="Espere..." class="btn btn-primary">Registrarse</button>
             </div>
         </div>
         <br>

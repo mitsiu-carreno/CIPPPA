@@ -50,6 +50,7 @@ class Main extends CI_Controller {
         //$data["user_info"]=$this->abc_model->get_bean("user", $id);
         $this->load->view("header", $data);
         $this->load->view("usuario/info_personal", $data["user_info"]);
+        $this->load->view("footer");
         
     }
 

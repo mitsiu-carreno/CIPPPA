@@ -1,13 +1,14 @@
 <script type="text/javascript">
   $(function(){
+    $("#fec_nac").datepicker({
+      format: 'dd/mm/yyyy'
+    });
+    $('#btn_id_prof').tooltip();
     //Función para mostrar modal si el profesor es nuevo
     var show_modal = <?php echo $user_info["new"];?>;
     if (show_modal){
       $('#myModal').modal('show');
     }
-    $("#fec_nac").datepicker({
-      format: 'dd/mm/yyyy'
-    });
   });
 </script>
 <!--Modal oculto, mostrar en caso que sea un usuario nuevo y no tenga correo institucional previo-->
@@ -89,7 +90,7 @@
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        <input type="text" id="fec_nac" class="form-control" name="fecha_nacimiento" data-date="12-02-2012" placeholder="dd/mm/yyyy" required value="<?php  echo $user_info["fecha_nacimiento"]?>">
+        <input type="text" id="fec_nac" class="form-control" name="fecha_nacimiento" data-date-viewmode="years" placeholder="dd/mm/yyyy" required value="<?php  echo $user_info["fecha_nacimiento"]?>">
       </div>
     </div>
   </div>
@@ -168,12 +169,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label>ID Profesor*</label>
+        <label>ID Profesor</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        <input type="text" class="form-control" name="profesor_id" placeholder="ID Profesor" required value="<?php echo $user_info["profesor_id"]?>">
+        <input type="text" id="btn_id_prof" class="form-control" name="profesor_id" placeholder="ID Profesor" value="<?php echo $user_info["profesor_id"]?>"  data-toggle="tooltip" data-placement="bottom" title="Este campo es para los profesores registros en la UPA, si usted es nuevo puede dejarlo en blanco">
       </div>
     </div>
   </div>
@@ -369,7 +370,7 @@
     </div>
   </div>
   <div class="visible-md-block"></div>
-  <!--
+  <!--SAMPLE de layer/input
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
@@ -378,7 +379,7 @@
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text"></input>
       </div>
     </div>
   </div>
@@ -387,5 +388,5 @@
   
 </div>
 
-<a href="<?php echo site_url("login/out")?>"><button type="button">Salir</button></a>
+
 
