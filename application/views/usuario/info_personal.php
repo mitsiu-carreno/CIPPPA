@@ -3,8 +3,11 @@
     //Función para mostrar modal si el profesor es nuevo
     var show_modal = <?php echo $user_info["new"];?>;
     if (show_modal){
-      //$('#myModal').modal('show');
+      $('#myModal').modal('show');
     }
+    $("#fec_nac").datepicker({
+      format: 'dd/mm/yyyy'
+    });
   });
 </script>
 <!--Modal oculto, mostrar en caso que sea un usuario nuevo y no tenga correo institucional previo-->
@@ -86,7 +89,7 @@
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text" id="fec_nac" class="form-control" name="fecha_nacimiento" data-date="12-02-2012" placeholder="dd/mm/yyyy" required value="<?php  echo $user_info["fecha_nacimiento"]?>">
       </div>
     </div>
   </div>
@@ -95,12 +98,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>Nacionalidad</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad" required value="<?php echo $user_info["nacionalidad"]?>">
       </div>
     </div>
   </div>
@@ -109,12 +112,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>Estado Civil</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text" class="form-control" name="edo_civil" placeholder="Estado Civil" required value="<?php echo $user_info["edo_civil"]?>">
       </div>
     </div>
   </div>
@@ -123,12 +126,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>CURP</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+         <input type="text" class="form-control" name="curp" placeholder="CUPR" required value="<?php echo $user_info["curp"]?>">
       </div>
     </div>
   </div>
@@ -137,12 +140,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>RFC</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text" class="form-control" name="rfc" placeholder="RFC" required value="<?php echo $user_info["rfc"]?>">
       </div>
     </div>
   </div>
@@ -151,12 +154,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>Número IMSSS</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text" class="form-control" name="imss" placeholder="Núm. IMSS" required value="<?php echo $user_info["imss"]?>">
       </div>
     </div>
   </div>
@@ -165,12 +168,29 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>ID Profesor*</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text" class="form-control" name="profesor_id" placeholder="ID Profesor" required value="<?php echo $user_info["profesor_id"]?>">
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+</div>
+  <h2>Información Domiciliaria</h2>
+<div class="row">
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label>Estado</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <input type="text" class="form-control" name="estado" placeholder="Estado" required value="<?php echo $user_info["estado"]?>">
       </div>
     </div>
   </div>
@@ -179,12 +199,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>Municipio</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text" class="form-control" name="municipio" placeholder="Municipio" required value="<?php echo $user_info["municipio"]?>">
       </div>
     </div>
   </div>
@@ -193,12 +213,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>Fraccionamiento</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text" class="form-control" name="fracc" placeholder="Fraccionamiento" required value="<?php echo $user_info["fracc"]?>">
       </div>
     </div>
   </div>
@@ -207,12 +227,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>Calle</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="text" class="form-control" name="calle" placeholder="Calle" required value="<?php echo $user_info["calle"]?>">
       </div>
     </div>
   </div>
@@ -221,12 +241,12 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>Núm. Domicilio</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="number" class="form-control" name="num_exterior_domicilio" placeholder="Numero Domic" required value="<?php echo $user_info["num_exterior_domicilio"]?>">
       </div>
     </div>
   </div>
@@ -235,203 +255,137 @@
   <div class="col-md-4 col-sm-5">
     <div class="row lay">
       <div class="col-sm-offset-1">
-        <label></label>
+        <label>Número Interior de Domicilio</label>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-offset-2">
-        
+        <input type="number" class="form-control" name="num_interior_domicilio" placeholder="Número Interior" value="<?php echo $user_info["num_interior_domicilio"]?>">
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label>Código Postal</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+         <input type="text" class="form-control" name="cod_postal" placeholder="Código Postal" required value="<?php echo $user_info["cod_postal"]?>">
       </div>
     </div>
   </div>
   <div class="visible-md-block"></div>
   <!---->
 </div>
-
-<!--
-<form id="info_personal" method="post" action="" role="form">
-  <div class="row"> 
-    <label class="col-md-2 col-sm-2 lay">Nombre(s)</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" required value="<?php if(isset($user_info["nombre"])){echo $user_info["nombre"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Apellido Pat.</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="apellido_paterno" placeholder="Apellido Paterno" required value="<?php if(isset($user_info["apellido_paterno"])){echo $user_info["apellido_paterno"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Apellido Mat.</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="apellido_materno placeholder="Apellido Materno" required value="<?php if(isset($user_info["apellido_materno"])){echo $user_info["apellido_materno"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Fecha de Nac.</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="date" class="form-control" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required value="<?php if(isset($user_info["fecha_nacimiento"])){echo $user_info["fecha_nacimiento"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Estado Civil</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="estado_civil" placeholder="Estado Civil" required value="<?php if(isset($user_info["estado_civil"])){echo $user_info["estado_civil"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Teléfono Fijo</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="number" class="form-control" name="tel" placeholder="Tel. Fijo" required value="<?php if(isset($user_info["telefono"])){echo $user_info["telefono"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Teléfono Oficina</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="number" class="form-control" name="tel_oficina" placeholder="Tel. Oficina" value="<?php if(isset($user_info["tel_oficina"])){echo $user_info["tel_oficina"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Celular</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="number" class="form-control" name="celular" placeholder="Celular" required value="<?php if(isset($user_info["celular"])){echo $user_info["celular"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Correo Personal</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="correo_personal" placeholder="Correo Personal" required value="<?php if(isset($user_info["correo_personal"])){echo $user_info["correo_personal"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Correo Inst.</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <div class="input-group">
-        <input type="text" class="form-control" name="correo_institucion" placeholder="Correo Inst." required value="<?php if(isset($user_info["correo_institucion"])){echo $user_info["correo_institucion"];} else{echo '';}?>">
-        <div class="input-group-addon">@upa.edu.mx</div>
+  <h2>Datos de contacto</h2>
+<div class="row">
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label>Correo Institucional</label>
       </div>
     </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Código Postal</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="cod_postal" placeholder="Código Postal" required value="<?php if(isset($user_info["cod_postal"])){echo $user_info["cod_postal"];} else{echo '';}?>">
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <div class="input-group">
+          <input type="text" class="form-control" name="correo_institucion" placeholder="Correo Inst." required readonly value="<?php echo $user_info["correo_institucion"]?>">
+          <div class="input-group-addon">@upa.edu.mx</div>
+        </div>
+      </div>
     </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Fraccionamiento</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="fracc" placeholder="Fraccionamiento" required value="<?php if(isset($user_info["fraccionamiento"])){echo $user_info["fraccionamiento"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Calle</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="calle" placeholder="Calle" required value="<?php if(isset($user_info["calle"])){echo $user_info["calle"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Núm. Domicilio</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="number" class="form-control" name="num_exterior_domicilio" placeholder="Numero Domic" required value="<?php if(isset($user_info["num_domicilio"])){echo $user_info["num_domicilio"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>   
-
-    <label class="col-md-2 col-sm-2 lay">Número Interior</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="number" class="form-control" name="num_interior_domicilio" placeholder="Número Interior" value="<?php if(isset($user_info["num_interior"])){echo $user_info["num_interior"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">CURP</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="curp" placeholder="CUPR" required value="<?php if(isset($user_info["curp"])){echo $user_info["curp"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">RFC</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="rfc" placeholder="RFC" required value="<?php if(isset($user_info["rfc"])){echo $user_info["rfc"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Nacionalidad</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad" required value="<?php if(isset($user_info["nacionalidad"])){echo $user_info["nacionalidad"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Número IMSS</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="imss" placeholder="Núm. IMSS" required value="<?php if(isset($user_info["num_imss"])){echo $user_info["num_imss"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Núm. Profesor</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="profesor_id" placeholder="Núm Profesor" required value="<?php if(isset($user_info["num_prof"])){echo $user_info["num_prof"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Municipio</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="municipio" placeholder="Municipio" required value="<?php if(isset($user_info["municipio"])){echo $user_info["municipio"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
-    <label class="col-md-2 col-sm-2 lay">Puesto Solicitado</label>     
-    <div class="visible-md-block"></div>
-    
-    <div class="col-md-2 col-sm-4">
-      <input type="text" class="form-control" name="puesto_solicitado" placeholder="Puesto Solicitado" required value="<?php if(isset($user_info["puesto"])){echo $user_info["puesto"];} else{echo '';}?>">
-    </div>
-    <div class="visible-md-block"></div>
-
   </div>
-</form>
--->
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label>Correo Personal</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <input type="email" class="form-control" name="correo_personal" placeholder="Correo Personal" required value="<?php echo $user_info["correo_personal"]?>">
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label>Celular</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <input type="number" class="form-control" name="celular" placeholder="Celular" required value="<?php echo $user_info["celular"]?>">
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label>Teléfono Fijo</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <input type="number" class="form-control" name="tel" placeholder="Tel. Fijo" required value="<?php echo $user_info["tel"]?>">
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label>Teléfono Oficina</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <input type="number" class="form-control" name="tel_oficina" placeholder="Tel. Oficina" value="<?php echo $user_info["tel_oficina"]?>">
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!---->
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label>Puesto Solicitado</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        <input type="text" class="form-control" name="puesto_solicitado" placeholder="Puesto Solicitado" required value="<?php echo $user_info["puesto_solicitado"]?>">
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  <!--
+  <div class="col-md-4 col-sm-5">
+    <div class="row lay">
+      <div class="col-sm-offset-1">
+        <label></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-2">
+        
+      </div>
+    </div>
+  </div>
+  <div class="visible-md-block"></div>
+  -->
+  
+</div>
+
 <a href="<?php echo site_url("login/out")?>"><button type="button">Salir</button></a>
 

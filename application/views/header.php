@@ -51,6 +51,7 @@
                 <div id="bienvenido_message_wrap">
                     <br>
                     <div  id="bienvenido_message" class="text-center">Bienvenido <?php echo $user_info["nombre"] ." ". $user_info["apellido_paterno"]?></div>
+                    <button class="pull-right">Salir</button>
                     <br>
                 </div>
             <?php endif;?>

@@ -45,6 +45,7 @@ class Abc_model extends CI_Model{
         $bean->imss=null;
         $bean->profesor_id=null;
         $bean->municipio=null;
+        $bean->estado=null;
         $bean->puesto_solicitado=null;
         R::store($bean);
         R::wipe('user');
