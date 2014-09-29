@@ -180,7 +180,7 @@
   </div>
   <div class="visible-md-block"></div>
 </div>
-  <h2>Información Domiciliaria</h2>
+  <h1 class="text-center">Información Domiciliaria</h1>
 <div class="row">
   <!---->
   <div class="col-md-4 col-sm-5">
@@ -282,7 +282,7 @@
   <div class="visible-md-block"></div>
   <!---->
 </div>
-  <h2>Datos de contacto</h2>
+  <h1 class="text-center">Datos de Contacto</h1>
 <div class="row">
   <div class="col-md-4 col-sm-5">
     <div class="row lay">

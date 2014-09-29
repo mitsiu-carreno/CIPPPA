@@ -112,3 +112,8 @@
 #footer{
     background-color: white;
 }
+
+#btn_salir_first_steps{
+    margin-top: 5px;
+    float:right;
+}
