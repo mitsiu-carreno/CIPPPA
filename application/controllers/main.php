@@ -73,4 +73,10 @@ class Main extends CI_Controller {
         
     }
 
+    function set_info_personal(){
+        $this->load->model("abc_model");
+        $data["info_personal"]= $this->input->post();
+        //Crear función update
+    }
+
 }
