@@ -1,6 +1,6 @@
 			<br>
 		</div>
-		<div class="page-header text-center">
+		<div id="footer" class="page-header text-center">
 			<hr>
 			Registro ante la Dirección General de Profesiones de la SEP.No. de Expediente: 01-00053, en el libro no.71-X, Secc.1ra. de Inst. Educativas foja 1215 
 			<br>

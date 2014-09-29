@@ -104,7 +104,11 @@
     //background-color: black;
     margin: 0 auto;
 }
-
-.lay{
+    
+.lay{   //estilo de layers de tabla
     //background-color: red;
+}
+
+#footer{
+    background-color: white;
 }

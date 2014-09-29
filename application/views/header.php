@@ -7,6 +7,7 @@
         <link href="<?php echo base_url() ?>css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url() ?>css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url() ?>css/datepicker.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url() ?>css/bootstrap-nav-wizard.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url()?>css/style.css" rel="stylesheet" type="text/css"/>
         <script src="<?php echo base_url() ?>js/jquery-1.11.1.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url() ?>js/bootstrap.js" type="text/javascript"></script>
@@ -47,14 +48,6 @@
             </a>
             End-Original-->
             
-            <?php if(isset($user_info["nombre"])):?>
-                <div id="bienvenido_message_wrap">
-                    <br>
-                    <div  id="bienvenido_message" class="text-center">Bienvenido <?php echo $user_info["nombre"] ." ". $user_info["apellido_paterno"]?></div>
-                    <a href="<?php echo site_url("login/out")?>"><button type="button">Salir</button></a>
-                    <br>
-                </div>
-            <?php endif;?>
             <!--<center><img src="<?php echo base_url()?>img/upa_header.png" style="width: 80%"></center>  -->
             
         </header>
