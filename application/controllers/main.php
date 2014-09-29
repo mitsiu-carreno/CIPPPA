@@ -22,6 +22,9 @@ class Main extends CI_Controller {
             if($this->data["user_info"]["fracc"]==null){
                 $this->data["user_info"]["first_steps_process"]=true;
             }
+            else{
+                $this->data["user_info"]["first_steps_process"]=false;
+            }
         }
         else{
             redirect("login");
@@ -40,7 +43,9 @@ class Main extends CI_Controller {
             if($data["user_info"]["first_steps_process"]){  //Si esta en proceso de first steps
                 $this->first_steps($data);
             }
-            $this->info_personal($data);  //Login al sistema completo    
+            else{
+                $this->info_personal($data);  //Login al sistema completo    
+            }
         }
 
         
@@ -52,12 +57,17 @@ class Main extends CI_Controller {
     }
 
     function first_steps($data){
+        echo 'first_steps';
+        var_dump($data);
         $this->load->view("header");
-        
+        $this->load->view("usuario/first_steps");
+        $this->load->view("usuario/info_personal", $data);
+        $this->load->view("footer");
     }
 
     function info_personal($data){	
-        //var_dump($data);
+        echo 'info_personal';
+        var_dump($data);
         //$id=$this->id;
         //$this->load->model("abc_model");
         //$data["user_info"]=$this->abc_model->get_bean("user", $id);
