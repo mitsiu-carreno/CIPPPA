@@ -74,9 +74,12 @@ class Main extends CI_Controller {
     }
 
     function set_info_personal(){
+        $id = $this->id;
         $this->load->model("abc_model");
         $data["info_personal"]= $this->input->post();
-        //Crear función update 
+        $data["info_personal"]= $this->abc_model->update_bean("user", $id, $data["info_personal"]);
+        //var_dump($data["info_personal"]);
+        echo $data["info_personal"];
     }
 
 }

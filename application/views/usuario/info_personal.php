@@ -11,11 +11,17 @@
       $('#myModal').modal('show');
     }
 
-    $("#btn_info_personal").click(function(e){
+    $("#btn_info_personal").click(function (e){
       var btn = $(this);
       btn.button('loading');
-    })
+    });
 
+    $("#form_info_personal").submit(function (e){
+      e.preventDefault();
+      $.post(this.action, $(this).serialize(), function(data){
+        console.log(data);
+      });
+    });
 
   });
 </script>
@@ -402,7 +408,7 @@
       
     </div>
   </div>
-
+  <br>
   <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
 </form>
 

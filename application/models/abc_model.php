@@ -88,6 +88,12 @@ class Abc_model extends CI_Model{
         }
     }
     
+    function update_bean($table, $id, $data){
+        $bean = R::load($table, $id);
+        $bean->import($data);
+        R::store($bean);
+        return $bean->export();
+    }
     
     function test(){
         $table = "user";
