@@ -28,6 +28,10 @@
   <li><a id="step3">Paso 3 - Datos de Contacto</a></li>
 
   <li><a>Paso 4 - Fotografía</a></li>
+  
   <button type="button" id="btn_salir_first_steps" class="btn btn-default pull-right">Salir</button>
+  <button type="button" id="btn_salir_first_steps" class="btn btn-default pull-right">
+  	<span class="glyphicon glyphicon-user"></span>
+  	Mitsiu Carreño
+  </button>
 </ul>
-	

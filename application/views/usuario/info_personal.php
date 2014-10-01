@@ -1,5 +1,6 @@
 <script type="text/javascript">
   $(function(){
+    console.log("ready");
     $("#fec_nac").datepicker({
       format: 'dd/mm/yyyy'
     });
@@ -10,6 +11,13 @@
     if (show_modal){
       $('#myModal').modal('show');
     }
+    $('#myModal').on('hidden.bs.modal', function (e) {
+      console.log("show popovers");
+      $('#btn_info_personal').popover('show');    
+      $('html, body').animate({
+                        scrollTop: $("#btn_info_personal").offset().top
+      }, 2000);
+    });
 
     $("#btn_info_personal").click(function (e){
       var btn = $(this);
@@ -52,6 +60,17 @@
 <!--Fin del modal-->
 <br>
 <br>
+<!--Alert Info Testing-->
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+  <span class="glyphicon glyphicon-bell"></span> Si usted no tiene toda la información ahora puede guardar su progreso Better check yourself, you're not looking too good.
+</div>
+<!--DOs-->
+  <div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+  <span class="glyphicon glyphicon-info-sign"></span><strong> Warning!</strong> Better check yourself, you're not looking too good.
+</div>
+<!--FIn-alert info-->
 <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
   <div id="info_personal">
     <h1 class="text-center">Información Personal</h1>
@@ -409,6 +428,6 @@
     </div>
   </div>
   <br>
-  <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
+  <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Guardar</button>
 </form>
 
