@@ -54,7 +54,7 @@ ul.nav-wizard li:before {
   position: absolute;
   display: block;
   border: 24px solid transparent;
-  border-left: 16px solid #d4d4d4;
+  //border-left: 16px solid #d4d4d4;
   border-right: 0;
   top: -1px;
   z-index: 10;
@@ -87,18 +87,18 @@ ul.nav-wizard li.active a:focus {
   background: #d9edf7;
 }
 ul.nav-wizard .active ~ li {
-  color: #999999;
-  background: #ededed;
+  //color: #999999;
+  background: transparent;
 }
 ul.nav-wizard .active ~ li:after {
-  border-left: 16px solid #ededed;
+  border-left: 16px solid transparent;
 }
 ul.nav-wizard .active ~ li a,
 ul.nav-wizard .active ~ li a:active,
 ul.nav-wizard .active ~ li a:visited,
 ul.nav-wizard .active ~ li a:focus {
-  color: #999999;
-  background: #ededed;
+  //color: #999999;
+  background: transparent;
 }
 ul.nav-wizard.nav-wizard-backnav li:hover {
   color: #468847;
@@ -115,16 +115,16 @@ ul.nav-wizard.nav-wizard-backnav li:hover a:focus {
   background: #f6fbfd;
 }
 ul.nav-wizard.nav-wizard-backnav .active ~ li {
-  color: #999999;
-  background: #ededed;
+  //color: #999999;
+  background: transparent;
 }
 ul.nav-wizard.nav-wizard-backnav .active ~ li:after {
-  border-left: 16px solid #ededed;
+  border-left: 16px solid transparent;
 }
 ul.nav-wizard.nav-wizard-backnav .active ~ li a,
 ul.nav-wizard.nav-wizard-backnav .active ~ li a:active,
 ul.nav-wizard.nav-wizard-backnav .active ~ li a:visited,
 ul.nav-wizard.nav-wizard-backnav .active ~ li a:focus {
-  color: #999999;
-  background: #ededed;
+  //color: #999999;
+  background: transparent;
 }
