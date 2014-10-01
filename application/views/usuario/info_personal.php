@@ -1,6 +1,5 @@
 <script type="text/javascript">
   $(function(){
-    console.log("ready");
     $("#fec_nac").datepicker({
       format: 'dd/mm/yyyy'
     });
@@ -11,12 +10,25 @@
     if (show_modal){
       $('#myModal').modal('show');
     }
+
+    //Evento cuando el modal se cierra
     $('#myModal').on('hidden.bs.modal', function (e) {
       console.log("show popovers");
-      $('#btn_info_personal').popover('show');    
-      $('html, body').animate({
+      $('#btn_info_personal').popover({   //Define las propiedades del popover
+        placement: 'right',
+        html: 'true',
+        title : '<span class="text-info"><strong>Importante:</strong></span>'+
+                '<button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;hide&quot;);">&times;</button>',
+        content : 'Si usted no tiene toda la información puede guardar su progreso presionando este boton y regresar más tarde.',
+        animation : 'true'
+      });
+      $('html, body').animate({     //Animación para auto scroll hasta el boton
                         scrollTop: $("#btn_info_personal").offset().top
+                       
       }, 2000);
+      setTimeout(function(){    //Delay para mostrar el popover (match tiempo de auto scroll)
+        $("#btn_info_personal").popover('show');
+      }, 1800);
     });
 
     $("#btn_info_personal").click(function (e){
@@ -30,7 +42,6 @@
         console.log(data);
       });
     });
-
   });
 </script>
 <!--Modal oculto, mostrar en caso que sea un usuario nuevo y no tenga correo institucional previo-->
@@ -60,17 +71,6 @@
 <!--Fin del modal-->
 <br>
 <br>
-<!--Alert Info Testing-->
-<div class="alert alert-warning alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
-  <span class="glyphicon glyphicon-bell"></span> Si usted no tiene toda la información ahora puede guardar su progreso Better check yourself, you're not looking too good.
-</div>
-<!--DOs-->
-  <div class="alert alert-warning alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
-  <span class="glyphicon glyphicon-info-sign"></span><strong> Warning!</strong> Better check yourself, you're not looking too good.
-</div>
-<!--FIn-alert info-->
 <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
   <div id="info_personal">
     <h1 class="text-center">Información Personal</h1>
@@ -428,6 +428,5 @@
     </div>
   </div>
   <br>
-  <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Guardar</button>
+  <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
 </form>
-
