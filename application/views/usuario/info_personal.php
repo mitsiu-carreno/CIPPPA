@@ -5,32 +5,6 @@
     });
     $('#btn_id_prof').tooltip();
     
-    //Función para mostrar modal si el profesor es nuevo
-    var show_modal = <?php echo $user_info["new"];?>;
-    if (show_modal){
-      $('#myModal').modal('show');
-    }
-
-    //Evento cuando el modal se cierra
-    $('#myModal').on('hidden.bs.modal', function (e) {
-      console.log("show popovers");
-      $('#btn_info_personal').popover({   //Define las propiedades del popover
-        placement: 'right',
-        html: 'true',
-        title : '<span class="text-info"><strong>Importante:</strong></span>'+
-                '<button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;hide&quot;);">&times;</button>',
-        content : 'Si usted no tiene toda la información puede guardar su progreso presionando este boton y regresar más tarde.',
-        animation : 'true'
-      });
-      $('html, body').animate({     //Animación para auto scroll hasta el boton
-                        scrollTop: $("#btn_info_personal").offset().top
-                       
-      }, 2000);
-      setTimeout(function(){    //Delay para mostrar el popover (match tiempo de auto scroll)
-        $("#btn_info_personal").popover('show');
-      }, 1800);
-    });
-
     $("#btn_info_personal").click(function (e){
       var btn = $(this);
       btn.button('loading');
@@ -45,7 +19,7 @@
   });
 </script>
 <!--Modal oculto, mostrar en caso que sea un usuario nuevo y no tenga correo institucional previo-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

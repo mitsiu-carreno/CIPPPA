@@ -52,10 +52,10 @@ class Main extends CI_Controller {
     }
 
     function first_steps($data){
-        echo 'first_steps';
-        var_dump($data);
+        //echo 'first_steps';
+        //var_dump($data);
         $this->load->view("header");
-        $this->load->view("usuario/first_steps");
+        $this->load->view("usuario/first_steps", $data);
         $this->load->view("usuario/info_personal", $data);
         $this->load->view("footer");
     }
