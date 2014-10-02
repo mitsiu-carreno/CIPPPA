@@ -52,7 +52,7 @@
       <div class="col-md-4 col-sm-5"> <!--Esta es la primer columna-->
         <div class="row lay"> <!--Se anida otro renglon para separar el layer del input-->
           <div class="col-sm-offset-1">
-            <label>Nombre</label>
+            <label id="label_nombre">*Nombre</label>
           </div>
         </div>
         <div class="row">
