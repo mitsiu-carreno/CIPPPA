@@ -34,7 +34,7 @@
 		    	placement : 'right',
 		    	html : 'true',
 		    	title : '<span class="text-info"><strong>Bienvendio:</strong></span>',
-		    	content : 'Usted puede navegar a través de este menu para completar su registro. <br> <button type="button" id="close" class="close" onclick="$(&quot;#step1&quot;).popover(&quot;hide&quot;);">Continuar</button>',
+		    	content : 'REFORMULAR-->Usted puede navegar a través de este menu para completar su registro. <br> <button type="button" id="close" class="close" onclick="$(&quot;#step1&quot;).popover(&quot;hide&quot;);">Continuar</button>',
 		    	animation : 'true'
 		    });
 
@@ -67,17 +67,31 @@
 
 		    console.log("auto-scroll");
 	      	$('html, body').animate({     //Animación para auto scroll hasta el boton
-	      		scrollTop: $("#step1").offset().top
-	      	}, 2000);
+	      		scrollTop: $("#step1").offset().top -200
+	      	}, 500);
 
 	      	console.log("show popover");
 	      	setTimeout(function(){    //Delay para mostrar el popover (match tiempo de auto scroll)
 	        	$("#step1").popover('show');
-	      	}, 1800);
+	      	}, 300);
 	    });
 	    
 	    $('#step1').on('hidden.bs.popover', function () {
-	      console.log("hidding_step1");
+	      	console.log("hidding_&_destroy step1");
+	      	$('#step1').popover('destroy');
+	      	$("#label_nombre").popover('show');
+	    });
+
+	    $('#label_nombre').on('hidden.bs.popover', function (){
+	    	console.log("hidding_&_destroy label_nombre");
+	    	$("#label_nombre").popover('destroy');
+	    	$('#btn_info_personal').popover('show');
+	    });
+
+	    $('#btn_info_personal').on('hidden.bs.popover', function(){
+	    	console.log("hidding_&_destroy btn_info_personal");
+	    	$("#btn_info_personal").popover('destroy');
+	    	$("#btn_profile_first_steps").popover('show');
 	    });
 	});
 </script>
