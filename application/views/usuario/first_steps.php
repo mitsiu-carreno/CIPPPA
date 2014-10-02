@@ -24,57 +24,59 @@
 	      $('#myModal').modal('show');
 	    }
 
-	    //Define las propiedades de los popover
-	    $("#step1").popover({
-	    	container : 'body',  //Para que este fuera del nav
-	    	placement : 'right',
-	    	html : 'true',
-	    	title : '<span class="text-info"><strong>Bienvendio:</strong></span>',
-	    	content : 'Usted puede navegar a través de este menu para completar su registro. <br> <button type="button" id="close" class="close" onclick="$(&quot;#step1&quot;).popover(&quot;destroy&quot;);">Continuar</button>',
-	    	animation : 'true'
-	    });
-
-	    $("#label_nombre").popover({
-	    	placement : 'right',
-	    	html : 'true',
-	    	title : '<span class="text-info"><strong>Importante:</strong></span>',
-	    	content : 'Recuerde que debe llenar todos los campos marcados con * <br> <button type="button" id="close" class="close" onclick="$(&quot;#label_nombre&quot;).popover(&quot;destroy&quot;);">Continuar</button>',
-	    	animation : 'true'
-	    });
-
-	    $('#btn_info_personal').popover({   
-	        placement: 'right',
-	        html: 'true',
-	        title : '<span class="text-info"><strong>Importante:</strong></span>'+
-	                '<button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;destroy&quot;);">&times;</button>',
-	        content : 'Si usted no tiene toda la información puede guardar su progreso presionando este boton y regresar más tarde. <button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;destroy&quot;);">Finalizar</button>',
-	        animation : 'true'
-	    });
-
-	    $("#btn_profile_first_steps").popover({
-	    	container : 'body',  //Para que este fuera del nav
-	    	placement : 'left',
-	    	html : 'true',
-	    	title : '<span class="text-info"><strong>Importante:</strong></span>'+
-	    			'<button type="button" id="close" class="close" onclick="$(&quot;#btn_profile_first_steps&quot;).popover(&quot;destroy&quot;);">&times;</button>',
-	    	content : 'Para cerrar sesión haga clic en este boton',
-	    	animation : 'true'
-	    });
-
 	    //Evento cuando el modal se cierra
 	    $('#myModal').on('hidden.bs.modal', function (e) {
-	      console.log("show popovers");
+	      	console.log("create popovers");
 	      
-	      $('html, body').animate({     //Animación para auto scroll hasta el boton
-	      	scrollTop: $("#step1").offset().top
-	      }, 2000);
+	      	//Define las propiedades de los popover
+		    $("#step1").popover({
+		    	container : 'body',  //Para que este fuera del nav
+		    	placement : 'right',
+		    	html : 'true',
+		    	title : '<span class="text-info"><strong>Bienvendio:</strong></span>',
+		    	content : 'Usted puede navegar a través de este menu para completar su registro. <br> <button type="button" id="close" class="close" onclick="$(&quot;#step1&quot;).popover(&quot;hide&quot;);">Continuar</button>',
+		    	animation : 'true'
+		    });
 
-	      setTimeout(function(){    //Delay para mostrar el popover (match tiempo de auto scroll)
-	        $("#step1").popover('show');
-	      }, 1800);
+		    $("#label_nombre").popover({
+		    	placement : 'right',
+		    	html : 'true',
+		    	title : '<span class="text-info"><strong>Importante:</strong></span>',
+		    	content : 'Recuerde que debe llenar todos los campos marcados con * <br> <button type="button" id="close" class="close" onclick="$(&quot;#label_nombre&quot;).popover(&quot;hide&quot;);">Continuar</button>',
+		    	animation : 'true'
+		    });
+
+		    $('#btn_info_personal').popover({   
+		        placement: 'right',
+		        html: 'true',
+		        title : '<span class="text-info"><strong>Importante:</strong></span>'+
+		                '<button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;hide&quot;);">&times;</button>',
+		        content : 'Si usted no tiene toda la información puede guardar su progreso presionando este boton y regresar más tarde. <button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;hide&quot;);">Finalizar</button>',
+		        animation : 'true'
+		    });
+
+		    $("#btn_profile_first_steps").popover({
+		    	container : 'body',  //Para que este fuera del nav
+		    	placement : 'left',
+		    	html : 'true',
+		    	title : '<span class="text-info"><strong>Importante:</strong></span>'+
+		    			'<button type="button" id="close" class="close" onclick="$(&quot;#btn_profile_first_steps&quot;).popover(&quot;hide&quot;);">&times;</button>',
+		    	content : 'Para cerrar sesión haga clic en este boton',
+		    	animation : 'true'
+		    });
+
+		    console.log("auto-scroll");
+	      	$('html, body').animate({     //Animación para auto scroll hasta el boton
+	      		scrollTop: $("#step1").offset().top
+	      	}, 2000);
+
+	      	console.log("show popover");
+	      	setTimeout(function(){    //Delay para mostrar el popover (match tiempo de auto scroll)
+	        	$("#step1").popover('show');
+	      	}, 1800);
 	    });
 	    
-	    $('#btn_info_personal').on('hidden.bs.popover', function () {
+	    $('#step1').on('hidden.bs.popover', function () {
 	      console.log("hidding_step1");
 	    });
 	});
