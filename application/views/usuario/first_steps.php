@@ -1,5 +1,8 @@
 <script type="text/javascript">
+	
+
 	$(function(){
+
 		$("#step1").click(function(e){
 			$("#info_personal").show("fade");
 			$("#info_domi").hide("fade");
@@ -31,7 +34,7 @@
 	      	//Define las propiedades de los popover
 		    $("#step1").popover({
 		    	container : 'body',  //Para que este fuera del nav
-		    	placement : 'right',
+		    	placement : 'bottom',
 		    	html : 'true',
 		    	title : '<span class="text-info"><strong>Bienvendio:</strong></span>',
 		    	content : 'REFORMULAR-->Usted puede navegar a través de este menu para completar su registro. <br> <button type="button" id="close" class="close" onclick="$(&quot;#step1&quot;).popover(&quot;hide&quot;);">Continuar</button>',
@@ -49,22 +52,21 @@
 		    $('#btn_info_personal').popover({   
 		        placement: 'right',
 		        html: 'true',
-		        title : '<span class="text-info"><strong>Importante:</strong></span>'+
-		                '<button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;hide&quot;);">&times;</button>',
-		        content : 'Si usted no tiene toda la información puede guardar su progreso presionando este boton y regresar más tarde. <button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;hide&quot;);">Finalizar</button>',
+		        title : '<span class="text-info"><strong>Importante:</strong></span>',
+		        content : 'Si usted no tiene toda la información puede guardar su progreso presionando este boton y regresar más tarde. <br><button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;hide&quot;);">Continuar</button>',
 		        animation : 'true'
 		    });
 
 		    $("#btn_profile_first_steps").popover({
 		    	container : 'body',  //Para que este fuera del nav
-		    	placement : 'left',
+		    	placement : 'bottom',
 		    	html : 'true',
 		    	title : '<span class="text-info"><strong>Importante:</strong></span>'+
 		    			'<button type="button" id="close" class="close" onclick="$(&quot;#btn_profile_first_steps&quot;).popover(&quot;hide&quot;);">&times;</button>',
-		    	content : 'Para cerrar sesión haga clic en este boton',
+		    	content : 'Para cerrar sesión haga clic en este boton <br><button type="button" id="close" class="close" onclick="$(&quot;#btn_profile_first_steps&quot;).popover(&quot;hide&quot;);">Finalizar</button>',
 		    	animation : 'true'
 		    });
-
+		    $("#fondo").addClass('overlay');
 		    console.log("auto-scroll");
 	      	$('html, body').animate({     //Animación para auto scroll hasta el boton
 	      		scrollTop: $("#step1").offset().top -200
@@ -79,20 +81,62 @@
 	    $('#step1').on('hidden.bs.popover', function () {
 	      	console.log("hidding_&_destroy step1");
 	      	$('#step1').popover('destroy');
-	      	$("#label_nombre").popover('show');
+	      	$("html, body").animate({
+	      		scrollTop: $("#label_nombre").offset().top -200
+	      	}, 500);
+
+	      	setTimeout(function(){
+	      		$("#label_nombre").popover('show');
+	      	}, 300);
+	      	
 	    });
 
 	    $('#label_nombre').on('hidden.bs.popover', function (){
 	    	console.log("hidding_&_destroy label_nombre");
 	    	$("#label_nombre").popover('destroy');
-	    	$('#btn_info_personal').popover('show');
+	    	$('html, body').animate({
+	    		scrollTop: $("#btn_info_personal").offset().top -200
+	    	}, 500);
+
+	    	setTimeout(function(){
+	    		$('#btn_info_personal').popover('show');
+	    	}, 500);
+	    	
 	    });
 
 	    $('#btn_info_personal').on('hidden.bs.popover', function(){
 	    	console.log("hidding_&_destroy btn_info_personal");
 	    	$("#btn_info_personal").popover('destroy');
-	    	$("#btn_profile_first_steps").popover('show');
+	    	$('html, body').animate({
+	    		scrollTop: $("#btn_profile_first_steps").offset().top -300
+	    	}, 500);
+
+	    	setTimeout(function(){
+	    		$("#btn_profile_first_steps").popover('show');
+	    	}, 500);
+	    	
+	    	//test();
 	    });
+
+	    $('#btn_profile_first_steps').on('hidden.bs.popover', function(){
+	    	console.log("hidding_&_destroy btn_profile_first_steps");
+	    	$('#btn_profile_first_steps').popover('destroy');
+	    });
+
+	    function on_hidden_and_animate_popover(hidding){
+			$('#step1').on('hidden.bs.popover', function () {
+		      	console.log("hidding_&_destroy step1");
+		      	$('#step1').popover('destroy');
+		      	$("html, body").animate({
+		      		scrollTop: $("#label_nombre").offset().top -200
+		      	}, 500);
+
+		      	setTimeout(function(){
+		      		$("#label_nombre").popover('show');
+		      	}, 300);
+		      	
+		    });
+		}	
 	});
 </script>
 <ul class='nav nav-wizard' data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">
@@ -110,3 +154,4 @@
   	<?php echo $user_info["nombre"]?>
   </button>
 </ul>
+<div id="fondo"></div>
