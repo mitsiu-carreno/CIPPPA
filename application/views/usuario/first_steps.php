@@ -69,6 +69,7 @@
 		    	animation : 'true'
 		    });
 		    $("#fondo").addClass('overlay');
+		    $("#fondo-transparente").addClass('transparent_overlay');
 		    $(".nav-wizard").css('z-index', '1010');
 		    console.log("auto-scroll");
 	      	$('html, body').animate({     //Animación para auto scroll hasta el boton
@@ -82,74 +83,45 @@
 	    });
 	    
 	    $('#step1').on('hidden.bs.popover', function () {
-	      	console.log("hidding_&_destroy step1");
-	      	$('#step1').popover('destroy');
+	      	destroy_animate_show_popover('#step1', '#label_nombre');
 	      	$(".nav-wizard").css('z-index', '11');
-	      	$("html, body").animate({
-	      		scrollTop: $("#label_nombre").offset().top -200
-	      	}, 500);
-
-	      	setTimeout(function(){
-	      		$(".lay").css('position', 'relative');
-	      		$(".lay").css('z-index', '1010');
-	      		$("#label_nombre").popover('show');
-	      	}, 300);
-	      	
+	      	$("#label_nombre").css('color', 'white');
+	      	$("#label_nombre").css('position', 'relative');
+	      	$("#label_nombre").css('z-index', '1010');
 	    });
 
 	    $('#label_nombre').on('hidden.bs.popover', function (){
-	    	console.log("hidding_&_destroy label_nombre");
-	    	$("#label_nombre").popover('destroy');
-	    	$('html, body').animate({
-	    		scrollTop: $("#btn_info_personal").offset().top -200
-	    	}, 500);
-
-	    	setTimeout(function(){
-	    		$("#btn_info_personal").css('position', 'relative');
-	    		$("#btn_info_personal").css('z-index', '1010');
-	    		$('#btn_info_personal').popover('show');
-	    	}, 500);
-	    	
+	    	$("#btn_info_personal").css('position', 'relative');
+	    	$("#btn_info_personal").css('z-index', '1010');
+	    	destroy_animate_show_popover('#label_nombre', '#btn_info_personal')
+	    	$("#label_nombre").css('color', '#333');
 	    });
 
 	    $('#btn_info_personal').on('hidden.bs.popover', function(){
-	    	console.log("hidding_&_destroy btn_info_personal");
-	    	$("#btn_info_personal").popover('destroy');
-	    	$('html, body').animate({
-	    		scrollTop: $("#btn_profile_first_steps").offset().top -300
-	    	}, 500);
-
-	    	setTimeout(function(){
-	    		
-	    		$(".nav-wizard").css('z-index', '1010');
-	    		$("#btn_profile_first_steps").popover('show');
-	    	}, 500);
-	    	
-	    	//test();
+	    	$("#btn_info_personal").css('z-index', '11');
+	    	$(".nav-wizard").css('z-index', '1010');
+	    	destroy_animate_show_popover('#btn_info_personal', '#btn_profile_first_steps');
 	    });
 
 	    $('#btn_profile_first_steps').on('hidden.bs.popover', function(){
 	    	console.log("hidding_&_destroy btn_profile_first_steps");
 	    	$('#btn_profile_first_steps').popover('destroy');
 	    	$('#fondo').removeClass('overlay');
+	    	$('#fondo-transparente').removeClass('transparent_overlay');
 	    	$(".nav-wizard").css('z-index', '11');
 	    	
 	    });
 
-	    //test();
-	    function on_hidden_and_animate_popover(hidding){
-			$('#step1').on('hidden.bs.popover', function () {
-		      	console.log("hidding_&_destroy step1");
-		      	$('#step1').popover('destroy');
-		      	$("html, body").animate({
-		      		scrollTop: $("#label_nombre").offset().top -200
-		      	}, 500);
+	    function destroy_animate_show_popover(destroy_popver, animate_btn){
+		    console.log("hidding_&_destroy");
+		    $(destroy_popver).popover('destroy');
+		    $("html, body").animate({
+		      	scrollTop: $(animate_btn).offset().top -200
+		    }, 800);
 
-		      	setTimeout(function(){
-		      		$("#label_nombre").popover('show');
-		      	}, 300);
-		      	
-		    });
+		    setTimeout(function(){
+		      	$(animate_btn).popover('show');
+		    }, 500);
 		}	
 	});
 </script>
@@ -171,3 +143,5 @@
 
 <!--Se usa para bloquear la página y hacer el tutorial first steps-->
 <div id="fondo"></div>
+<!--Se usa para que se resalten los botones pero no se pueda hacer click-->
+<div id="fondo-transparente"></div>
