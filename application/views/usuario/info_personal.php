@@ -45,13 +45,15 @@
 <!--Fin del modal-->
 <br>
 <br>
-<form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
-  <div id="info_personal">
+<div id="info_personal">
+  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
     <h1 class="text-center">Información Personal</h1>
     <div class="row"> <!--Crea un renglon con tres columnas-->
       <div class="col-md-4 col-sm-5"> <!--Esta es la primer columna-->
         <div class="row lay"> <!--Se anida otro renglon para separar el layer del input-->
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label id="label_nombre">*Nombre</label>
           </div>
         </div>
@@ -66,6 +68,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Apellido Paterno</label>
           </div>
         </div>
@@ -80,6 +84,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Apellido Materno</label>
           </div>
         </div>
@@ -94,6 +100,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Fecha de Nacimiento</label>
           </div>
         </div>
@@ -108,6 +116,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Nacionalidad</label>
           </div>
         </div>
@@ -122,6 +132,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Estado Civil</label>
           </div>
         </div>
@@ -136,6 +148,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>CURP</label>
           </div>
         </div>
@@ -150,6 +164,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>RFC</label>
           </div>
         </div>
@@ -164,6 +180,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Número IMSSS</label>
           </div>
         </div>
@@ -178,6 +196,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>ID Profesor</label>
           </div>
         </div>
@@ -189,14 +209,20 @@
       </div>
       <div class="visible-md-block"></div>
     </div>
-  </div>
-  <div id="info_domi">
+    <br>
+    <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
+  </form>
+</div>
+<div id="info_domi">
+  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
     <h1 class="text-center">Información Domiciliaria</h1>
     <div class="row">
       <!---->
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Estado</label>
           </div>
         </div>
@@ -211,6 +237,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Municipio</label>
           </div>
         </div>
@@ -225,6 +253,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Fraccionamiento</label>
           </div>
         </div>
@@ -239,6 +269,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Calle</label>
           </div>
         </div>
@@ -253,6 +285,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Núm. Domicilio</label>
           </div>
         </div>
@@ -267,6 +301,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Número Interior de Domicilio</label>
           </div>
         </div>
@@ -281,6 +317,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Código Postal</label>
           </div>
         </div>
@@ -293,13 +331,19 @@
       <div class="visible-md-block"></div>
       <!---->
     </div>
-  </div>
-  <div id="info_contacto">
+    <br>
+    <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
+  </form>
+</div>
+<div id="info_contacto">
+  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
     <h1 class="text-center">Datos de Contacto</h1>
     <div class="row">
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Correo Institucional</label>
           </div>
         </div>
@@ -317,6 +361,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Correo Personal</label>
           </div>
         </div>
@@ -331,6 +377,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Celular</label>
           </div>
         </div>
@@ -345,6 +393,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Teléfono Fijo</label>
           </div>
         </div>
@@ -359,6 +409,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Teléfono Oficina</label>
           </div>
         </div>
@@ -373,6 +425,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+            <hr>
+            
             <label>Puesto Solicitado</label>
           </div>
         </div>
@@ -387,6 +441,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
+  <hr>
+        <br>
             <label></label>
           </div>
         </div>
@@ -400,7 +456,7 @@
       -->
       
     </div>
-  </div>
-  <br>
-  <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
-</form>
+    <br>
+    <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
+  </form>
+</div>

@@ -146,3 +146,7 @@
 h1{
     word-wrap: break-word;
 }
+
+#close{
+    opacity: .8;
+}

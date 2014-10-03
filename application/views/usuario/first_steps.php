@@ -130,7 +130,8 @@
 	});
 </script>
 
-<ul class="nav nav-pills nav-pills-my nav-justified">
+<h1 class="text-center"><strong>Perfil</strong></h1>
+<ul class="nav nav-pills nav-pills-my">
 
 	<li class="active"><a href='#step1' data-toggle="tab" id="step1" >Paso 1 - Información Personal</a></li>
 
@@ -140,14 +141,14 @@
 
   	<li><a href='#step4' data-toggle="tab" id="step4">Paso 4 - Fotografía</a></li>
   	
-  	<li id="btn_profile_first_steps" class="dropdown">
+  	<li id="btn_profile_first_steps" class="dropdown pull-right">
     	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
       		<span class="glyphicon glyphicon-user"></span>
   			<?php echo $user_info["nombre"]?>
   			<span class="caret"></span>
     	</a>
     	<ul class="dropdown-menu" role="menu">
-    		<li><a href="#">Perfil</a></li>
+    		<li class="active"><a href="<?php echo site_url(array("main"))?>">Perfil</a></li>
     		<li><a href="#">Configuración</a></li>
     		<li class="divider"></li>
     		<li><a href="<?php echo site_url(array("login", "out"))?>">Salir</a></li>
