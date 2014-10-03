@@ -137,3 +137,8 @@
     left:0px;
     z-index:1012;
 }
+
+.nav-pills-my{
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+}

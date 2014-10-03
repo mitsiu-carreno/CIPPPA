@@ -130,7 +130,7 @@
 	});
 </script>
 
-<ul class="nav nav-pills">
+<ul class="nav nav-pills nav-pills-my">
 
 	<li class="active"><a href='#step1' data-toggle="tab" id="step1" >Paso 1 - Información Personal</a></li>
 
@@ -139,12 +139,22 @@
   	<li><a href='#step3' data-toggle="tab" id="step3">Paso 3 - Datos de Contacto</a></li>
 
   	<li><a href='#step4' data-toggle="tab" id="step4">Paso 4 - Fotografía</a></li>
-  
-  	<button type="button" id="btn_profile_first_steps" class="btn btn-default pull-right">
-  		<span class="glyphicon glyphicon-user"></span>
-  		<?php echo $user_info["nombre"]?>
-  	</button>
+  	
+  	<li id="btn_profile_first_steps" class="dropdown pull-right">
+    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      		<span class="glyphicon glyphicon-user"></span>
+  			<?php echo $user_info["nombre"]?>
+  			<span class="caret"></span>
+    	</a>
+    	<ul class="dropdown-menu" role="menu">
+    		<li><a href="#">Perfil</a></li>
+    		<li><a href="#">Configuración</a></li>
+    		<li class="divider"></li>
+    		<li><a href="<?php echo site_url(array("login", "out"))?>">Salir</a></li>
+    	</ul>
+  	</li>
 </ul>
+
 
 <!--BUG-NOT-RESPONSIVE
 <ul class='nav nav-wizard' data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">
