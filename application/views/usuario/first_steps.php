@@ -2,6 +2,8 @@
 	
 
 	$(function(){
+		$("#info_domi").hide();
+		$("#info_contacto").hide();
 
 		$("#step1").click(function(e){
 			$("#info_personal").show("fade");
@@ -67,6 +69,7 @@
 		    	animation : 'true'
 		    });
 		    $("#fondo").addClass('overlay');
+		    $(".nav-wizard").css('z-index', '1010');
 		    console.log("auto-scroll");
 	      	$('html, body').animate({     //Animación para auto scroll hasta el boton
 	      		scrollTop: $("#step1").offset().top -200
@@ -81,11 +84,14 @@
 	    $('#step1').on('hidden.bs.popover', function () {
 	      	console.log("hidding_&_destroy step1");
 	      	$('#step1').popover('destroy');
+	      	$(".nav-wizard").css('z-index', '11');
 	      	$("html, body").animate({
 	      		scrollTop: $("#label_nombre").offset().top -200
 	      	}, 500);
 
 	      	setTimeout(function(){
+	      		$(".lay").css('position', 'relative');
+	      		$(".lay").css('z-index', '1010');
 	      		$("#label_nombre").popover('show');
 	      	}, 300);
 	      	
@@ -99,6 +105,8 @@
 	    	}, 500);
 
 	    	setTimeout(function(){
+	    		$("#btn_info_personal").css('position', 'relative');
+	    		$("#btn_info_personal").css('z-index', '1010');
 	    		$('#btn_info_personal').popover('show');
 	    	}, 500);
 	    	
@@ -112,6 +120,8 @@
 	    	}, 500);
 
 	    	setTimeout(function(){
+	    		
+	    		$(".nav-wizard").css('z-index', '1010');
 	    		$("#btn_profile_first_steps").popover('show');
 	    	}, 500);
 	    	
@@ -121,8 +131,12 @@
 	    $('#btn_profile_first_steps').on('hidden.bs.popover', function(){
 	    	console.log("hidding_&_destroy btn_profile_first_steps");
 	    	$('#btn_profile_first_steps').popover('destroy');
+	    	$('#fondo').removeClass('overlay');
+	    	$(".nav-wizard").css('z-index', '11');
+	    	
 	    });
 
+	    //test();
 	    function on_hidden_and_animate_popover(hidding){
 			$('#step1').on('hidden.bs.popover', function () {
 		      	console.log("hidding_&_destroy step1");
@@ -154,4 +168,6 @@
   	<?php echo $user_info["nombre"]?>
   </button>
 </ul>
+
+<!--Se usa para bloquear la página y hacer el tutorial first steps-->
 <div id="fondo"></div>
