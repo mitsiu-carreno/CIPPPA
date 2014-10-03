@@ -70,7 +70,10 @@
 		    });
 		    $("#fondo").addClass('overlay');
 		    $("#fondo-transparente").addClass('transparent_overlay');
-		    $(".nav-wizard").css('z-index', '1010');
+		    $(".nav-pills").css('z-index', '1010');
+		    $(".nav-pills").css('position', 'relative');
+		    $(".nav-pills").css('background-color', 'white');
+
 		    console.log("auto-scroll");
 	      	$('html, body').animate({     //Animación para auto scroll hasta el boton
 	      		scrollTop: $("#step1").offset().top -200
@@ -84,7 +87,7 @@
 	    
 	    $('#step1').on('hidden.bs.popover', function () {
 	      	destroy_animate_show_popover('#step1', '#label_nombre');
-	      	$(".nav-wizard").css('z-index', '11');
+	      	$(".nav-pills").css('z-index', '11');
 	      	$("#label_nombre").css('color', 'white');
 	      	$("#label_nombre").css('position', 'relative');
 	      	$("#label_nombre").css('z-index', '1010');
@@ -99,7 +102,8 @@
 
 	    $('#btn_info_personal').on('hidden.bs.popover', function(){
 	    	$("#btn_info_personal").css('z-index', '11');
-	    	$(".nav-wizard").css('z-index', '1010');
+	    	$(".nav-pills").css('z-index', '1010');
+	    	
 	    	destroy_animate_show_popover('#btn_info_personal', '#btn_profile_first_steps');
 	    });
 
@@ -108,7 +112,7 @@
 	    	$('#btn_profile_first_steps').popover('destroy');
 	    	$('#fondo').removeClass('overlay');
 	    	$('#fondo-transparente').removeClass('transparent_overlay');
-	    	$(".nav-wizard").css('z-index', '11');
+	    	$(".nav-pills").css('z-index', '11');
 	    	
 	    });
 
@@ -117,29 +121,48 @@
 		    $(destroy_popver).popover('destroy');
 		    $("html, body").animate({
 		      	scrollTop: $(animate_btn).offset().top -200
-		    }, 800);
+		    }, 1000);
 
 		    setTimeout(function(){
 		      	$(animate_btn).popover('show');
-		    }, 500);
+		    }, 900);
 		}	
 	});
 </script>
-<ul class='nav nav-wizard' data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">
+
+<ul class="nav nav-pills">
+
+	<li class="active"><a href='#step1' data-toggle="tab" id="step1" >Paso 1 - Información Personal</a></li>
+
+  	<li><a href='#step2' data-toggle="tab" id="step2">Paso 2 - Datos Domiciliarios</a></li>
+
+  	<li><a href='#step3' data-toggle="tab" id="step3">Paso 3 - Datos de Contacto</a></li>
+
+  	<li><a href='#step4' data-toggle="tab" id="step4">Paso 4 - Fotografía</a></li>
   
+  	<button type="button" id="btn_profile_first_steps" class="btn btn-default pull-right">
+  		<span class="glyphicon glyphicon-user"></span>
+  		<?php echo $user_info["nombre"]?>
+  	</button>
+</ul>
+
+<!--BUG-NOT-RESPONSIVE
+<ul class='nav nav-wizard' data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">
   <li class="active"><a href='#step1' data-toggle="tab" id="step1" >Paso 1 - Información Personal</a></li>
 
-  <li><a href='#step2' data-toggle="tab" id="step2">Paso 2 - Datos Domiciliarios</a></li>
+  	<li><a href='#step2' data-toggle="tab" id="step2">Paso 2 - Datos Domiciliarios</a></li>
 
-  <li><a href='#step3' data-toggle="tab" id="step3">Paso 3 - Datos de Contacto</a></li>
+  	<li><a href='#step3' data-toggle="tab" id="step3">Paso 3 - Datos de Contacto</a></li>
 
-  <li><a href='#step4' data-toggle="tab" id="step4">Paso 4 - Fotografía</a></li>
+  	<li><a href='#step4' data-toggle="tab" id="step4">Paso 4 - Fotografía</a></li>
   
-  <button type="button" id="btn_profile_first_steps" class="btn btn-default pull-right">
-  	<span class="glyphicon glyphicon-user"></span>
-  	<?php echo $user_info["nombre"]?>
-  </button>
+  	<button type="button" id="btn_profile_first_steps" class="btn btn-default pull-right">
+  		<span class="glyphicon glyphicon-user"></span>
+  		<?php echo $user_info["nombre"]?>
+  	</button>
+  
 </ul>
+-->
 
 <!--Se usa para bloquear la página y hacer el tutorial first steps-->
 <div id="fondo"></div>
