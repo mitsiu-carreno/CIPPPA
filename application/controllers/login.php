@@ -58,8 +58,8 @@ class Login extends CI_Controller {
             $data["registro"]["correo_institucion"]=$data["registro"]["correo_institucion"][0];
         }
         $data["registro"]["password"] = md5($data["registro"]["password"]);
-        $data["registro"]["fecha_registro"] = date("Y/m/d G:i:s");
-        $data["registro"]["fecha_actualizacion"] = date("Y/m/d G:i:s");
+        $data["registro"]["fecha_registro"] = date("d/m/Y G:i:s");
+        $data["registro"]["fecha_actualizacion"] = date("d/m/Y G:i:s");
         unset($data["registro"]["password2"]);
         $id = $this->abc_model->insert_with_foreign_key("tipouser","user", $data["registro"],1);
         $this->session->set_userdata("userid", $id);

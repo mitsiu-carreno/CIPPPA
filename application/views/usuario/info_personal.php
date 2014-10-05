@@ -59,7 +59,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="nombre" placeholder="Nombre(s)" required value="<?php echo $user_info["nombre"]?>">
+            <input type="text" class="form-control required-input" name="nombre" placeholder="Nombre(s)" value="<?php echo $user_info["nombre"]?>">
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="apellido_paterno" placeholder="Apellido Paterno" required value="<?php echo $user_info["apellido_paterno"]?>">
+            <input type="text" class="form-control" name="apellido_paterno" placeholder="Apellido Paterno" value="<?php echo $user_info["apellido_paterno"]?>">
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="apellido_materno" placeholder="Apellido Materno" required value="<?php echo $user_info["apellido_materno"]?>">
+            <input type="text" class="form-control" name="apellido_materno" placeholder="Apellido Materno" value="<?php echo $user_info["apellido_materno"]?>">
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" id="fec_nac" class="form-control" name="fecha_nacimiento" data-date-viewmode="years" placeholder="dd/mm/yyyy" required value="<?php  echo $user_info["fecha_nacimiento"]?>">
+            <input type="text" id="fec_nac" class="form-control" name="fecha_nacimiento" data-date-viewmode="years" placeholder="dd/mm/yyyy" value="<?php  echo $user_info["fecha_nacimiento"]?>">
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad" required value="<?php echo $user_info["nacionalidad"]?>">
+            <input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad" value="<?php echo $user_info["nacionalidad"]?>">
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="edo_civil" placeholder="Estado Civil" required value="<?php echo $user_info["edo_civil"]?>">
+            <input type="text" class="form-control" name="edo_civil" placeholder="Estado Civil" value="<?php echo $user_info["edo_civil"]?>">
           </div>
         </div>
       </div>
@@ -155,7 +155,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-             <input type="text" class="form-control" name="curp" placeholder="CUPR" required value="<?php echo $user_info["curp"]?>">
+             <input type="text" class="form-control" name="curp" placeholder="CUPR" value="<?php echo $user_info["curp"]?>">
           </div>
         </div>
       </div>
@@ -171,7 +171,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="rfc" placeholder="RFC" required value="<?php echo $user_info["rfc"]?>">
+            <input type="text" class="form-control" name="rfc" placeholder="RFC" value="<?php echo $user_info["rfc"]?>">
           </div>
         </div>
       </div>
@@ -187,7 +187,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="imss" placeholder="Núm. IMSS" required value="<?php echo $user_info["imss"]?>">
+            <input type="text" class="form-control" name="imss" placeholder="Núm. IMSS" value="<?php echo $user_info["imss"]?>">
           </div>
         </div>
       </div>
@@ -228,7 +228,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="estado" placeholder="Estado" required value="<?php echo $user_info["estado"]?>">
+            <input type="text" class="form-control" name="estado" placeholder="Estado" value="<?php echo $user_info["estado"]?>">
           </div>
         </div>
       </div>
@@ -244,7 +244,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="municipio" placeholder="Municipio" required value="<?php echo $user_info["municipio"]?>">
+            <input type="text" class="form-control" name="municipio" placeholder="Municipio" value="<?php echo $user_info["municipio"]?>">
           </div>
         </div>
       </div>
@@ -260,7 +260,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="fracc" placeholder="Fraccionamiento" required value="<?php echo $user_info["fracc"]?>">
+            <input type="text" class="form-control" name="fracc" placeholder="Fraccionamiento" value="<?php echo $user_info["fracc"]?>">
           </div>
         </div>
       </div>
@@ -276,7 +276,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="calle" placeholder="Calle" required value="<?php echo $user_info["calle"]?>">
+            <input type="text" class="form-control" name="calle" placeholder="Calle" value="<?php echo $user_info["calle"]?>">
           </div>
         </div>
       </div>
@@ -292,7 +292,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="number" class="form-control" name="num_exterior_domicilio" placeholder="Numero Domic" required value="<?php echo $user_info["num_exterior_domicilio"]?>">
+            <input type="number" class="form-control" name="num_exterior_domicilio" placeholder="Numero Domic" value="<?php echo $user_info["num_exterior_domicilio"]?>">
           </div>
         </div>
       </div>
@@ -324,7 +324,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-             <input type="text" class="form-control" name="cod_postal" placeholder="Código Postal" required value="<?php echo $user_info["cod_postal"]?>">
+             <input type="text" class="form-control" name="cod_postal" placeholder="Código Postal" value="<?php echo $user_info["cod_postal"]?>">
           </div>
         </div>
       </div>
@@ -350,7 +350,7 @@
         <div class="row">
           <div class="col-sm-offset-2">
             <div class="input-group">
-              <input type="text" class="form-control" name="correo_institucion" placeholder="Correo Inst." required readonly value="<?php echo $user_info["correo_institucion"]?>">
+              <input type="text" class="form-control" name="correo_institucion" placeholder="Correo Inst." readonly value="<?php echo $user_info["correo_institucion"]?>">
               <div class="input-group-addon">@upa.edu.mx</div>
             </div>
           </div>
@@ -368,7 +368,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="email" class="form-control" name="correo_personal" placeholder="Correo Personal" required value="<?php echo $user_info["correo_personal"]?>">
+            <input type="email" class="form-control" name="correo_personal" placeholder="Correo Personal" value="<?php echo $user_info["correo_personal"]?>">
           </div>
         </div>
       </div>
@@ -384,7 +384,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="number" class="form-control" name="celular" placeholder="Celular" required value="<?php echo $user_info["celular"]?>">
+            <input type="number" class="form-control" name="celular" placeholder="Celular" value="<?php echo $user_info["celular"]?>">
           </div>
         </div>
       </div>
@@ -400,7 +400,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="number" class="form-control" name="tel" placeholder="Tel. Fijo" required value="<?php echo $user_info["tel"]?>">
+            <input type="number" class="form-control" name="tel" placeholder="Tel. Fijo" value="<?php echo $user_info["tel"]?>">
           </div>
         </div>
       </div>
@@ -432,7 +432,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="puesto_solicitado" placeholder="Puesto Solicitado" required value="<?php echo $user_info["puesto_solicitado"]?>">
+            <input type="text" class="form-control" name="puesto_solicitado" placeholder="Puesto Solicitado" value="<?php echo $user_info["puesto_solicitado"]?>">
           </div>
         </div>
       </div>
