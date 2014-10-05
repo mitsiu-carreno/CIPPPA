@@ -7,7 +7,7 @@
     
     $("#btn_info_personal").click(function (e){
       var btn = $(this);
-      btn.button('loading');
+      //btn.button('loading');
     });
 
     $("#form_info_personal").submit(function (e){
@@ -107,7 +107,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" id="fec_nac" class="form-control" name="fecha_nacimiento" data-date-viewmode="years" placeholder="dd/mm/yyyy" value="<?php  echo $user_info["fecha_nacimiento"]?>">
+            <input id="fec_nac" class="form-control" name="fecha_nacimiento" data-date-viewmode="years" placeholder="dd/mm/yyyy" value="<?php  echo $user_info["fecha_nacimiento"]?>">
           </div>
         </div>
       </div>
@@ -139,7 +139,12 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="edo_civil" placeholder="Estado Civil" value="<?php echo $user_info["edo_civil"]?>">
+            <!--<input type="text" class="form-control" name="edo_civil" placeholder="Estado Civil" value="<?php echo $user_info["edo_civil"]?>">-->
+            <select class="form-control" name="edo_civil">
+              <?php echo ($user_info["edo_civil"]==null)?"<option hidden selected>Estado Civil</option>":""?>
+                <option <?php echo ($user_info["edo_civil"]=="Soltero")?"selected":""; ?> value="Soltero">Soltero</option>
+                <option <?php echo ($user_info["edo_civil"]=="Casado")?"selected":""; ?> value="Casado">Casado</option>
+            </select>
           </div>
         </div>
       </div>
@@ -155,7 +160,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-             <input type="text" class="form-control" name="curp" placeholder="CUPR" value="<?php echo $user_info["curp"]?>">
+             <input type="text" class="form-control" maxlength="18"  name="curp" placeholder="CUPR" value="<?php echo $user_info["curp"]?>">
           </div>
         </div>
       </div>
@@ -432,7 +437,12 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="puesto_solicitado" placeholder="Puesto Solicitado" value="<?php echo $user_info["puesto_solicitado"]?>">
+            <!--<input type="text" class="form-control" name="puesto_solicitado" placeholder="Puesto Solicitado" value="<?php echo $user_info["puesto_solicitado"]?>">-->
+            <select class="form-control" name="puesto_solicitado">
+              <?php echo ($user_info["puesto_solicitado"]==null)?"<option hidden selected></option>":"";?>
+              <option <?php echo ($user_info["puesto_solicitado"]=="pa")?"selected":""; ?> value="pa">Profesor de Asignatura</option>
+              <option <?php echo ($user_info["puesto_solicitado"]=="ptc")?"selected":""; ?> value="ptc">Prof. Tiempo Completo</option>
+            </select>
           </div>
         </div>
       </div>

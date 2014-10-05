@@ -77,9 +77,10 @@ class Main extends CI_Controller {
         $id = $this->id;
         $this->load->model("abc_model");
         $data["info_personal"]= $this->input->post();
+        $data["info_personal"]["fecha_actualizacion"] = date("d/m/Y G:i:s");
         $data["info_personal"]= $this->abc_model->update_bean("user", $id, $data["info_personal"]);
-        //var_dump($data["info_personal"]);
-        echo $data["info_personal"];
+        var_dump($data["info_personal"]);
+        //echo $data["info_personal"];
     }
 
 }
