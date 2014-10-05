@@ -45,8 +45,9 @@
 <!--Fin del modal-->
 <br>
 <br>
-<div id="info_personal">
-  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
+
+<form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
+  <div id="info_personal">
     <h1 class="text-center">Información Personal</h1>
     <div class="row"> <!--Crea un renglon con tres columnas-->
       <div class="col-md-4 col-sm-5"> <!--Esta es la primer columna-->
@@ -208,18 +209,21 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" id="btn_id_prof" class="form-control" name="profesor_id" placeholder="ID Profesor" value="<?php echo $user_info["profesor_id"]?>"  data-toggle="tooltip" data-placement="bottom" title="Este campo es para los profesores registros en la UPA, si usted es nuevo debe dejarlo en blanco">
+            <input type="text" id="btn_id_prof" class="form-control" name="profesor_id" placeholder="ID Profesor" value="<?php echo $user_info["profesor_id"]?>"  
+            data-toggle="tooltip" data-placement="bottom" title="Este campo es para los profesores registrados en la UPA, si usted es nuevo debe dejarlo en blanco">
           </div>
         </div>
       </div>
       <div class="visible-md-block"></div>
     </div>
-    <br>
+  </div>
+    <!--<br>
     <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
   </form>
 </div>
 <div id="info_domi">
-  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
+  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">-->
+  <div id="info_domi">
     <h1 class="text-center">Información Domiciliaria</h1>
     <div class="row">
       <!---->
@@ -329,19 +333,21 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-             <input type="text" class="form-control" name="cod_postal" placeholder="Código Postal" value="<?php echo $user_info["cod_postal"]?>">
+             <input type="text" class="form-control" maxlength="5" pattern="[0-9]{5}" name="cod_postal" placeholder="Código Postal" value="<?php echo $user_info["cod_postal"]?>">
           </div>
         </div>
       </div>
       <div class="visible-md-block"></div>
       <!---->
     </div>
-    <br>
+  </div>
+    <!--<br>
     <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
   </form>
 </div>
 <div id="info_contacto">
-  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
+  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">-->
+  <div id="info_contacto">
     <h1 class="text-center">Datos de Contacto</h1>
     <div class="row">
       <div class="col-md-4 col-sm-5">
@@ -466,7 +472,8 @@
       -->
       
     </div>
-    <br>
-    <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
-  </form>
-</div>
+  </div>
+  <br>
+  <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
+</form>
+
