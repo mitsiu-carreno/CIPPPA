@@ -160,7 +160,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-             <input type="text" class="form-control" maxlength="18"  name="curp" placeholder="CUPR" value="<?php echo $user_info["curp"]?>">
+             <input type="text" class="form-control" maxlength="18"  pattern=".{18,}"name="curp" placeholder="CUPR" value="<?php echo $user_info["curp"]?>">
           </div>
         </div>
       </div>
@@ -441,7 +441,7 @@
             <select class="form-control" name="puesto_solicitado">
               <?php echo ($user_info["puesto_solicitado"]==null)?"<option hidden selected></option>":"";?>
               <option <?php echo ($user_info["puesto_solicitado"]=="pa")?"selected":""; ?> value="pa">Profesor de Asignatura</option>
-              <option <?php echo ($user_info["puesto_solicitado"]=="ptc")?"selected":""; ?> value="ptc">Prof. Tiempo Completo</option>
+              <option <?php echo ($user_info["puesto_solicitado"]=="ptc")?"selected":""; ?> value="ptc">Prof. Tiempo C</option>
             </select>
           </div>
         </div>
