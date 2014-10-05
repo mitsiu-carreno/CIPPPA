@@ -143,7 +143,7 @@
         <h1 class="text-center"><b>REGISTRESE</b></h1>
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-md-3">
+            <div class="col-md-7">
                 <label>Nombre(s)</label>
             </div>
         </div>  
@@ -157,7 +157,7 @@
 
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-md-3">
+            <div class="col-md-7">
                 <label>Apellido Paterno</label>
             </div>
         </div>          
@@ -171,7 +171,7 @@
 
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-md-3">
+            <div class="col-md-7">
                 <label>Apellido Materno</label>
             </div>
         </div>  
@@ -185,7 +185,7 @@
 
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-md-3">
+            <div class="col-md-7">
                 <label>Correo Institucional</label>
             </div>
         </div>  
@@ -203,7 +203,7 @@
 
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-md-3">
+            <div class="col-md-7">
                 <label>Correo Personal</label>
             </div>
         </div>  
@@ -217,7 +217,7 @@
 
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-md-3">
+            <div class="col-md-7">
                 <label>Contraseña</label>
             </div>
         </div>  
@@ -231,7 +231,7 @@
 
         <div class="row">
             <div class="col-sm-1"></div>
-            <div class="col-md-3">
+            <div class="col-md-7">
                 <label>Repetir Contraseña</label>
             </div>
         </div>  

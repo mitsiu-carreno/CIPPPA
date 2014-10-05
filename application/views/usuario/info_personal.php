@@ -14,6 +14,17 @@
       e.preventDefault();
       $.post(this.action, $(this).serialize(), function(data){
         console.log(data);
+        /*
+          if($("info_personal").is(':visible')){
+          $("#info_personal").hide("fade");
+          $("#info_domi").show("fade");
+        }
+        else if($("#info_domi").is(':visible')){
+          $("#info_domi").hide("fade");
+          $("#info_contacto").show("fade");
+        }
+      
+        */
       });
     });
   });
