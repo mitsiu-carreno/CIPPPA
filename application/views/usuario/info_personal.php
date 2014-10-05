@@ -142,8 +142,8 @@
             <!--<input type="text" class="form-control" name="edo_civil" placeholder="Estado Civil" value="<?php echo $user_info["edo_civil"]?>">-->
             <select class="form-control" name="edo_civil">
               <?php echo ($user_info["edo_civil"]==null)?"<option hidden selected>Estado Civil</option>":""?>
-                <option <?php echo ($user_info["edo_civil"]=="Soltero")?"selected":""; ?> value="Soltero">Soltero</option>
-                <option <?php echo ($user_info["edo_civil"]=="Casado")?"selected":""; ?> value="Casado">Casado</option>
+                <option <?php echo ($user_info["edo_civil"]=="s")?"selected":""; ?> value="s">Soltero</option>
+                <option <?php echo ($user_info["edo_civil"]=="c")?"selected":""; ?> value="c">Casado</option>
             </select>
           </div>
         </div>
@@ -160,7 +160,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-             <input type="text" class="form-control" maxlength="18"  pattern=".{18,}"name="curp" placeholder="CUPR" value="<?php echo $user_info["curp"]?>">
+             <input type="text" class="form-control" maxlength="18"  pattern=".{18}" name="curp" spellcheck="false" placeholder="CUPR" value="<?php echo $user_info["curp"]?>">
           </div>
         </div>
       </div>
@@ -176,7 +176,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="rfc" placeholder="RFC" value="<?php echo $user_info["rfc"]?>">
+            <input type="text" class="form-control" maxlength="10" pattern=".{10}" spellcheck="false" name="rfc" placeholder="RFC" value="<?php echo $user_info["rfc"]?>">
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control" name="imss" placeholder="Núm. IMSS" value="<?php echo $user_info["imss"]?>">
+            <input type="text" class="form-control" maxlength="10" pattern="[0-9]{10}" name="imss" placeholder="Núm. IMSS" value="<?php echo $user_info["imss"]?>">
           </div>
         </div>
       </div>
@@ -208,7 +208,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" id="btn_id_prof" class="form-control" name="profesor_id" placeholder="ID Profesor" value="<?php echo $user_info["profesor_id"]?>"  data-toggle="tooltip" data-placement="bottom" title="Este campo es para los profesores registros en la UPA, si usted es nuevo puede dejarlo en blanco">
+            <input type="text" id="btn_id_prof" class="form-control" name="profesor_id" placeholder="ID Profesor" value="<?php echo $user_info["profesor_id"]?>"  data-toggle="tooltip" data-placement="bottom" title="Este campo es para los profesores registros en la UPA, si usted es nuevo debe dejarlo en blanco">
           </div>
         </div>
       </div>

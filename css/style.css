@@ -21,7 +21,7 @@
     url('../fonts/rosario/Rosario-BoldItalic.ttf');
 }
 
-/* Otras opciones
+
 @font-face{
     font-family: Margot;
     src: url('../fonts/margot/Margot-Regular.ttf'),
@@ -39,9 +39,9 @@
     src: url('../fonts/smidswater/Smidswater Regular/SmidsReg.ttf'),
     url('../fonts/smidswater/Smidswater Regular/SmidsReg.ttf');
 }
-*/
 
-* { font-family: Rosario-regular;}
+
+* { font-family: Rosario-regular; letter-spacing: 1px;}
 
 #bienvenido_message_wrap{
 	background-color: green;
@@ -107,6 +107,7 @@
     
 .lay{   //estilo de layers de tabla
     //background-color: red;
+    font-size: 16px;
 }
 
 #footer{
@@ -141,6 +142,8 @@
 .nav-pills-my{
     border: 1px solid #d4d4d4;
     border-radius: 6px;
+    font-size: 15px;
+
 }
 
 h1{
@@ -149,4 +152,8 @@ h1{
 
 #close{
     opacity: .8;
+}
+
+input{ 
+    font-family: Margot; //Principalmente para a visualización de números
 }
