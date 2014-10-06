@@ -5,26 +5,43 @@
     });
     $('#btn_id_prof').tooltip();
     
-    $("#btn_info_personal").click(function (e){
+    $(".btn_info_personal").click(function (e){
       var btn = $(this);
-      //btn.button('loading');
+      btn.button('loading');
     });
 
+    //Envio de formularios
     $("#form_info_personal").submit(function (e){
       e.preventDefault();
       $.post(this.action, $(this).serialize(), function(data){
         console.log(data);
-        /*
-          if($("info_personal").is(':visible')){
-          $("#info_personal").hide("fade");
-          $("#info_domi").show("fade");
+        var btn = $(".btn_info_personal");
+        if(data>0){
+          console.log("ok");
+          btn.button('reset');
         }
-        else if($("#info_domi").is(':visible')){
-          $("#info_domi").hide("fade");
-          $("#info_contacto").show("fade");
+        else{
+          console.log("error");
+          btn.button('reset');
         }
-      
-        */
+      });
+    });
+
+    $("#form_info_domi").submit(function (e){
+      e.preventDefault();
+      $.post(this.action, $(this).serialize(), function(data){
+        console.log(data);
+        $("#info_domi").hide("fade");
+        $("#info_contacto").show("fade");
+      });
+    });
+
+    $("#form_info_contacto").submit(function (e){
+      e.preventDefault();
+      $.post(this.action, $(this).serialize(), function(data){
+        console.log(data);
+        $("#info_contacto").hide("fade");
+        $("#info_personal").show("fade");
       });
     });
   });
@@ -57,8 +74,8 @@
 <br>
 <br>
 
-<form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
-  <div id="info_personal">
+<div id="info_personal">
+  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
     <h1 class="text-center">Información Personal</h1>
     <div class="row"> <!--Crea un renglon con tres columnas-->
       <div class="col-md-4 col-sm-5"> <!--Esta es la primer columna-->
@@ -227,14 +244,12 @@
       </div>
       <div class="visible-md-block"></div>
     </div>
-  </div>
-    <!--<br>
-    <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
+    <br>
+    <button type="submit" data-loading-text="Espere..." class="btn btn-primary btn_info_personal">Guardar</button>
   </form>
 </div>
 <div id="info_domi">
-  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">-->
-  <div id="info_domi">
+  <form id="form_info_domi" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
     <h1 class="text-center">Información Domiciliaria</h1>
     <div class="row">
       <!---->
@@ -351,14 +366,13 @@
       <div class="visible-md-block"></div>
       <!---->
     </div>
-  </div>
-    <!--<br>
-    <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
+  
+    <br>
+    <button type="submit" data-loading-text="Espere..." class="btn btn-primary btn_info_personal">Guardar</button>
   </form>
 </div>
 <div id="info_contacto">
-  <form id="form_info_personal" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">-->
-  <div id="info_contacto">
+  <form id="form_info_contacto" method="post" action="<?php echo site_url(array("main","set_info_personal"))?>" role="form">
     <h1 class="text-center">Datos de Contacto</h1>
     <div class="row">
       <div class="col-md-4 col-sm-5">
@@ -468,8 +482,8 @@
       <div class="col-md-4 col-sm-5">
         <div class="row lay">
           <div class="col-sm-offset-1">
-  <hr>
-        <br>
+            <hr>
+            <br>
             <label></label>
           </div>
         </div>
@@ -483,10 +497,10 @@
       -->
       
     </div>
-  </div>
-  <br>
-  <button id="btn_info_personal" type="submit" data-loading-text="Espere..." class="btn btn-primary">Guardar</button>
-</form>
+    <br>
+    <button type="submit" data-loading-text="Espere..." class="btn btn-primary btn_info_personal">Guardar</button>
+  </form>
+</div>
 
 <br>
 <div id="the-basics">
@@ -518,7 +532,7 @@
   };
 };
 
-var test = ['test', 'test2']; 
+var test = {"id":"31","name":"Elankeeran","email":"ekeeran@yahoo.com","activated":"0","phone":""};
 var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
   'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
   'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
@@ -541,3 +555,32 @@ $('#the-basics .typeahead').typeahead({
   source: substringMatcher(test)
 });
 </script>
+
+<!--CUstom
+<style type="text/css">
+  #custom-templates .empty-message {
+  padding: 5px 10px;
+ text-align: center;
+}
+</style>
+
+<div id="custom-templates">
+  <input class="typeahead" type="text" placeholder="Oscar winners for Best Picture">
+</div>
+
+<script type="text/javascript">
+$('#custom-templates .typeahead').typeahead(null, {
+  name: 'best-pictures',
+  displayKey: 'value',
+  source: substringMatcher(test)
+  templates: {
+    empty: [
+      '<div class="empty-message">',
+      'unable to find any Best Picture winners that match the current query',
+      '</div>'
+    ].join('\n'),
+    suggestion: Handlebars.compile('<p><strong>{{value}}</strong> – {{year}}</p>')
+  }
+});
+</script>
+-->

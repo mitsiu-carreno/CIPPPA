@@ -61,8 +61,8 @@ class Main extends CI_Controller {
     }
 
     function info_personal($data){	
-        echo 'info_personal';
-        var_dump($data);
+        //echo 'info_personal';
+        //var_dump($data);
         //$id=$this->id;
         //$this->load->model("abc_model");
         //$data["user_info"]=$this->abc_model->get_bean("user", $id);
@@ -79,8 +79,12 @@ class Main extends CI_Controller {
         $data["info_personal"]= $this->input->post();
         $data["info_personal"]["fecha_actualizacion"] = date("d/m/Y G:i:s");
         $data["info_personal"]= $this->abc_model->update_bean("user", $id, $data["info_personal"]);
-        //var_dump($data["info_personal"]);
-        //echo $data["info_personal"];
+        //if($data["info_personal"]){
+        //    echo 1;
+        //}
+        //else{
+            echo 0;
+        //}
     }
 
 }

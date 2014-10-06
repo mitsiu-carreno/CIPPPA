@@ -51,11 +51,11 @@
 		    	animation : 'true'
 		    });
 
-		    $('#btn_info_personal').popover({   
+		    $('.btn_info_personal').popover({   
 		        placement: 'right',
 		        html: 'true',
 		        title : '<span class="text-info"><strong>Importante:</strong></span>',
-		        content : 'Si usted no tiene toda la información puede guardar su progreso presionando este boton y regresar más tarde. <br><button type="button" id="close" class="close" onclick="$(&quot;#btn_info_personal&quot;).popover(&quot;hide&quot;);">Continuar</button>',
+		        content : 'Si usted no tiene toda la información puede guardar su progreso presionando este boton y regresar más tarde. <br><button type="button" id="close" class="close" onclick="$(&quot;.btn_info_personal&quot;).popover(&quot;hide&quot;);">Continuar</button>',
 		        animation : 'true'
 		    });
 
@@ -94,17 +94,17 @@
 	    });
 
 	    $('#label_nombre').on('hidden.bs.popover', function (){
-	    	$("#btn_info_personal").css('position', 'relative');
-	    	$("#btn_info_personal").css('z-index', '1010');
-	    	destroy_animate_show_popover('#label_nombre', '#btn_info_personal')
+	    	$(".btn_info_personal").css('position', 'relative');
+	    	$(".btn_info_personal").css('z-index', '1010');
+	    	destroy_animate_show_popover('#label_nombre', '.btn_info_personal')
 	    	$("#label_nombre").css('color', '#333');
 	    });
 
-	    $('#btn_info_personal').on('hidden.bs.popover', function(){
-	    	$("#btn_info_personal").css('z-index', '11');
+	    $('.btn_info_personal').on('hidden.bs.popover', function(){
+	    	$(".btn_info_personal").css('z-index', '11');
 	    	$(".nav-pills").css('z-index', '1010');
 	    	
-	    	destroy_animate_show_popover('#btn_info_personal', '#btn_profile_first_steps');
+	    	destroy_animate_show_popover('.btn_info_personal', '#btn_profile_first_steps');
 	    });
 
 	    $('#btn_profile_first_steps').on('hidden.bs.popover', function(){
