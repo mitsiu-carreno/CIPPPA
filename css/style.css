@@ -41,7 +41,7 @@
 }
 
 
-* { font-family: Rosario-regular; letter-spacing: 1px;}
+* { font-family: Rosario-regular; letter-spacing: 0.5px;}
 
 #bienvenido_message_wrap{
 	background-color: green;
@@ -63,7 +63,7 @@
     width: 600px;
     border: 2px solid;
     border-radius: 25px;
-    opacity: 0.9;
+    opacity: 0.96;
     color:white;
     font-size: 16px;
 }
@@ -156,5 +156,6 @@ h1{
 }
 
 input{ 
+    //vertical-align: text-top;
     font-family: Margot; //Principalmente para a visualización de números
 }
