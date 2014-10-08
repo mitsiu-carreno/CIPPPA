@@ -91,6 +91,9 @@ class Abc_model extends CI_Model{
     }
     
     function update_bean($table, $id, $data){
+        foreach ($data as $d) {
+            $d="test";
+        }
         //var_dump("model_pre");
         //var_dump($data);
         $bean = R::load($table, $id);

@@ -76,12 +76,12 @@ class Main extends CI_Controller {
     function set_info_personal(){
         $id = $this->id;
         $this->load->model("abc_model");
-        $data["save_info_personal"]= $this->input->post();
+        $data["info_personal"]= $this->input->post();
         
-        $data["save_info_personal"]["fecha_actualizacion"] = date("d/m/Y G:i:s");
-        var_dump("controller_pre");
-        var_dump($data["save_info_personal"]);
-        $return= $this->abc_model->update_bean("user", $id, $data["save_info_personal"]);
+        $data["info_personal"]["fecha_actualizacion"] = date("d/m/Y G:i:s");
+        //var_dump("controller_pre");
+        //var_dump($data["save_info_personal"]);
+        $return= $this->abc_model->update_bean("user", $id, $data["info_personal"]);
         //if($data["info_personal"]){
         //    echo 1;
         //}
