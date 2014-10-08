@@ -72,7 +72,7 @@
             $.post(this.action, $(this).serialize(), function(data){
                 console.log(data);
                 if(data > 0)
-                    window.location = "<?php echo site_url(array("main")) ?>";
+                    window.location = "<?php echo site_url(array("main","first_steps")) ?>";
                 else{
                     var btn = $("#form_reg_listo");
                     btn.button('reset');

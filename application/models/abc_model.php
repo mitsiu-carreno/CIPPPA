@@ -16,9 +16,9 @@ class Abc_model extends CI_Model{
     //Crea tablas iniciales para que funcione el sistema :) 
     function initial_tables(){
         //Destruye toda la basde de datos 
-        R::nuke(); //HANDLE WITH CARE!!!! <-FOR TESTING POURPUSES ONLY
+        R::wipe('user'); //HANDLE WITH CARE!!!! <-FOR TESTING POURPUSES ONLY
 
-        //Tabla user
+        /*Tabla user
         $bean = R ::dispense('user');
         $bean->nombre=null;
         $bean->apellido_paterno=null;
@@ -50,6 +50,7 @@ class Abc_model extends CI_Model{
         R::store($bean);
         R::wipe('user');
 
+
         //Tabla tipouser
         $bean = R::dispense('tipouser');
         $bean->tipo_usuario = 'usuario';
@@ -60,6 +61,7 @@ class Abc_model extends CI_Model{
         $bean = R::dispense('tipouser');
         $bean->tipo_usuario = 'administrador';
         R::store($bean);
+        */
     } 
     //$table=tabla llave padre, $table2= tabla llave foranea, $data=datos del tabla hijo, $id = llave padre a la que se liga
     function insert_with_foreign_key($table, $table2, $data, $id){
@@ -89,9 +91,13 @@ class Abc_model extends CI_Model{
     }
     
     function update_bean($table, $id, $data){
+        //var_dump("model_pre");
+        //var_dump($data);
         $bean = R::load($table, $id);
         $bean->import($data);
         R::store($bean);
+        //var_dump("model_pos");
+        //var_dump($bean->export());
         return $bean->export();
     }
     

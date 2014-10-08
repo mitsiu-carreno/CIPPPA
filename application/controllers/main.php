@@ -19,6 +19,7 @@ class Main extends CI_Controller {
             $this->id= $this->session->userdata("userid");
             $this->load->model("abc_model");
             $this->data["user_info"] = $this->abc_model->get_bean("user", $this->id);
+            $this->data["user_info"]["new"]=0; //No mostrar modal por default
         }
         else{
             redirect("login");
@@ -28,17 +29,10 @@ class Main extends CI_Controller {
 
     function index(){
     	$data = $this->data;
-        if($data["user_info"]["fracc"]==null){  //Si el usuario completo first steps
-            if($data["user_info"]["fecha_registro"]==$data["user_info"]["fecha_actualizacion"]){  //Si el usuario acaba de registrarse
-                $data["user_info"]["new"]=1; //Mostrar modal
-            }
-            else{
-                $data["user_info"]["new"]=0; //Ocultar modal
-            }
-            $this->first_steps($data);
+        if($data["user_info"]["fracc"]===null){  //Si el usuario completo first steps
+            $this->first_steps();
         }
         else{
-             $data["user_info"]["new"]=0; //Ocultar modal
             $this->info_personal($data); //login al sistema completo
         }
 
@@ -51,8 +45,14 @@ class Main extends CI_Controller {
         
     }
 
-    function first_steps($data){
-        //echo 'first_steps';
+    function first_steps(){ //El usuario se acaba de registrar
+        $data=$this->data;
+        if($data["user_info"]["fecha_registro"]==$data["user_info"]["fecha_actualizacion"]){  //Si el usuario acaba de registrarse
+            $data["user_info"]["new"]=1; //Mostrar modal
+        }
+        else{
+            $data["user_info"]["new"]=0; //Ocultar modal
+        }
         //var_dump($data);
         $this->load->view("header");
         $this->load->view("usuario/first_steps", $data);
@@ -76,17 +76,21 @@ class Main extends CI_Controller {
     function set_info_personal(){
         $id = $this->id;
         $this->load->model("abc_model");
-        $data["info_personal"]= $this->input->post();
-        var_dump($data["info_personal"]);
-        $data["info_personal"]["fecha_actualizacion"] = date("d/m/Y G:i:s");
-        $data["info_personal"]= $this->abc_model->update_bean("user", $id, $data["info_personal"]);
+        $data["save_info_personal"]= $this->input->post();
+        
+        $data["save_info_personal"]["fecha_actualizacion"] = date("d/m/Y G:i:s");
+        var_dump("controller_pre");
+        var_dump($data["save_info_personal"]);
+        $return= $this->abc_model->update_bean("user", $id, $data["save_info_personal"]);
         //if($data["info_personal"]){
         //    echo 1;
         //}
         //else{
-            echo 0;
-            var_dump($data["info_personal"]);
+            //echo 0;
+            //var_dump("controller_pos");
+            //var_dump($return);
         //}
+        //echo json_encode($return);
     }
 
 }

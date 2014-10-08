@@ -1,27 +1,31 @@
 <script type="text/javascript">
   $(function(){
+    console.log(<?php echo $user_info["profesor_id"]?>);
     $("#fec_nac").datepicker({
       format: 'dd/mm/yyyy'
     });
     $('#btn_id_prof').tooltip();
     
+    /*
     $(".btn_info_personal").click(function (e){
       var btn = $(this);
       btn.button('loading');
     });
+    */
 
     //Envio de formularios
     $("#form_info_personal").submit(function (e){
       e.preventDefault();
+      var btn = $(".btn_info_personal");
       $.post(this.action, $(this).serialize(), function(data){
-        console.log(data);
-        var btn = $(".btn_info_personal");
+        //console.log(data);
+        btn.button('loading');
         if(data>0){
-          console.log("ok");
+          //console.log("ok");
           btn.button('reset');
         }
         else{
-          console.log("error");
+          //console.log("error");
           btn.button('reset');
         }
       });
@@ -170,7 +174,7 @@
           <div class="col-sm-offset-2">
             <!--<input type="text" class="form-control" name="edo_civil" placeholder="Estado Civil" value="<?php echo $user_info["edo_civil"]?>">-->
             <select class="form-control" name="edo_civil">
-              <?php echo ($user_info["edo_civil"]==null)?"<option hidden selected>Estado Civil</option>":""?>
+              <?php echo ($user_info["edo_civil"]==null)?"<option hidden selected></option>":""?>
                 <option <?php echo ($user_info["edo_civil"]=="s")?"selected":""; ?> value="s">Soltero</option>
                 <option <?php echo ($user_info["edo_civil"]=="c")?"selected":""; ?> value="c">Casado</option>
             </select>
@@ -237,7 +241,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" id="btn_id_prof" class="form-control" name="profesor_id" placeholder="ID Profesor" value="<?php echo $user_info["profesor_id"]?>"  
+            <input type="text" id="btn_id_prof" class="form-control" maxlength="6" pattern="[0-9]{6}" name="profesor_id" placeholder="ID Profesor" value="<?php echo $user_info["profesor_id"]?>"  
             data-toggle="tooltip" data-placement="bottom" title="Este campo es para los profesores registrados en la UPA, si usted es nuevo debe dejarlo en blanco">
           </div>
         </div>
@@ -501,6 +505,12 @@
     <button type="submit" data-loading-text="Espere..." class="btn btn-primary btn_info_personal">Guardar</button>
   </form>
 </div>
+
+<ul class="pager">
+  <li><a href="#">Previous</a></li>
+  <li><a href="#">Next</a></li>
+</ul>
+
 
 <br>
 <div id="the-basics">
