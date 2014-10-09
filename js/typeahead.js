@@ -746,7 +746,8 @@
                 left: "0",
                 borderColor: "transparent",
                 boxShadow: "none",
-                opacity: "1"
+                opacity: "1",
+                color: "transparent"    //Bug cuando borras letras, hint y value no estan alineados
             },
             input: {
                 position: "relative",
