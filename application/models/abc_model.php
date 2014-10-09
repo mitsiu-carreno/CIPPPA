@@ -63,7 +63,7 @@ class Abc_model extends CI_Model{
         R::store($bean);
         
     } 
-    
+
     //$table=tabla llave padre, $table2= tabla llave foranea, $data=datos del tabla hijo, $id = llave padre a la que se liga
     function insert_with_foreign_key($table, $table2, $data, $id){
         $bean = R::load($table, $id);
@@ -92,11 +92,11 @@ class Abc_model extends CI_Model{
     }
     
     function update_bean($table, $id, $data){
-        foreach ($data as &$d) {
+        foreach ($data as &$d) {    //NOTA cuando se va a modificar el valor del arreglo se usa "&" antes del key!!
             ($d=="")? $d=null: "";
         }
-        var_dump("model_pre");
-        var_dump($data);
+        //var_dump("model_pre");
+        //var_dump($data);
         $bean = R::load($table, $id);
         $bean->import($data);
         R::store($bean);
