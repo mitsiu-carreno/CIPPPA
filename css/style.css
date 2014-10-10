@@ -159,8 +159,3 @@ input{
     //vertical-align: text-top;
     font-family: Margot; //Principalmente para a visualización de números
 }
-
-.dropdown-menu{     
-    max-height: 150px;
-    overflow-y: auto;
-}
