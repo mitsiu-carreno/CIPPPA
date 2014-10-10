@@ -18,7 +18,7 @@ class Main extends CI_Controller {
         if($this->session->userdata("userid")){
             $this->id= $this->session->userdata("userid");
             $this->load->model("abc_model");
-            $this->data["user_info"] = $this->abc_model->get_bean("user", $this->id);
+            $this->data["user_info"] = $this->abc_model->get_bean_by_id("user", $this->id);
             $this->data["user_info"]["new"]=0; //No mostrar modal por default
         }
         else{
@@ -54,6 +54,9 @@ class Main extends CI_Controller {
             $data["user_info"]["new"]=0; //Ocultar modal
         }
         //var_dump($data);
+        $this->load->model("abc_model");
+        $data["user_info"]["paises"] = $this->abc_model->get_beans("pais");
+        
         $this->load->view("header");
         $this->load->view("usuario/first_steps", $data);
         $this->load->view("usuario/info_personal", $data);
@@ -65,7 +68,7 @@ class Main extends CI_Controller {
         //var_dump($data);
         //$id=$this->id;
         //$this->load->model("abc_model");
-        //$data["user_info"]=$this->abc_model->get_bean("user", $id);
+        //$data["user_info"]=$this->abc_model->get_bean_by_id("user", $id);
         $this->load->view("header");
         $this->load->view("menu/usuario", $data);
         $this->load->view("usuario/info_personal", $data);
@@ -93,4 +96,9 @@ class Main extends CI_Controller {
         //echo json_encode($return);
     }
 
+    function get_pais(){
+        $this->load->model("abc_model");
+        $paises = $this->abc_model->get_beans("pais");
+        echo json_encode($paises);
+    }
 }

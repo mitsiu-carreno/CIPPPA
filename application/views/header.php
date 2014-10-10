@@ -13,7 +13,8 @@
         <script src="<?php echo base_url() ?>js/bootstrap.js" type="text/javascript"></script>
         <script src="<?php echo base_url() ?>js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<?php echo base_url() ?>js/validate_form.js" type="text/javascript"></script>
-        <script src="<?php echo base_url() ?>js/typeahead.js" type="text/javascript"></script>
+        <!--<script src="<?php echo base_url() ?>js/typeahead.js" type="text/javascript"></script>-->
+        <script src="<?php echo base_url() ?>js/bootstrap-typeahead.js" type="text/javascript"></script>
         <script type="text/javascript">
             var global_baseurl = "<?php echo base_url(); ?>"
         </script> 

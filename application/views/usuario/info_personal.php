@@ -513,14 +513,7 @@
   </ul>
 </div>
 
-
-
-
-<br>
-<div id="the-basics">
-  <input class="typeahead form-control" type="text" placeholder="States of USA">
-</div>
-
+<!--Progress
 <script type="text/javascript">
   var substringMatcher = function(strs) {
     return function findMatches(q, cb) {
@@ -546,6 +539,8 @@
     };
   };
 
+//This dont follow the best practices but i don't want to overflow the server with request -Sorry- to the maintainance guy
+/*
 var paises=["Afganistán", "Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila", 
   "Antártida", "Antigua y Barbuda", "Antillas Neerlandesas", "Arabia Saudí", "Arctic Ocean", 
   "Argelia", "Argentina", "Armenia", "Aruba", "Ashmore andCartier Islands", "Atlantic Ocean", 
@@ -582,6 +577,11 @@ var paises=["Afganistán", "Akrotiri", "Albania", "Alemania", "Andorra", "Angola
   "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Unión Europea", "Uruguay", "Uzbekistán", 
   "Vanuatu", "Venezuela", "Vietnam", "Wake Island", "Wallis y Futuna", "West Bank", "World", 
   "Yemen", "Yibuti", "Zambia", "Zimbabue"];
+  */
+  var paises= [
+           
+            {"stateCode": "OH", "stateName": "Ohio"}
+        ];
  
 $('#nacionalidad .typeahead').typeahead({
   hint: true,
@@ -589,59 +589,33 @@ $('#nacionalidad .typeahead').typeahead({
   minLength: 1
 },
 {
-  name: 'Nacionalidad',
-  displayKey: 'value',
+  name: 'stateCode',
+  displayKey: 'stateName',
   source: substringMatcher(paises)
 });
 
-var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-];
- 
-$('#the-basics .typeahead').typeahead({
-  hint: true,
-  highlight: true,
-  minLength: 1
-},
-{
-  name: 'states',
-  displayKey: 'value',
-  source: substringMatcher(states)
-});
 </script>
+ENd-progress-->
 
-<!--CUstom
-<style type="text/css">
-  #custom-templates .empty-message {
-  padding: 5px 10px;
- text-align: center;
-}
-</style>
-
-<div id="custom-templates">
-  <input class="typeahead" type="text" placeholder="Oscar winners for Best Picture">
-</div>
+<input id="demo1" type="text" class="col-md-12 form-control" placeholder="Search cities..." autocomplete="off">
 
 <script type="text/javascript">
-$('#custom-templates .typeahead').typeahead(null, {
-  name: 'best-pictures',
-  displayKey: 'value',
-  source: substringMatcher(test)
-  templates: {
-    empty: [
-      '<div class="empty-message">',
-      'unable to find any Best Picture winners that match the current query',
-      '</div>'
-    ].join('\n'),
-    suggestion: Handlebars.compile('<p><strong>{{value}}</strong> – {{year}}</p>')
-  }
-});
+  var paises=[{id:1,name:'Afganist\u00e1n'},{id:2,name:'Akrotiri'}];
+
+    
+
+  /*
+  $.ajax({
+    url: '<?php echo site_url(array("main", "get_pais"))?>',
+    type: 'POST',
+    datatype: 'JSON',
+    success: function (data){
+      paises=data;
+    }
+  });
+*/
+  $('#demo1').typeahead({
+        source: paises
+      
+    });
 </script>
--->

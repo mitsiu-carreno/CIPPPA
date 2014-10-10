@@ -74,6 +74,8 @@ class Login extends CI_Controller {
 
     public function testing(){
         $this->load->model("abc_model");
-        $this->abc_model->initial_tables();
+        //$this->abc_model->initial_tables();
+        $test = $this->abc_model->get_beans("pais");
+        var_dump($test);
     }
 }
