@@ -55,8 +55,19 @@ class Main extends CI_Controller {
         }
         //var_dump($data);
         $this->load->model("abc_model");
-        $data["user_info"]["paises"] = $this->abc_model->get_beans("pais");
-        
+        $paises = $this->abc_model->get_beans("pais");
+        $data["user_info"]["paises"]=array();
+        foreach ($paises as $row) {
+            array_push($data["user_info"]["paises"], $row["pais"]);
+            /*
+            foreach ($row as $val => $value) {
+                array_push($data["user_info"]["paises"], $value);
+            }
+            */
+
+        }
+        //var_dump($data["user_info"]["paises"]);
+        //print_r($data["user_info"]["paises"]);
         $this->load->view("header");
         $this->load->view("usuario/first_steps", $data);
         $this->load->view("usuario/info_personal", $data);

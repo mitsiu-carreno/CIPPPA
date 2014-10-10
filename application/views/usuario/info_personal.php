@@ -597,10 +597,15 @@ $('#nacionalidad .typeahead').typeahead({
 </script>
 ENd-progress-->
 
+
+<pre>
+<?php echo json_encode($user_info["paises"])?>
+</pre>
 <input id="demo1" type="text" class="col-md-12 form-control" placeholder="Search cities..." autocomplete="off">
 
 <script type="text/javascript">
-  var paises=[{id:1,name:'Afganist\u00e1n'},{id:2,name:'Akrotiri'}];
+  //var paises=[{id:1,name:'Afganist\u00e1n'},{id:2,name:'Akrotiri'}];
+  var paises = <?php echo json_encode($user_info["paises"])?>;
 
     
 
@@ -615,7 +620,8 @@ ENd-progress-->
   });
 */
   $('#demo1').typeahead({
-        source: paises
-      
+        source: paises,
+        display: 'pais',
+        val: 'id'
     });
 </script>
