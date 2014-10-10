@@ -622,6 +622,7 @@ ENd-progress-->
   $('#demo1').typeahead({
         source: paises,
         display: 'pais',
-        val: 'id'
+        val: 'id',
+        items: 5
     });
 </script>
