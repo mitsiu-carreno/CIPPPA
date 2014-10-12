@@ -251,7 +251,12 @@
       <div class="visible-md-block"></div>
     </div>
     <br>
-    <button type="submit" data-loading-text="Espere..." class="btn btn-primary btn_info_personal">Guardar</button>
+    <ul class="pager">
+      <!--<li><a href="#">Previous</a></li>-->
+      <button type="submit" data-loading-text="Espere..." class="btn btn-primary btn_info_personal">Guardar</button>
+      <li><a href="#">Siguiente</a></li>
+    </ul>
+    <!--<button type="submit" data-loading-text="Espere..." class="btn btn-primary btn_info_personal">Guardar</button>-->
   </form>
 </div>
 <div id="info_domi">
@@ -513,113 +518,12 @@
   </ul>
 </div>
 
-<!--Progress
-<script type="text/javascript">
-  var substringMatcher = function(strs) {
-    return function findMatches(q, cb) {
-      var matches, substrRegex;
-   
-      // an array that will be populated with substring matches
-      matches = [];
-   
-      // regex used to determine if a string contains the substring `q`
-      substrRegex = new RegExp(q, 'i');
-   
-      // iterate through the pool of strings and for any string that
-      // contains the substring `q`, add it to the `matches` array
-      $.each(strs, function(i, str) {
-        if (substrRegex.test(str)) {
-          // the typeahead jQuery plugin expects suggestions to a
-          // JavaScript object, refer to typeahead docs for more info
-          matches.push({ value: str });
-        }
-      });
-   
-      cb(matches);
-    };
-  };
-
-//This dont follow the best practices but i don't want to overflow the server with request -Sorry- to the maintainance guy
-/*
-var paises=["Afganistán", "Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila", 
-  "Antártida", "Antigua y Barbuda", "Antillas Neerlandesas", "Arabia Saudí", "Arctic Ocean", 
-  "Argelia", "Argentina", "Armenia", "Aruba", "Ashmore andCartier Islands", "Atlantic Ocean", 
-  "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bahráin", "Bangladesh", "Barbados", "Bélgica", 
-  "Belice", "Benín", "Bermudas", "Bielorrusia", "Birmania Myanmar", "Bolivia", "Bosnia y Hercegovina", 
-  "Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso", "Burundi", "Bután", "Cabo Verde", "Camboya", 
-  "Camerún", "Canadá", "Chad", "Chile", "China", "Chipre", "Clipperton Island", "Colombia", "Comoras", 
-  "Congo", "Coral Sea Islands", "Corea del Norte", "Corea del Sur", "Costa de Marfil", "Costa Rica", 
-  "Croacia", "Cuba", "Dhekelia", "Dinamarca", "Dominica", "Ecuador", "Egipto", "El Salvador", 
-  "El Vaticano", "Emiratos Árabes Unidos", "Eritrea", "Eslovaquia", "Eslovenia", "España", "Estados Unidos", 
-  "Estonia", "Etiopía", "Filipinas", "Finlandia", "Fiyi", "Francia", "Gabón", "Gambia", "Gaza Strip", 
-  "Georgia", "Ghana", "Gibraltar", "Granada", "Grecia", "Groenlandia", "Guam", "Guatemala", "Guernsey", 
-  "Guinea", "Guinea Ecuatorial", "Guinea-Bissau", "Guyana", "Haití", "Honduras", "Hong Kong", "Hungría", 
-  "India", "Indian Ocean", "Indonesia", "Irán", "Iraq", "Irlanda", "Isla Bouvet", "Isla Christmas", 
-  "Isla Norfolk", "Islandia", "Islas Caimán", "Islas Cocos", "Islas Cook", "Islas Feroe", 
-  "Islas Georgia del Sur y Sandwich del Sur", "Islas Heard y McDonald", "Islas Malvinas", 
-  "Islas Marianas del Norte", "IslasMarshall", "Islas Pitcairn", "Islas Salomón", "Islas Turcas y Caicos", 
-  "Islas Vírgenes Americanas", "Islas Vírgenes Británicas", "Israel", "Italia", "Jamaica", "Jan Mayen", 
-  "Japón", "Jersey", "Jordania", "Kazajistán", "Kenia", "Kirguizistán", "Kiribati", "Kuwait", "Laos", "Lesoto", 
-  "Letonia", "Líbano", "Liberia", "Libia", "Liechtenstein", "Lituania", "Luxemburgo", "Macao", "Macedonia", 
-  "Madagascar", "Malasia", "Malaui", "Maldivas", "Malí", "Malta", "Man, Isle of", "Marruecos", "Mauricio", 
-  "Mauritania", "Mayotte", "México", "Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montserrat", "Mozambique", 
-  "Namibia", "Nauru", "Navassa Island", "Nepal", "Nicaragua", "Níger", "Nigeria", "Niue", "Noruega", 
-  "Nueva Caledonia", "Nueva Zelanda", "Omán", "Pacific Ocean", "Países Bajos", "Pakistán", "Palaos", "Panamá", 
-  "Papúa-Nueva Guinea", "Paracel Islands", "Paraguay", "Perú", "Polinesia Francesa", "Polonia", "Portugal", 
-  "Puerto Rico", "Qatar", "Reino Unido", "República Centroafricana", "República Checa", 
-  "República Democrática del Congo", "República Dominicana", "Ruanda", "Rumania", "Rusia", 
-  "Sáhara Occidental", "Samoa", "Samoa Americana", "San Cristóbal y Nieves", "San Marino", 
-  "San Pedro y Miquelón", "San Vicente y las Granadinas", "Santa Helena", "Santa Lucía", "Santo Tomé y Príncipe", 
-  "Senegal", "Seychelles", "Sierra Leona", "Singapur", "Siria", "Somalia", "Southern Ocean", "Spratly Islands", 
-  "Sri Lanka", "Suazilandia", "Sudáfrica", "Sudán", "Suecia", "Suiza", "Surinam", "Svalbard y Jan Mayen", 
-  "Tailandia", "Taiwán", "Tanzania", "Tayikistán", "TerritorioBritánicodel Océano Indico", 
-  "Territorios Australes Franceses", "Timor Oriental", "Togo", "Tokelau", "Tonga", "Trinidad y Tobago", 
-  "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Unión Europea", "Uruguay", "Uzbekistán", 
-  "Vanuatu", "Venezuela", "Vietnam", "Wake Island", "Wallis y Futuna", "West Bank", "World", 
-  "Yemen", "Yibuti", "Zambia", "Zimbabue"];
-  */
-  var paises= [
-           
-            {"stateCode": "OH", "stateName": "Ohio"}
-        ];
- 
-$('#nacionalidad .typeahead').typeahead({
-  hint: true,
-  highlight: true,
-  minLength: 1
-},
-{
-  name: 'stateCode',
-  displayKey: 'stateName',
-  source: substringMatcher(paises)
-});
-
-</script>
-ENd-progress-->
-
-
-<pre>
-<?php echo json_encode($user_info["paises"])?>
-</pre>
-<input id="demo1" type="text" class="col-md-12 form-control" placeholder="Search cities..." autocomplete="off">
 
 <script type="text/javascript">
   //var paises=[{id:1,name:'Afganist\u00e1n'},{id:2,name:'Akrotiri'}];
   var paises = <?php echo json_encode($user_info["paises"])?>;
 
-    
-
-  /*
-  $.ajax({
-    url: '<?php echo site_url(array("main", "get_pais"))?>',
-    type: 'POST',
-    datatype: 'JSON',
-    success: function (data){
-      paises=data;
-    }
-  });
-*/
-  $('#demo1').typeahead({
+  $('#nacionalidad .typeahead').typeahead({
         source: paises,
         display: 'pais',
         val: 'id',
