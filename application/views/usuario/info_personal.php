@@ -157,7 +157,7 @@
         <div class="row">
           <div class="col-sm-offset-2">
             <div id="nacionalidad">
-              <input type="text" class="form-control typeahead" name="nacionalidad" value="<?php echo $user_info["nacionalidad"]?>">
+              <input type="text" id="inp_nacionalidad" class="form-control typeahead" name="nacionalidad" value="<?php echo $user_info["nacionalidad"]?>">
             </div>
           </div>
         </div>
@@ -523,19 +523,28 @@
 <script type="text/javascript">
   //var paises=[{id:1,name:'Afganist\u00e1n'},{id:2,name:'Akrotiri'}];
   var paises = <?php echo json_encode($user_info["paises"])?>;
+  var pais_id=null;
   $('#nacionalidad .typeahead').typeahead({
         source: paises,
         display: 'pais',
         val: 'id',
         items: 5,
+        triggerLength: 0,
         onSelect: function(item) {
-          console.log(item.value);
-          $("#nacionalidad .typeahead").val("1");
-          console.log("after");
+          //console.log(item.value);
+          //$("#inp_nacionalidad").attr("value", item.value);
+          //console.log("after");
+          pais_id = item.value;
         },
     });
 
-  $("#nacionalidad .typeahead").focusout(function(){
-    
+  $("#inp_nacionalidad").focusout(function(){
+    if(!pais_id){
+      console.log("no selected");
+    }
+    else{
+      console.log(pais_id);
+    }
   });
+
 </script>
