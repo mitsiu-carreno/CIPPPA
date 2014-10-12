@@ -58,7 +58,8 @@ class Main extends CI_Controller {
         $paises = $this->abc_model->get_beans("pais");
         $data["user_info"]["paises"]=array();
         foreach ($paises as $row) {
-            array_push($data["user_info"]["paises"], $row["pais"]);
+            $pais = array("id" => $row["id"], "name" =>$row["pais"]); 
+            array_push($data["user_info"]["paises"], $pais);
             /*
             foreach ($row as $val => $value) {
                 array_push($data["user_info"]["paises"], $value);

@@ -251,6 +251,7 @@
       <div class="visible-md-block"></div>
     </div>
     <br>
+    <hr>
     <ul class="pager">
       <!--<li><a href="#">Previous</a></li>-->
       <button type="submit" data-loading-text="Espere..." class="btn btn-primary btn_info_personal">Guardar</button>
@@ -522,11 +523,19 @@
 <script type="text/javascript">
   //var paises=[{id:1,name:'Afganist\u00e1n'},{id:2,name:'Akrotiri'}];
   var paises = <?php echo json_encode($user_info["paises"])?>;
-
   $('#nacionalidad .typeahead').typeahead({
         source: paises,
         display: 'pais',
         val: 'id',
-        items: 5
+        items: 5,
+        onSelect: function(item) {
+          console.log(item.value);
+          $("#nacionalidad .typeahead").val("1");
+          console.log("after");
+        },
     });
+
+  $("#nacionalidad .typeahead").focusout(function(){
+    
+  });
 </script>

@@ -729,11 +729,7 @@ class Abc_model extends CI_Model{
         R::store($bean);
 
         $bean = R::dispense('pais');
-        $bean->pais= "Man;
-        R::store($bean);
-
-        $bean = R::dispense('pais');
-        $bean->pais= Isle of";
+        $bean->pais= "Isla de Man";
         R::store($bean);
 
         $bean = R::dispense('pais');
