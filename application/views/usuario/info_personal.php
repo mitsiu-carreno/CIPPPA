@@ -5,7 +5,8 @@
       format: 'dd/mm/yyyy'
     });
     $('#btn_id_prof').tooltip();
-    
+    $("#inp_nacionalidad").tooltip();
+
     /*
     $(".btn_info_personal").click(function (e){
       var btn = $(this);
@@ -157,7 +158,7 @@
         <div class="row">
           <div class="col-sm-offset-2">
             <div id="nacionalidad">
-              <input type="text" id="inp_nacionalidad" class="form-control typeahead" name="nacionalidad" value="<?php echo $user_info["nacionalidad"]?>">
+              <input type="text" id="inp_nacionalidad" class="form-control typeahead" data-toggle="tooltip" data-placement="bottom" title="Opción no valida" data-trigger="manual" name="nacionalidad" value="<?php echo $user_info["nacionalidad"]?>">
             </div>
           </div>
         </div>
@@ -523,7 +524,19 @@
 <script type="text/javascript">
   //var paises=[{id:1,name:'Afganist\u00e1n'},{id:2,name:'Akrotiri'}];
   var paises = <?php echo json_encode($user_info["paises"])?>;
-  var pais_id=null;
+  var pais_id=0;
+  /*
+  Casos:
+  Blanco->bien (value = x)
+  Blanco->mal (show tooltip//value=0)
+  Escrito->bien (Value = x)
+  Escrito->mal (show tooltip // value=0)
+  Escrito->blanco (show tooltip // value=0)
+  */
+  $("#inp_nacionalidad").keydown(function(){
+    console.log("escribio");
+  });
+
   $('#nacionalidad .typeahead').typeahead({
         source: paises,
         display: 'pais',
@@ -531,19 +544,17 @@
         items: 5,
         triggerLength: 0,
         onSelect: function(item) {
-          //console.log(item.value);
-          //$("#inp_nacionalidad").attr("value", item.value);
-          //console.log("after");
-          pais_id = item.value;
+          console.log(item.value);
+          pais_id=item.value;
+          if(pais_id>0){
+            $("#inp_nacionalidad").attr("value", item.value);
+          }
         },
     });
 
   $("#inp_nacionalidad").focusout(function(){
-    if(!pais_id){
-      console.log("no selected");
-    }
-    else{
-      console.log(pais_id);
+    if(pais_id==null){
+      $(this).tooltip("show");
     }
   });
 
