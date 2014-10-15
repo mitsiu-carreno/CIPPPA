@@ -158,8 +158,8 @@
         <div class="row">
           <div class="col-sm-offset-2">
             <div id="nacionalidad">
-              <input type="text" id="id_inp_nacionalidad"></input>
-              <input type="text" id="inp_nacionalidad" class="form-control typeahead" data-toggle="tooltip" data-placement="bottom" title="Opción no valida" data-trigger="manual" name="nacionalidad" value="<?php echo $user_info["nacionalidad"]?>">
+              <input type="text" id="id_inp_nacionalidad" name="nacionalidad" value="<?php echo $user_info["nacionalidad"]?>"></input>
+              <input type="text" id="inp_nacionalidad" class="form-control typeahead" data-toggle="tooltip" data-placement="bottom" title="Opción no valida" data-trigger="manual">
             </div>
           </div>
         </div>
@@ -532,8 +532,9 @@
   Escrito->mal (show tooltip // value=0)
   Escrito->blanco (show tooltip // value=0)
   */
-
+  //Inicio validación país
   var paises = <?php echo json_encode($user_info["paises"])?>;
+
   var pais_id=null;
   $("#inp_nacionalidad").keydown(function(e){
     if (e.keyCode != 9) { //Código del tabulador
@@ -550,7 +551,7 @@
         items: 5,
         triggerLength: 0,
         onSelect: function(item) {
-          console.log(item.value);
+          console.log(item);
           pais_id=item.value;
           if(pais_id>0){
             $("#id_inp_nacionalidad").attr("value", item.value);
@@ -573,5 +574,14 @@
     }, 90);
     
   });
+
+  //var result = $.grep(paises, function(e){ return e.id == pais_id; });
+  if($("#id_inp_nacionalidad").val() != ""){
+    console.log("algo");
+    var pais_id= $("#id_inp_nacionalidad");
+    var encontrar_pais_seleccionado = $.grep(paises, function(e){ return e.id == "1"; });
+    $("#inp_nacionalidad").val(encontrar_pais_seleccionado[0].name);
+  }
+  //Fin validación país
 
 </script>
