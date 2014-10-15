@@ -158,7 +158,7 @@
         <div class="row">
           <div class="col-sm-offset-2">
             <div id="nacionalidad">
-              <input type="text" ></input>
+              <input type="text" id="id_inp_nacionalidad"></input>
               <input type="text" id="inp_nacionalidad" class="form-control typeahead" data-toggle="tooltip" data-placement="bottom" title="Opción no valida" data-trigger="manual" name="nacionalidad" value="<?php echo $user_info["nacionalidad"]?>">
             </div>
           </div>
@@ -535,10 +535,12 @@
 
   var paises = <?php echo json_encode($user_info["paises"])?>;
   var pais_id=null;
-  $("#inp_nacionalidad").keydown(function(){
-    $(this).tooltip("hide");
-    console.log("escribio");
-    pais_id=0;
+  $("#inp_nacionalidad").keydown(function(e){
+    if (e.keyCode != 9) { //Código del tabulador
+      $(this).tooltip("hide");
+      console.log("escribio");
+      pais_id=0;
+    }
   });
 
   $('#nacionalidad .typeahead').typeahead({
@@ -551,21 +553,25 @@
           console.log(item.value);
           pais_id=item.value;
           if(pais_id>0){
-            $("#inp_nacionalidad").attr("value", item.value);
+            $("#id_inp_nacionalidad").attr("value", item.value);
           }
         },
     });
 
   $("#inp_nacionalidad").focusout(function(){
-    if($(this).val()=="mexico" || $(this).val()=="Mexico"){
-      pais_id=156;
-       $("#inp_nacionalidad").attr("value", pais_id);
-    }
-    if(pais_id==0){
-      $(this).tooltip("show");
-      $(this).attr("value", null);
-      $(this).val("");
-    }
+    setTimeout(function(){    //Retrazo necesario, si se elige con clic del typeahead es un focusout pero si entra 
+      if($("#inp_nacionalidad").val()=="mexico" || $("#inp_nacionalidad").val()=="Mexico"){
+        pais_id=1;
+        $("#id_inp_nacionalidad").attr("value", pais_id);
+        $("#inp_nacionalidad").val("México");
+      }
+      if(pais_id==0){
+        $("#inp_nacionalidad").tooltip("show");
+        $("#id_inp_nacionalidad").attr("value", null);
+        $("#inp_nacionalidad").val("");
+      }     
+    }, 90);
+    
   });
 
 </script>

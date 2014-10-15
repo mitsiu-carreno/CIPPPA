@@ -125,6 +125,10 @@ class Abc_model extends CI_Model{
         
         //Tabla pais
         $bean = R::dispense('pais');
+        $bean->pais= "México";
+        R::store($bean);
+
+        $bean = R::dispense('pais');
         $bean->pais= "Afganistán";
         R::store($bean);
 
@@ -746,10 +750,6 @@ class Abc_model extends CI_Model{
 
         $bean = R::dispense('pais');
         $bean->pais= "Mayotte";
-        R::store($bean);
-
-        $bean = R::dispense('pais');
-        $bean->pais= "México";
         R::store($bean);
 
         $bean = R::dispense('pais');
