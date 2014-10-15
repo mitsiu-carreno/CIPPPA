@@ -19,7 +19,7 @@
       e.preventDefault();
       var btn = $(".btn_info_personal");
       $.post(this.action, $(this).serialize(), function(data){
-        //console.log(data);
+        console.log($(this).serialize());
         btn.button('loading');
         if(data>0){
           //console.log("ok");
@@ -158,6 +158,7 @@
         <div class="row">
           <div class="col-sm-offset-2">
             <div id="nacionalidad">
+              <input type="text" ></input>
               <input type="text" id="inp_nacionalidad" class="form-control typeahead" data-toggle="tooltip" data-placement="bottom" title="Opción no valida" data-trigger="manual" name="nacionalidad" value="<?php echo $user_info["nacionalidad"]?>">
             </div>
           </div>
@@ -522,10 +523,8 @@
 
 
 <script type="text/javascript">
-  //var paises=[{id:1,name:'Afganist\u00e1n'},{id:2,name:'Akrotiri'}];
-  var paises = <?php echo json_encode($user_info["paises"])?>;
-  var pais_id=0;
   /*
+  Validación de País
   Casos:
   Blanco->bien (value = x)
   Blanco->mal (show tooltip//value=0)
@@ -533,8 +532,13 @@
   Escrito->mal (show tooltip // value=0)
   Escrito->blanco (show tooltip // value=0)
   */
+
+  var paises = <?php echo json_encode($user_info["paises"])?>;
+  var pais_id=null;
   $("#inp_nacionalidad").keydown(function(){
+    $(this).tooltip("hide");
     console.log("escribio");
+    pais_id=0;
   });
 
   $('#nacionalidad .typeahead').typeahead({
@@ -553,8 +557,14 @@
     });
 
   $("#inp_nacionalidad").focusout(function(){
-    if(pais_id==null){
+    if($(this).val()=="mexico" || $(this).val()=="Mexico"){
+      pais_id=156;
+       $("#inp_nacionalidad").attr("value", pais_id);
+    }
+    if(pais_id==0){
       $(this).tooltip("show");
+      $(this).attr("value", null);
+      $(this).val("");
     }
   });
 

@@ -5,6 +5,12 @@
 }
 
 @font-face{
+    font-family: arca;
+    src: url('../fonts/brelaregular.otf'),
+         url('../fonts/brelaregular.otf');
+}
+
+@font-face{
     font-family: Rosario-bold;
     src: url('../fonts/rosario/Rosario-Bold.ttf'),
     url('../fonts/rosario/Rosario-Bold.ttf');
@@ -155,7 +161,6 @@ h1{
     opacity: .8;
 }
 
-input{ 
-    //vertical-align: text-top;
-    font-family: Margot; //Principalmente para a visualización de números
+input{
+    letter-spacing: 1px;
 }
