@@ -25,6 +25,30 @@ class Abc_model extends CI_Model{
         return $new_id;
     }
 
+    function set_bean_with_foreign_key($table, $table2, $data, $id, $id2){
+        foreach ($data as &$d) {    //NOTA cuando se va a modificar el valor del arreglo se usa "&" antes del key!!
+            ($d=="")? $d=null: "";
+        }
+        if(empty($id2)){    //Insert
+            $bean = R::load($table, $id);
+            $bean2 = R::dispense($table2);
+            $bean2->import($data);
+            $bean->ownBeanList[] = $bean2;
+            $id = R::store($bean);
+            $new_id = $bean2->id;
+            return $new_id;
+        }
+        else{   //Update
+
+            $bean = R::load($table, $id);
+            $bean2 = R::load($table2, $id2);
+            $bean2->import($data);
+            $bean->ownBeanList[] = $bean2;
+            R::store($bean); 
+            return $bean2->export();
+        }
+    }
+
     function get_beans($table){
         $beans = R::findAll($table);
         return R::exportAll($beans);
