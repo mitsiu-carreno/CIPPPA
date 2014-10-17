@@ -18,3 +18,8 @@ function validarForm(formulario){
         return "true";
     }
 }
+
+/*TAREA INGLES
+34 c 
+35 g 
+82

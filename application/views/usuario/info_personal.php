@@ -18,8 +18,6 @@
     $("#form_info_personal").submit(function (e){
       e.preventDefault();
       if(validarForm(this)==="true"){
-        /*
-        e.preventDefault();
         var btn = $(".btn_info_personal");
         $.post(this.action, $(this).serialize(), function(data){
           console.log($(this).serialize());
@@ -33,7 +31,6 @@
             btn.button('reset');
           }
         });
-    */
       }
     });
 
