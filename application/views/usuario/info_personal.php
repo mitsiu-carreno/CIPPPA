@@ -17,19 +17,24 @@
     //Envio de formularios
     $("#form_info_personal").submit(function (e){
       e.preventDefault();
-      var btn = $(".btn_info_personal");
-      $.post(this.action, $(this).serialize(), function(data){
-        console.log($(this).serialize());
-        btn.button('loading');
-        if(data>0){
-          //console.log("ok");
-          btn.button('reset');
-        }
-        else{
-          //console.log("error");
-          btn.button('reset');
-        }
-      });
+      if(validarForm(this)==="true"){
+        /*
+        e.preventDefault();
+        var btn = $(".btn_info_personal");
+        $.post(this.action, $(this).serialize(), function(data){
+          console.log($(this).serialize());
+          btn.button('loading');
+          if(data>0){
+            //console.log("ok");
+            btn.button('reset');
+          }
+          else{
+            //console.log("error");
+            btn.button('reset');
+          }
+        });
+    */
+      }
     });
 
     $("#form_info_domi").submit(function (e){
@@ -93,7 +98,7 @@
         </div>
         <div class="row">
           <div class="col-sm-offset-2">
-            <input type="text" class="form-control required-input" name="nombre" placeholder="Nombre(s)" value="<?php echo $user_info["nombre"]?>">
+            <input type="text" class="form-control required-input" name="nombre" required placeholder="Nombre(s)" value="<?php echo $user_info["nombre"]?>">
           </div>
         </div>
       </div>
