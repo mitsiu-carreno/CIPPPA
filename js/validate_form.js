@@ -2,12 +2,13 @@ function validarForm(formulario){
     var inputs     = formulario.getElementsByClassName('required-input');
     var num_inputs = inputs.length;
     var empty = 0;
+    var val;
     console.log("validacion");
     console.log(num_inputs);
     for(var i = 0; i < num_inputs; i++){
-        inputs[i].value =inputs[i].value.replace(/\s+/g, '');   //Elimina espacios en blanco " "!= ""
-        console.log(inputs[i].value);
-        if(inputs[i].value === null || inputs[i].value === ""){
+        val =inputs[i].value.replace(/\s+/g, '');   //Elimina espacios en blanco " "!= ""
+        console.log(val);
+        if(val === null || val === ""){
             empty = empty + 1;
         }
     }
