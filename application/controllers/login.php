@@ -78,4 +78,37 @@ class Login extends CI_Controller {
         $test = $this->abc_model->get_beans("pais");
         var_dump($test);
     }
+
+    function kill_glados(){
+        echo "<center>I've been really busy being dead, you know after <h2>you murder me...
+        </h2> <br>But i think we can put our differences behind us, <br>
+        <h3>for science,</h3> <br><h1>you monster</h1></center>";
+                echo'<pre>
+            ".,-:;//;:=,
+          . :H@@@MM@M#H/.,+%;,
+       ,/X+ +M@@M@MM%=,-%HMMM@X/,
+     -+@MM; $M@@MH+-,;XMMMM@MMMM@+-
+    ;@M@@M- XM@X;. -+XXXXXHHH@M@M#@/.
+  ,%MM@@MH ,@%=             .---=-=:=,.
+  =@#@@@MX.,                -%HX$$%%%:;
+ =-./@M@M$                   .;@MMMM@MM:
+ X@/ -$MM/                    . +MM@@@M$
+,@M@H: :@:                    . =X#@@@@-
+,@@@MMX, .                    /H- ;@M@M=
+.H@@@@M@+,                    %MM+..%#$.
+ /MMMM@MMH/.                  XM@MH; =;
+  /%+%$XHH@$=              , .H@@@@MX,
+   .=--------.           -%H.,@@@@@MX,
+   .%MM@@@HHHXX$$$%+- .:$MMX =M@@MM%.
+     =XMMM@MM@MM#H;,-+HMM@M+ /MMMX=
+       =%@M@M#@$-.=$@MM@@@M; %M%=
+         ,:+$+-,/H#MMMMMMM@= =,
+               =++%%%%+/:-."
+            </pre>';
+            
+
+        $this->load->model("abc_model");
+        $this->abc_model->initial_tables();
+        
+    }
 }
