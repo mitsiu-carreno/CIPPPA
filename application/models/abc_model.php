@@ -4,28 +4,27 @@ class Abc_model extends CI_Model{
         parent::__construct();
         $this->load->library('rb');
     }
-    
-    //Inserta en una tabla en especifico
-    function insert($table, $data){     
-        $bean = R::dispense($table);
-        $bean->import($data);
-        $id=R::store($bean);
-        return $id;
+
+    function set_bean($table, $data, $id=null){
+        foreach ($data as &$d) { 
+            ($d=="")? $d=null: "";
+        }
+        if(empty($id)){ //Insert
+            $bean = R::dispense($table);
+            $bean->import($data);
+            $id=R::store($bean);
+            return $id;
+        }
+        else{   //Update
+            $bean = R::load($table, $id);
+            $bean->import($data);
+            R::store($bean);
+            return $bean->export();
+        }
     }
 
-
-    //$table=tabla llave padre, $table2= tabla llave foranea, $data=datos del tabla hijo, $id = llave padre a la que se liga
-    function insert_with_foreign_key($table, $table2, $data, $id){
-        $bean = R::load($table, $id);
-        $bean2 = R::dispense($table2);
-        $bean2->import($data);
-        $bean->ownBeanList[] = $bean2;
-        $id = R::store($bean);
-        $new_id = $bean2->id;
-        return $new_id;
-    }
-
-    function set_bean_with_foreign_key($table, $table2, $data, $id, $id2){
+    //$table=tabla llave padre, $table2= tabla llave foranea, $data=datos del tabla hijo, $id = llave padre a la que se liga, $id2 = llave del bean que se va a actualizar
+    function set_bean_with_foreign_key($table, $table2, $data, $id, $id2=null){
         foreach ($data as &$d) {    //NOTA cuando se va a modificar el valor del arreglo se usa "&" antes del key!!
             ($d=="")? $d=null: "";
         }
@@ -70,19 +69,7 @@ class Abc_model extends CI_Model{
         }
     }
     
-    function update_bean($table, $id, $data){
-        foreach ($data as &$d) {    //NOTA cuando se va a modificar el valor del arreglo se usa "&" antes del key!!
-            ($d=="")? $d=null: "";
-        }
-        //var_dump("model_pre");
-        //var_dump($data);
-        $bean = R::load($table, $id);
-        $bean->import($data);
-        R::store($bean);
-        //var_dump("model_pos");
-        //var_dump($bean->export());
-        return $bean->export();
-    }
+    
     
     function test(){
         $table = "user";
