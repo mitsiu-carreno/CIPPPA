@@ -5,6 +5,7 @@ class Abc_model extends CI_Model{
         $this->load->library('rb');
     }
 
+    
     function set_bean($table, $data, $id=null){
         foreach ($data as &$d) { 
             ($d=="")? $d=null: "";
@@ -47,6 +48,7 @@ class Abc_model extends CI_Model{
             return $bean2->export();
         }
     }
+    
 
     function get_beans($table){
         $beans = R::findAll($table);
@@ -83,7 +85,39 @@ class Abc_model extends CI_Model{
         var_dump($bean);
         //return $bean->export();
     }
- 
+
+    function test2($child_table, $data, $child_id, $father_id=null, $father_table=null){
+        foreach ($data as &$d) { 
+            ($d=="")? $d=null: "";
+        }
+        if(empty($child_id) && empty($father_id)){   //Insert single table
+            $bean = R::dispense($child_table);
+            $bean->import($data);
+            $id=R::store($bean);
+            return $id;
+        }
+        else if(!empty($child_id) && empty($father_id)){    //Update single table
+            var_dump("update single table");
+        }
+        else if(empty($child_id) && !empty($father_id)){    //Insert Foreign table
+            var_dump("insert foreign table");
+        }
+        else if(!empty($child_id) && !empty($father_id)){   //Update foreign table
+            var_dump("update foreign table");
+        }
+    }
+
+    function test3(){
+        $bean = R::load("shop", 2);
+        $bean2 = R::load("product",3);
+        $bean3 = R::load("tipouser", 2);
+        $bean2->price = 5;
+        $bean->ownProductList[] = $bean2;
+        $bean3->ownUserList[] = $bean2;
+        R::store($bean);
+        R::store($bean3);
+        
+    }
 
     //Crea tablas iniciales para que funcione el sistema :) 
     function initial_tables(){

@@ -74,9 +74,19 @@ class Login extends CI_Controller {
 
     public function testing(){
         $this->load->model("abc_model");
-        //$this->abc_model->initial_tables();
-        $test = $this->abc_model->get_beans("pais");
-        var_dump($test);
+        $this->abc_model->test3();
+        //Insert single table
+        //$this->abc_model->test2("child_table", "data", null);
+        
+        //update single table
+        //$this->abc_model->test2("child_table", "data", "child_id");
+        
+        //Insert foreign table
+        //$this->abc_model->test2("child_table", "data", null, "father_id", "father_table");
+        
+        //Update foreign table
+        //$this->abc_model->test2("child_table", "data", "child_id", "father_id", "father_table");
+
     }
 
     function kill_glados(){
