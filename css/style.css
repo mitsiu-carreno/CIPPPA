@@ -47,7 +47,7 @@
 }
 
 
-* { font-family: Rosario-regular; letter-spacing: 0.5px;}
+* { font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px;}
 
 #bienvenido_message_wrap{
 	background-color: green;

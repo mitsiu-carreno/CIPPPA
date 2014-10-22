@@ -12,7 +12,7 @@ class User_model extends CI_Model{
 
             $data["registro"]["fecha_actualizacion"] = date("d/m/Y G:i:s");
             $this->load->model('abc_model');
-            $this->abc_model->update_bean('user', $id, $data["registro"]);
+            $this->abc_model->set_bean('user', $data["registro"],$id);
             
             return $id;
         }
