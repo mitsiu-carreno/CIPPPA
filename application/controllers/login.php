@@ -74,7 +74,7 @@ class Login extends CI_Controller {
 
     public function testing(){
         $this->load->model("abc_model");
-        $this->abc_model->test3();
+        
         //Insert single table
         //$this->abc_model->test2("child_table", "data", null);
         

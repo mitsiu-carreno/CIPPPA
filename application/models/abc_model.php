@@ -5,48 +5,71 @@ class Abc_model extends CI_Model{
         $this->load->library('rb');
     }
 
-    
-    function set_bean($table, $data, $id=null){
+    function set_bean($child_table, $data, $child_id, $father_id=null, $father_table=null){
         foreach ($data as &$d) { 
             ($d=="")? $d=null: "";
         }
-        if(empty($id)){ //Insert
-            $bean = R::dispense($table);
-            $bean->import($data);
-            $id=R::store($bean);
-            return $id;
+        if(empty($child_id) && empty($father_id)){   //Insert single table
+            $this->insert_bean($child_table, $data);
+            //var_dump("insert single table");
         }
-        else{   //Update
-            $bean = R::load($table, $id);
-            $bean->import($data);
-            R::store($bean);
-            return $bean->export();
+        else if(!empty($child_id) && empty($father_id)){    //Update single table
+            $this->update_bean($child_table, $data, $child_id);
+            //var_dump("update single table");
+        }
+        else if(empty($child_id) && !empty($father_id)){    //Insert Foreign table
+            $this->insert_bean_foreign_table($child_table, $data, $father_id, $father_table);
+            //var_dump("insert foreign table");
+        }
+        else if(!empty($child_id) && !empty($father_id)){   //Update foreign table
+            var_dump("update foreign table");
         }
     }
+    //ATENCIÓN, NO LLAMAR ESTA FUNCIÓN DIRECTAMENTE ->USAR SET_BEAN()
+    function insert_bean($table, $data){
+        $bean = R::dispense($table);
+        $bean->import($data);
+        $id=R::store($bean);
+        return $id;
 
+    }
+    //ATENCIÓN, NO LLAMAR ESTA FUNCIÓN DIRECTAMENTE ->USAR SET_BEAN()
+    function update_bean($table, $data, $id){
+        $bean = R::load($table, $id);
+        $bean->import($data);
+        R::store($bean);
+        return $bean->export();
+    }
+    //ATENCIÓN, NO LLAMAR ESTA FUNCIÓN DIRECTAMENTE ->USAR SET_BEAN()
     //$table=tabla llave padre, $table2= tabla llave foranea, $data=datos del tabla hijo, $id = llave padre a la que se liga, $id2 = llave del bean que se va a actualizar
-    function set_bean_with_foreign_key($table, $table2, $data, $id, $id2=null){
-        foreach ($data as &$d) {    //NOTA cuando se va a modificar el valor del arreglo se usa "&" antes del key!!
-            ($d=="")? $d=null: "";
-        }
-        if(empty($id2)){    //Insert
-            $bean = R::load($table, $id);
-            $bean2 = R::dispense($table2);
-            $bean2->import($data);
-            $bean->ownBeanList[] = $bean2;
-            $id = R::store($bean);
-            $new_id = $bean2->id;
-            return $new_id;
-        }
-        else{   //Update
+    function insert_bean_foreign_table($child_table, $data, $father_id, $father_table){
+        $bean = R::load($father_table, $father_id);
+        $bean2 = R::dispense($child_table);
+        $bean2->import($data);
+        $bean->ownBeanList[] = $bean2;
+        $id = R::store($bean);
+        $new_id = $bean2->id;
+        return $new_id;   
+    }
+    //ATENCIÓN, NO LLAMAR ESTA FUNCIÓN DIRECTAMENTE ->USAR SET_BEAN()
+    function update_bean_foreign_table($child_table, $data, $child_id, $father_id, $father_table){
+        $bean = R::load($father_table, $father_id);
+        $bean2 = R::load($child_table, $child_id);
+        $bean2->import($data);
+        $bean->ownBeanList[] = $bean2;
+        R::store($bean); 
+        return $bean2->export();
 
-            $bean = R::load($table, $id);
-            $bean2 = R::load($table2, $id2);
-            $bean2->import($data);
-            $bean->ownBeanList[] = $bean2;
-            R::store($bean); 
-            return $bean2->export();
-        }
+        /*
+        $bean = R::load("shop", 2);
+        $bean2 = R::load("product",3);
+        $bean3 = R::load("tipouser", 2);
+        $bean2->price = 5;
+        $bean->ownProductList[] = $bean2;
+        $bean3->ownUserList[] = $bean2;
+        R::store($bean);
+        R::store($bean3);
+        */
     }
     
 
@@ -84,27 +107,6 @@ class Abc_model extends CI_Model{
     
         var_dump($bean);
         //return $bean->export();
-    }
-
-    function test2($child_table, $data, $child_id, $father_id=null, $father_table=null){
-        foreach ($data as &$d) { 
-            ($d=="")? $d=null: "";
-        }
-        if(empty($child_id) && empty($father_id)){   //Insert single table
-            $bean = R::dispense($child_table);
-            $bean->import($data);
-            $id=R::store($bean);
-            return $id;
-        }
-        else if(!empty($child_id) && empty($father_id)){    //Update single table
-            var_dump("update single table");
-        }
-        else if(empty($child_id) && !empty($father_id)){    //Insert Foreign table
-            var_dump("insert foreign table");
-        }
-        else if(!empty($child_id) && !empty($father_id)){   //Update foreign table
-            var_dump("update foreign table");
-        }
     }
 
     function test3(){
