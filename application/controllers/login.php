@@ -61,7 +61,7 @@ class Login extends CI_Controller {
         $data["registro"]["fecha_registro"] = date("d/m/Y G:i:s");
         $data["registro"]["fecha_actualizacion"] = date("d/m/Y G:i:s");
         unset($data["registro"]["password2"]);
-        $id = $this->abc_model->set_bean_with_foreign_key("user", $data["registro"], null, "tipouser", 1);
+        $id = $this->abc_model->set_bean("user", $data["registro"], null, 1, "tipouser");
         $this->session->set_userdata("userid", $id);
         echo $id;
     }
@@ -74,7 +74,7 @@ class Login extends CI_Controller {
 
     public function testing(){
         $this->load->model("abc_model");
-        
+        $this->abc_model->test3();
         //Insert single table
         //$this->abc_model->test2("child_table", "data", null);
         

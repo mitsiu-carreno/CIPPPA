@@ -10,19 +10,22 @@ class Abc_model extends CI_Model{
             ($d=="")? $d=null: "";
         }
         if(empty($child_id) && empty($father_id)){   //Insert single table
-            $this->insert_bean($child_table, $data);
+            $id= $this->insert_bean($child_table, $data);
+            return $id;
             //var_dump("insert single table");
         }
         else if(!empty($child_id) && empty($father_id)){    //Update single table
-            $this->update_bean($child_table, $data, $child_id);
+            $bean = $this->update_bean($child_table, $data, $child_id);
+            return $bean;
             //var_dump("update single table");
         }
         else if(empty($child_id) && !empty($father_id)){    //Insert Foreign table
-            $this->insert_bean_foreign_table($child_table, $data, $father_id, $father_table);
+            $id = $this->insert_bean_foreign_table($child_table, $data, $father_id, $father_table);
+            return $id; 
             //var_dump("insert foreign table");
         }
         else if(!empty($child_id) && !empty($father_id)){   //Update foreign table
-            var_dump("update foreign table");
+            //var_dump("update foreign table");
         }
     }
     //ATENCIÓN, NO LLAMAR ESTA FUNCIÓN DIRECTAMENTE ->USAR SET_BEAN()

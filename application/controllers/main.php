@@ -108,9 +108,4 @@ class Main extends CI_Controller {
         //echo json_encode($return);
     }
 
-    function get_pais(){
-        $this->load->model("abc_model");
-        $paises = $this->abc_model->get_beans("pais");
-        echo json_encode($paises);
-    }
 }
